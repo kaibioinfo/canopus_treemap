@@ -219,16 +219,19 @@ class SiriusWorkspace(object):
     def load_compounds(self):
         for adir in Path(self.rootdir).glob("*/spectrum.ms"):
             compound_dir = adir.parent
-            canopusfp = next(compound_dir.glob("canopus/1_*.fpt"))
-            name = None
-            with adir.open() as fhandle:
-                for line in fhandle:
-                    name = line.strip().split(" ")[1]
-                    break
-            cmp = Compound(name, adir)
-            if canopusfp.exists():
-                cmp.canopusfp = np.loadtxt(canopusfp)
-            self.compounds[name] = cmp
+            try:
+                canopusfp = next(compound_dir.glob("canopus/1_*.fpt"))
+                name = None
+                with adir.open() as fhandle:
+                    for line in fhandle:
+                        name = line.strip().split(" ")[1]
+                        break
+                cmp = Compound(name, adir)
+                if canopusfp.exists():
+                    cmp.canopusfp = np.loadtxt(canopusfp)
+                self.compounds[name] = cmp
+            except StopIteration:
+                pass
         
         
     def load_ontology_index(self):
