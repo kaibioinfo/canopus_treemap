@@ -1,6 +1,13 @@
 # canopus_treemap
 CANOPUS visualization for Jupyter notebook
 
+## install
+
+```
+python setup.py sdist bdist_wheel
+pip install dist/canopus-0.0.1.tar.gz
+```
+
 ## usage in Jupyter notebook
 
 ```python
