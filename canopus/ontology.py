@@ -132,7 +132,7 @@ class CanopusStatistics(object):
         # always decide for the most specific compound category
         assignment = dict()
         for compound in self.compounds_with_fingerprints():
-             assignment[compound] = min(self.leafs(compound), key=lambda x: stats[x])
+            assignment[compound] = min(self.leafs(compound), default=self.workspace.ontology.root, key=lambda x: stats[x])
         self.assignments = assignment 
         reduced_counts = self.__category_counts__()
         for assignment in self.assignments.values():
