@@ -9,6 +9,10 @@ class CanopusRenderer:
         self.workspace = workspace
         self.uid = uid if uid is not None else str(uuid.uuid4().hex)
         self.treemaps = []
+        self.use_probabilities = False
+
+    def use_probabilities(value=True):
+      self.use_probabilities = value
     
     def addTreemap(self,statistics = None):
         if statistics is None:
@@ -136,12 +140,12 @@ div.node {
 </div>"""))
         
     def renderJavascript(self):
-        customCode = "var json = " + json.dumps(self.workspace.json_treemap()) + """;
+        customCode = "var json = " + json.dumps(self.workspace.json_treemap(use_probabilities=self.use_probabilities)) + """;
 var nodes = [];
 allnodes(json, nodes);
 loadColors(nodes);
         """;
-        charts = "\n".join(["createVisualization(" + json.dumps(self.workspace.json_treemap(x)) + ", \"" + self.uid + "\""  + ",\"" + self.uid + "_" + str(i) + "\");" for (i, x) in enumerate(self.treemaps)])
+        charts = "\n".join(["createVisualization(" + json.dumps(self.workspace.json_treemap(x,use_probabilities=self.use_probabilities)) + ", \"" + self.uid + "\""  + ",\"" + self.uid + "_" + str(i) + "\");" for (i, x) in enumerate(self.treemaps)])
         json_code = pkg_resources.resource_string("canopus.resources", "treemap.js").decode("utf-8")
         display(Javascript(json_code.replace('"<CUSTOM-CODE>";', customCode + "\n" + charts)))
         

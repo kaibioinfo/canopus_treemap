@@ -188,6 +188,13 @@ class SiriusWorkspace(object):
         self.statistics = CanopusStatistics(self)
         self.statistics.setCompounds(self.compounds)
         self.statistics.assign_most_specific_classes()
+
+    def write_csv(self, filename):
+        with open(filename,"w") as fhandle:
+            fhandle.write("name\tchemontid\tcount\tfrequency\treducedFrequency\n")
+            for category in self.ontology.categories.values():
+                fhandle.write("%s\t%s\t%d\t%f\t%f\n" % (category.name, category.oid, self.statistics.counting[category], self.statistics.counting[category]/len(self.statistics.compounds), self.statistics.reduced_counts[category] /len(self.statistics.compounds)))
+
         
     def select(self, compoundset):
         s=CanopusStatistics(self)
@@ -204,17 +211,19 @@ class SiriusWorkspace(object):
         r = re.compile(reg)
         return self.select({n:c for (n,c) in self.compounds.items() if re.match(r, n)})
         
-    def json_treemap(self, stats=None):
+    def json_treemap(self, stats=None, use_probabilities=True):
         if stats is None:
             stats = self.statistics
-        return self.__node_to_json(self.ontology.root, stats)
+        return self.__node_to_json(self.ontology.root, stats, use_probabilities)
         
-    def __node_to_json(self, node, stats):
+    def __node_to_json(self, node, stats, use_probabilities):
+        num = stats.probabilistic_counts[node] if use_probabilities else stats.counting[node]
+        freq = num/len(stats.compounds)
         return {"name": node.name, "description": node.description, 
-         "freq": stats.probabilistic_counts[node]/len(stats.compounds), 
-         "num": stats.probabilistic_counts[node], 
+         "freq": freq, 
+         "num": num, 
                 "size": stats.reduced_counts[node],
-        "children": [self.__node_to_json(child,stats) for child in node.children if child in stats.reduced_counts and stats.reduced_counts[child]>0]}
+        "children": [self.__node_to_json(child,stats,use_probabilities) for child in node.children if child in stats.reduced_counts and stats.reduced_counts[child]>0]}
         
     def load_compounds(self):
         for adir in Path(self.rootdir).glob("*/spectrum.ms"):
