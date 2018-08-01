@@ -140,7 +140,7 @@ var createVisualization = function(json, mainId, id) {
     var setCurrentToNull = function(previous) {
         globalRegistry[id].current = null;
         // Hide the breadcrumb trail
-        d3.select(mainIdNode(mainId, ".treelegend")).style("display", "hidden");
+        d3.select(mainIdNode(".treelegend")).style("display", "hidden");
 
         // Deactivate all segments during transition.
         //d3.selectAll(idnode("path")).on("mouseover", null);
