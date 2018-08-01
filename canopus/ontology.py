@@ -149,14 +149,23 @@ class CanopusStatistics(object):
                 category = self.workspace.mapping[index]
                 compoundset.add(category)
         return extract_leafs(compoundset)
+
+    def categoriesFor(self, compound, threshold):
+        compoundset = set()
+        for index, probability in enumerate(compound.canopusfp):
+            if probability >= threshold:
+                category = self.workspace.mapping[index]
+                while not (category is None) and not (category in compoundset):
+                    compoundset.add(category)
+                    category = category.parent
+        return compoundset
+
     
-    def make_class_counting_statistics(self):
+    def make_class_counting_statistics(self, threshold=0.5):
         counting = self.__category_counts__()
         for compound in self.compounds_with_fingerprints():
-            for leaf in self.leafs(compound):
-                counting[leaf] += 1
-                for innerNode in leaf.ancestors():
-                        counting[innerNode] += 1
+            for node in self.categoriesFor(compound, threshold):
+                counting[node] += 1
         self.counting = counting
         
     def make_probabilistic_category_statistics(self):
