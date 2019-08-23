@@ -116,10 +116,15 @@ def extract_leafs(setofcompounds):
     return setofcompounds - innerNodes
 
 class CanopusStatistics(object):
-    def __init__(self, workspace):
+    def __init__(self, workspace, quantifier=None):
+        if quantifier is None:
+            self.quantifier = lambda x: 1
+        else:
+            self.quantifier = quantifier
         self.workspace = workspace
         self.probabilistic_counts = self.__category_counts__()
         self.reduced_counts = self.__category_counts__()
+        self.total_count = 0.0
         
     def setCompounds(self, compounds):
         self.compounds = compounds
@@ -163,19 +168,24 @@ class CanopusStatistics(object):
     
     def make_class_counting_statistics(self, threshold=0.5):
         counting = self.__category_counts__()
+        summe = 0
         for compound in self.compounds_with_fingerprints():
+            summe += self.quantifier(compound)
             for node in self.categoriesFor(compound, threshold):
-                counting[node] += 1
+                counting[node] += self.quantifier(compound)
         self.counting = counting
+        self.total_count = summe
         
     def make_probabilistic_category_statistics(self):
         self.probabilistic_counts = self.__category_counts__()
+        summe = 0.0
         for compound in self.compounds_with_fingerprints():
+            summe += self.quantifier(compound)
             for index, probability in enumerate(compound.canopusfp):
                 if probability >= 0.01:
                     category = self.workspace.mapping[index]
-                    self.probabilistic_counts[category] += probability
-        self.probabilistic_counts[self.workspace.ontology.root] = len(self.compounds)
+                    self.probabilistic_counts[category] += (probability * self.quantifier(compound))
+        self.probabilistic_counts[self.workspace.ontology.root] = summe
         
     def compounds_with_fingerprints(self):
         return [compound for compound in self.compounds.values() if compound.canopusfp is not None]
@@ -192,8 +202,11 @@ class SiriusWorkspace(object):
         self.rootdir = Path(rootdir)
         self.compounds = dict()
         self.ontology = load_ontology() if ontology is None else ontology
-        self.load_ontology_index()
-        self.load_compounds()
+        if Path(rootdir).is_dir():
+            self.load_ontology_index()
+            self.load_compounds()
+        else:
+            self.load_compounds_from_csv(rootdir)
         self.statistics = CanopusStatistics(self)
         self.statistics.setCompounds(self.compounds)
         self.statistics.assign_most_specific_classes()
@@ -204,7 +217,12 @@ class SiriusWorkspace(object):
             for category in self.ontology.categories.values():
                 fhandle.write("%s\t%s\t%d\t%f\t%f\n" % (category.name, category.oid, self.statistics.counting[category], self.statistics.counting[category]/len(self.statistics.compounds), self.statistics.reduced_counts[category] /len(self.statistics.compounds)))
 
-        
+    def quantify(self, quantifier):
+        s=CanopusStatistics(self, quantifier=quantifier)
+        s.setCompounds(self.compounds)
+        s.assign_most_specific_classes(self.statistics.counting)
+        return s
+
     def select(self, compoundset):
         s=CanopusStatistics(self)
         s.setCompounds(compoundset)
@@ -227,13 +245,37 @@ class SiriusWorkspace(object):
         
     def __node_to_json(self, node, stats, use_probabilities):
         num = stats.probabilistic_counts[node] if use_probabilities else stats.counting[node]
-        freq = num/len(stats.compounds)
+        freq = num/stats.total_count
         return {"name": node.name, "description": node.description, 
          "freq": freq, 
          "num": num, 
                 "size": stats.reduced_counts[node],
         "children": [self.__node_to_json(child,stats,use_probabilities) for child in node.children if child in stats.reduced_counts and stats.reduced_counts[child]>0]}
         
+    def load_compounds_from_csv(self, csvFile):
+        header = None
+        with open(csvFile) as fhandle:
+            for line in fhandle:
+                cols = line.rstrip().split("\t")
+                if header:
+                    cmp = Compound(cols[0],None)
+                    cmp.canopusfp = np.array([float(x) for x in cols[1:]])
+                    self.compounds[cmp.name] = cmp
+                else:
+                    header = cols
+                    self.create_mapping_from_tsv(cols)
+
+    def create_mapping_from_tsv(self, columns):
+        mapping = dict()
+        ontologyByName = dict()
+        for category in self.ontology.categories:
+            c=self.ontology.categories[category]
+            ontologyByName[c.name] = c
+        for (index, name) in enumerate(columns[1:]):
+            mapping[index] = ontologyByName[name]
+        self.mapping = mapping
+        return mapping
+
     def load_compounds(self):
         for adir in Path(self.rootdir).glob("*/spectrum.ms"):
             compound_dir = adir.parent
