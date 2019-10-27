@@ -1,27 +1,118 @@
 from IPython.display import HTML, display, Javascript
 import uuid
-from .ontology import Ontology, SiriusWorkspace,CanopusStatistics
+from .ontology import Ontology, SiriusWorkspace,CanopusStatistics,Compound,Formula
 import json
 import pkg_resources
 from pathlib import Path
-class CanopusRenderer:
-    def __init__(self, workspace, uid=None):
-        self.workspace = workspace
-        self.uid = uid if uid is not None else str(uuid.uuid4().hex)
-        self.treemaps = []
-        self.use_probabilities = False
+import pandas as pd
+import re
+import numpy as np
+import matplotlib
+import matplotlib.pyplot as plt
+import math
 
-    def use_probabilities(value=True):
-      self.use_probabilities = value
+
+class CanopusRenderer:
+  def __init__(self, workspace, uid=None):
+    self.workspace = workspace
+    self.uid = uid if uid is not None else str(uuid.uuid4().hex)
+    self.treemaps = []
+    self.use_probabilities = False
+    self.groups = []
+
+  def __compound__(self,c):
+    if type(c) is not Compound:
+      return self.workspace.compounds[c]
+    else:
+      return c
+
+  def useQuantification(self,quant):
+    self.quantification = quant
+
+  def defineGroup(self,name, regexp, groupcolor):
+    """add a new discriminative group. All samples matching the pattern are part of this group. They are plotted together and in the same color."""
+    self.groups.append((name,re.compile(regexp),groupcolor))
+
+  def shortdesc(self,compound,form=None, threshold=0.33, filter=None):
+    compound = self.__compound__(compound)
+    # print formula and adduct
+    display(HTML("<h3>%s (%s)</h3><br />Zodiac Score: %d<br />Feature-ID: %s" % (
+      Formula(compound.formula).to_html(), compound.adduct, int(compound.zodiacScore*100) if (compound.zodiacScore is not None and not math.isnan(compound.zodiacScore) )else 0,
+      compound.name
+    )))
+    # plot top structure results
+    f = Path("%s/structure_candidates.csv" % compound.directory)
+    if f.exists():
+      table = pd.read_csv(f,sep="\t")
+      display(table.sort_values(by="score",ascending=False).head(10))
+    # plot classification
+    self.canopusTreeTable(compound)
+    # plot quantification
+    self.quantplot(compound, filter)
+
+  def quantplot(self,compound,filter=None,Quant=None):
+    if Quant is None:
+      Quant = self.quantification
+    if filter:
+      filter = re.compile(filter)
+      m = [x for x in Quant.columns if filter.match(x)]
+      Quant = Quant.loc[:,m] 
+    compound = self.__compound__(compound)
+    fid = compound.name
+    grp = self.groups if self.groups else [('all',re.compile('.*'),'steelblue')]
+    n=0
+    mids=[]
+    names = []
+    for (name,pattern,color) in grp:
+      members = [column for column in Quant.columns if pattern.match(column)]
+      indizes = np.arange(n,n+len(members))
+      mid = n+len(indizes)//2
+      n += len(members)
+      plt.bar(
+        indizes, Quant.loc[fid,members], width=1,color=color
+      )
+      mids.append(mid)
+      names.append(name)
+    plt.xticks(ticks=mids,labels=names)
+    plt.show()
+
+  def canopusTreeTable(self,compound,threshold=0.25):
+    compound = self.__compound__(compound)
+    fp = self.workspace.statistics.categoriesAndProbabilitiesFor(compound,threshold)
+    klasses = set(fp.keys())
+    astree = self.workspace.ontology.root
+    # add root
+    fp[astree] = 1.0
+    display(HTML(self.__displayTreeAsHTML__(fp,astree,0)))
+
+  def __tooltip__(self,text, tipp):
+    return "<span title='" + tipp + "'>" + text + "</span>"
+
+  def __displayTreeAsHTML__(self,fp,root,indent):
+    s=""
+    weight = "bold" if fp[root]>0.5 else "italic"
+    s += "<li>" + self.__tooltip__("<span style='font-weight:" + weight +"'>" + root.name + "</span>" + "<span style='margin-left:15pt;font-weight:" + weight + "'>" + 
+      (str(int(fp[root]*100)) + " %" if fp[root] > 0 else "") + "</span>", root.description)
+    t = "<ul>"
+    c=0
+    for child in root.children:
+      if child in fp:
+        t += self.__displayTreeAsHTML__(fp,child,indent+1)
+        c +=1
+    t += "</ul>"
+    if c>0:
+      s += t
+    s += "</li>"
+    return s
     
-    def addTreemap(self,statistics = None):
-        if statistics is None:
-            statistics = self.workspace.statistics
-        self.treemaps.append(statistics)
-        
-        
-    def renderCSS(self):      
-        display(HTML(r"""
+  def addTreemap(self,statistics = None):
+      if statistics is None:
+          statistics = self.workspace.statistics
+      self.treemaps.append(statistics)
+      
+      
+  def renderCSS(self):      
+      display(HTML(r"""
 <style>
 #main {
   width: 100%;
@@ -112,40 +203,40 @@ div.node {
 }
 </style>
 """))
-        
-    def render(self):
-        self.renderCSS()
-        self.renderHTML()
-        self.renderJavascript()
-        
-    def renderHTML(self):
-        charts = "\n".join([
-            "<div class=\"chart\" id=\"chart" + self.uid + "_" + str(i) + "\">"
-            """
-            
-                <div class="explanation" style="visibility: hidden;">
-                  <span class="percentage"></span><br/>
-                  <span class="category_name"></span>
-                </div>
+      
+  def render(self):
+      self.renderCSS()
+      self.renderHTML()
+      self.renderJavascript()
+      
+  def renderHTML(self):
+      charts = "\n".join([
+          "<div class=\"chart\" id=\"chart" + self.uid + "_" + str(i) + "\">"
+          """
+          
+              <div class="explanation" style="visibility: hidden;">
+                <span class="percentage"></span><br/>
+                <span class="category_name"></span>
               </div>
-            """ for (i,_) in enumerate(self.treemaps)])
-        display(HTML("<div id=\"main" + "_" +self.uid + "\">" +
+            </div>
+          """ for (i,_) in enumerate(self.treemaps)])
+      display(HTML("<div id=\"main" + "_" +self.uid + "\">" +
 """
-      <div class="treelegend"></div>
-      <div class="sequence"></div>
+    <div class="treelegend"></div>
+    <div class="sequence"></div>
 """ + charts + """<div class="sidebar">
-      <div>
-      <p class="description"></p>
-      </div>
+    <div>
+    <p class="description"></p>
+    </div>
 </div>"""))
-        
-    def renderJavascript(self):
-        customCode = "var json = " + json.dumps(self.workspace.json_treemap(use_probabilities=self.use_probabilities)) + """;
+      
+  def renderJavascript(self):
+      customCode = "var json = " + json.dumps(self.workspace.json_treemap(use_probabilities=self.use_probabilities)) + """;
 var nodes = [];
 allnodes(json, nodes);
 loadColors(nodes);
-        """;
-        charts = "\n".join(["createVisualization(" + json.dumps(self.workspace.json_treemap(x,use_probabilities=self.use_probabilities)) + ", \"" + self.uid + "\""  + ",\"" + self.uid + "_" + str(i) + "\");" for (i, x) in enumerate(self.treemaps)])
-        json_code = pkg_resources.resource_string("canopus.resources", "treemap.js").decode("utf-8")
-        display(Javascript(json_code.replace('"<CUSTOM-CODE>";', customCode + "\n" + charts)))
-        
+      """;
+      charts = "\n".join(["createVisualization(" + json.dumps(self.workspace.json_treemap(x,use_probabilities=self.use_probabilities)) + ", \"" + self.uid + "\""  + ",\"" + self.uid + "_" + str(i) + "\");" for (i, x) in enumerate(self.treemaps)])
+      json_code = pkg_resources.resource_string("canopus.resources", "treemap.js").decode("utf-8")
+      display(Javascript(json_code.replace('"<CUSTOM-CODE>";', customCode + "\n" + charts)))
+      

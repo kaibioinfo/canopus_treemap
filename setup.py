@@ -19,4 +19,7 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ),
+    install_requires=[
+    "jupyter >= 1.0.0","numpy >= 1.0.0", "pandas >= 0.24.0", "scikit-learn >= 0.20.3", "scipy >= 1.2.1", "seaborn >= 0.9.0", "matplotlib >= 3.0.0"
+    ]
 )
