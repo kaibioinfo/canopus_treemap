@@ -93,6 +93,15 @@ class Canopus(object):
       return self.all
     return self.conditions[name]
 
+  def invert(self, condition, color, name=None):
+    """invert a condition"""
+    condition = self.condition(condition)
+    x = Condition(name if name else "not " + condition.name, 
+      "(?!:"+condition.regexpString+")",
+      color)
+    self.__assignSamples__(x)
+    return x
+
   def join(self, *conditions,name=None,color=None):
     """
     Select all samples that are part of at least one of the given conditions
@@ -146,7 +155,7 @@ class Canopus(object):
     'highest_expression' -- order compounds by fold change, but only with respect to compounds which are higher
                             expressed in the left condition than in the right condition
     """
-    return DifferentialApi(self, self.condition(conditionLeft), self.condition(conditionRight), method)
+    return DifferentialApi(self, self.condition(conditionLeft), self.condition(conditionRight) if conditionRight else self.invert(conditionLeft, "red"), method)
 
   def treemap(self, condition=None, method="binary",probabilities=True):
     """
@@ -208,6 +217,7 @@ class Canopus(object):
     """
     compound = self.__fid__(compound)
     self.featureHeader(compound)
+    self.gnpsHit(compound)
     self.identification(compound)
     self.classification(compound)
     self.histogram(compound,conditions)
@@ -490,7 +500,7 @@ class DifferentialApi(object):
     bestFeatures = pd.DataFrame(dict(compound=Quant.index, weight=f.feature_importances_, category=self.__assign_specific_class__(Quant.index)))
     bestFeatures.sort_values(by="weight",ascending=False,inplace=True)
     bestFeatures.set_index("compound",drop=True,inplace=True)
-    bestFeatures[bestFeatures.weight < 2*bestFeatures.weight.median()] = 0.0 # we do not trust the lower values anyways
+    bestFeatures[bestFeatures.weight < 10*bestFeatures.weight.median()] = 0.0 # we do not trust the lower values anyways
     self.ordering =  bestFeatures
 
   def __assign_specific_class__(self, compounds):
