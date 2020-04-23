@@ -62,6 +62,15 @@ class Canopus(object):
   def _ipython_key_completions_(self):
     return self.__all_keywords__()
 
+  def exportCytoscape(self, file, selection=None):
+    """
+    export the data into a cytoscape graphml file.
+    file      -- name of the output file
+    selection -- a list/set of class names which should be used for annotating nodes in the network.
+                 if omitted, CANOPUS will try to find useful classes itself.  
+    """
+    self.gnps.write(file, selection)
+
   def defineCondition(self,name, regexp=None, color=None):
     """
     define a condition (group, organ, treatment, ...)
