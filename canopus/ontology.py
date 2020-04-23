@@ -199,7 +199,7 @@ class Compound(object):
             return True
         if peakshape and "BadPeakShape" in self.quality:
             return True
-        if self.zodiacScore < zodiac:
+        if self.zodiacScore and self.zodiacScore < zodiac:
             return True
         return False
 
@@ -403,6 +403,8 @@ class SiriusInstance(object):
         self.topAdduct = filename[1]
         if self.maxZodiac is not None:
             self.zodiacScore = self.maxZodiac[2]
+        else:
+            self.zodiacScore = None
         canopusPath = Path(self.dirname, "canopus", filename[0] + "_" + filename[1] + ".fpt")
         if canopusPath.exists():
             self.canopusfp = np.loadtxt(canopusPath)
