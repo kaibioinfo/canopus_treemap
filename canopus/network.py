@@ -38,6 +38,285 @@ class NetworkNode:
 
 class MolecularNetwork:
 
+
+  def writeWithPieCharts(self, file):
+    ns = dict(ml="http://graphml.graphdrawing.org/xmlns")
+    xml = ET.parse(self.gnps)
+    # add canopus class tag
+    c1 = ET.Element("{http://graphml.graphdrawing.org/xmlns}key", {"attr.name": "main class", "attr.type":"string", "for":"node",
+     "id":"canopus1"})
+    c2 = ET.Element("{http://graphml.graphdrawing.org/xmlns}key", {"attr.name": "upper class", "attr.type":"string", "for":"node",
+     "id":"canopus2"})
+    c3 = ET.Element("{http://graphml.graphdrawing.org/xmlns}key", {"attr.name": "superclass", "attr.type":"string", "for":"node",
+     "id":"canopus3"})
+    c4 = ET.Element("{http://graphml.graphdrawing.org/xmlns}key", {"attr.name": "class", "attr.type":"string", "for":"node",
+     "id":"canopus4"})
+    c5 = ET.Element("{http://graphml.graphdrawing.org/xmlns}key", {"attr.name": "subclass", "attr.type":"string", "for":"node",
+     "id":"canopus5"})
+    c6 = ET.Element("{http://graphml.graphdrawing.org/xmlns}key", {"attr.name": "siriusQuality", "attr.type":"long", "for":"node",
+     "id":"canopus6"})
+    c7 = ET.Element("{http://graphml.graphdrawing.org/xmlns}key", {"attr.name": "formula", "attr.type":"string", "for":"node",
+     "id":"sirius1"})
+
+
+    allSecondaryClasses = set([c for c in self.sirius.statistics.secondaryAssignments.values() if c in self.sirius.revmap])
+    mappingCl = {("cl%d" % index): name for (index, name) in enumerate(allSecondaryClasses)}
+    for key in mappingCl:
+        xml.find(".").insert(0, ET.Element("{http://graphml.graphdrawing.org/xmlns}key", {"attr.name": mappingCl[key].name, "attr.type":"float", "for":"node",
+     "id":key}))    
+    revmap = dict()
+    for key in mappingCl:
+        revmap[mappingCl[key]] = key
+    cother = "clX"
+    xml.find(".").insert(0, ET.Element("{http://graphml.graphdrawing.org/xmlns}key", {"attr.name": "other", "attr.type":"float", "for":"node",
+     "id":"clX"}))    
+    xml.find(".").insert(0, c7)
+    xml.find(".").insert(0, c6)
+    xml.find(".").insert(0, c5)
+    xml.find(".").insert(0, c4)
+    xml.find(".").insert(0, c3)
+    xml.find(".").insert(0, c2)
+    xml.find(".").insert(0, c1)
+    for graph in xml.findall("ml:graph",ns):
+      for node in graph.findall("ml:node",ns):
+        id = node.attrib["id"]
+        if id in self.sirius.compounds:
+          c = self.sirius.compounds[id]
+          # get quality flag
+          flag = 4
+          if c.isBadQuality(zodiac=0.8):
+            flag = 3
+          if c.isBadQuality(peakshape=True):
+            flag = 2
+          if c.isBadQuality():
+            flag = 1
+          meta = ET.Element("{http://graphml.graphdrawing.org/xmlns}data",{"key":"canopus6"})
+          meta.text = str(flag)
+          node.append(meta)
+          if c in self.sirius.statistics.assignments:
+            formula = c.formula
+            meta = ET.Element("{http://graphml.graphdrawing.org/xmlns}data",{"key":"sirius1"})
+            meta.text = str(formula)
+            node.append(meta)
+            klassname = self.sirius.statistics.assignments[c].name
+            meta = ET.Element("{http://graphml.graphdrawing.org/xmlns}data",{"key":"canopus1"})
+            meta.text = klassname
+            node.append(meta)
+            genus = self.sirius.statistics.assignments[c].classyFireGenus()
+            if "superclass" in genus:
+              meta = ET.Element("{http://graphml.graphdrawing.org/xmlns}data",{"key":"canopus3"})
+              meta.text = genus["superclass"].name
+              node.append(meta)
+            if "class" in genus:
+              meta = ET.Element("{http://graphml.graphdrawing.org/xmlns}data",{"key":"canopus4"})
+              meta.text = genus["class"].name
+              node.append(meta)
+            if "subclass" in genus:
+              meta = ET.Element("{http://graphml.graphdrawing.org/xmlns}data",{"key":"canopus5"})
+              meta.text = genus["subclass"].name
+              node.append(meta)
+            klassname2 = self.sirius.statistics.secondaryAssignments[c].name 
+            meta = ET.Element("{http://graphml.graphdrawing.org/xmlns}data",{"key":"canopus2"})
+            meta.text = klassname2
+            node.append(meta)
+            allSecondaryClasses = set()
+            for key in mappingCl:
+                index=self.sirius.revmap[mappingCl[key]]
+                if c.canopusfp[index]>=0.5:
+                    allSecondaryClasses.add(key)
+
+            for key in list(allSecondaryClasses):
+                for a in mappingCl[key].ancestors():
+                    if a in revmap and revmap[a] in allSecondaryClasses:
+                        display("remove %s due to %s" % (a.name, mappingCl[key].name) )
+                        allSecondaryClasses.remove(revmap[a])
+
+            weight = 1.0/len(allSecondaryClasses) if allSecondaryClasses else 1.0
+            for key in mappingCl:
+                meta = ET.Element("{http://graphml.graphdrawing.org/xmlns}data",{"key":key})
+                meta.text = str(weight) if (key in allSecondaryClasses) else "0.0"
+                node.append(meta)
+            otherweight = 0.0 if allSecondaryClasses else 1.0
+            meta = ET.Element("{http://graphml.graphdrawing.org/xmlns}data",{"key":cother})
+            meta.text = str(otherweight)
+            node.append(meta)
+    xml.write(file)
+
+  def writeWithPieChartsPreselected(self, file, assignments):
+    ns = dict(ml="http://graphml.graphdrawing.org/xmlns")
+    xml = ET.parse(self.gnps)
+    # add canopus class tag
+    c1 = ET.Element("{http://graphml.graphdrawing.org/xmlns}key", {"attr.name": "main class", "attr.type":"string", "for":"node",
+     "id":"canopus1"})
+    c2 = ET.Element("{http://graphml.graphdrawing.org/xmlns}key", {"attr.name": "upper class", "attr.type":"string", "for":"node",
+     "id":"canopus2"})
+    c3 = ET.Element("{http://graphml.graphdrawing.org/xmlns}key", {"attr.name": "superclass", "attr.type":"string", "for":"node",
+     "id":"canopus3"})
+    c4 = ET.Element("{http://graphml.graphdrawing.org/xmlns}key", {"attr.name": "class", "attr.type":"string", "for":"node",
+     "id":"canopus4"})
+    c5 = ET.Element("{http://graphml.graphdrawing.org/xmlns}key", {"attr.name": "subclass", "attr.type":"string", "for":"node",
+     "id":"canopus5"})
+    c6 = ET.Element("{http://graphml.graphdrawing.org/xmlns}key", {"attr.name": "siriusQuality", "attr.type":"long", "for":"node",
+     "id":"canopus6"})
+    c7 = ET.Element("{http://graphml.graphdrawing.org/xmlns}key", {"attr.name": "formula", "attr.type":"string", "for":"node",
+     "id":"sirius1"})
+
+    allSecondaryClasses = set()
+    for subset in assignments.values():
+      for kl in subset:
+        allSecondaryClasses.add(kl)
+    mappingCl = {("cl%d" % index): name for (index, name) in enumerate(allSecondaryClasses)}
+    for key in mappingCl:
+        xml.find(".").insert(0, ET.Element("{http://graphml.graphdrawing.org/xmlns}key", {"attr.name": mappingCl[key].name, "attr.type":"float", "for":"node",
+     "id":key}))    
+    revmap = dict()
+    for key in mappingCl:
+        revmap[mappingCl[key]] = key
+    cother = "clX"
+    xml.find(".").insert(0, ET.Element("{http://graphml.graphdrawing.org/xmlns}key", {"attr.name": "other", "attr.type":"float", "for":"node",
+     "id":"clX"}))    
+    xml.find(".").insert(0, c7)
+    xml.find(".").insert(0, c6)
+    xml.find(".").insert(0, c5)
+    xml.find(".").insert(0, c4)
+    xml.find(".").insert(0, c3)
+    xml.find(".").insert(0, c2)
+    xml.find(".").insert(0, c1)
+    for graph in xml.findall("ml:graph",ns):
+      for node in graph.findall("ml:node",ns):
+        id = node.attrib["id"]
+        if id in self.sirius.compounds:
+          c = self.sirius.compounds[id]
+          # get quality flag
+          flag = 4
+          if c.isBadQuality(zodiac=0.8):
+            flag = 3
+          if c.isBadQuality(peakshape=True):
+            flag = 2
+          if c.isBadQuality():
+            flag = 1
+          meta = ET.Element("{http://graphml.graphdrawing.org/xmlns}data",{"key":"canopus6"})
+          meta.text = str(flag)
+          node.append(meta)
+          if c in self.sirius.statistics.assignments:
+            formula = c.formula
+            meta = ET.Element("{http://graphml.graphdrawing.org/xmlns}data",{"key":"sirius1"})
+            meta.text = str(formula)
+            node.append(meta)
+            klassname = self.sirius.statistics.assignments[c].name
+            meta = ET.Element("{http://graphml.graphdrawing.org/xmlns}data",{"key":"canopus1"})
+            meta.text = klassname
+            node.append(meta)
+            genus = self.sirius.statistics.assignments[c].classyFireGenus()
+            if "superclass" in genus:
+              meta = ET.Element("{http://graphml.graphdrawing.org/xmlns}data",{"key":"canopus3"})
+              meta.text = genus["superclass"].name
+              node.append(meta)
+            if "class" in genus:
+              meta = ET.Element("{http://graphml.graphdrawing.org/xmlns}data",{"key":"canopus4"})
+              meta.text = genus["class"].name
+              node.append(meta)
+            if "subclass" in genus:
+              meta = ET.Element("{http://graphml.graphdrawing.org/xmlns}data",{"key":"canopus5"})
+              meta.text = genus["subclass"].name
+              node.append(meta)
+            klassname2 = self.sirius.statistics.secondaryAssignments[c].name 
+            meta = ET.Element("{http://graphml.graphdrawing.org/xmlns}data",{"key":"canopus2"})
+            meta.text = klassname2
+            node.append(meta)
+            allSecondaryClasses = assignments[c] if c in assignments else set()
+
+            weight = 1.0/len(allSecondaryClasses) if allSecondaryClasses else 1.0
+            for key in mappingCl:
+                meta = ET.Element("{http://graphml.graphdrawing.org/xmlns}data",{"key":key})
+                meta.text = str(weight) if (key in allSecondaryClasses) else "0.0"
+                node.append(meta)
+            otherweight = 0.0 if allSecondaryClasses else 1.0
+            meta = ET.Element("{http://graphml.graphdrawing.org/xmlns}data",{"key":cother})
+            meta.text = str(otherweight)
+            node.append(meta)
+    xml.write(file)
+
+  def write(self, file, manualAssignment=None):
+    ns = dict(ml="http://graphml.graphdrawing.org/xmlns")
+    xml = ET.parse(self.gnps)
+    # add canopus class tag
+    c1 = ET.Element("{http://graphml.graphdrawing.org/xmlns}key", {"attr.name": "main class", "attr.type":"string", "for":"node",
+     "id":"canopus1"})
+    c2 = ET.Element("{http://graphml.graphdrawing.org/xmlns}key", {"attr.name": "upper class", "attr.type":"string", "for":"node",
+     "id":"canopus2"})
+    c3 = ET.Element("{http://graphml.graphdrawing.org/xmlns}key", {"attr.name": "superclass", "attr.type":"string", "for":"node",
+     "id":"canopus3"})
+    c4 = ET.Element("{http://graphml.graphdrawing.org/xmlns}key", {"attr.name": "class", "attr.type":"string", "for":"node",
+     "id":"canopus4"})
+    c5 = ET.Element("{http://graphml.graphdrawing.org/xmlns}key", {"attr.name": "subclass", "attr.type":"string", "for":"node",
+     "id":"canopus5"})
+    c6 = ET.Element("{http://graphml.graphdrawing.org/xmlns}key", {"attr.name": "siriusQuality", "attr.type":"long", "for":"node",
+     "id":"canopus6"})
+    c8 = ET.Element("{http://graphml.graphdrawing.org/xmlns}key", {"attr.name": "classification", "attr.type":"string", "for":"node",
+     "id":"canopus7"})
+    c7 = ET.Element("{http://graphml.graphdrawing.org/xmlns}key", {"attr.name": "formula", "attr.type":"string", "for":"node",
+     "id":"sirius1"})
+    xml.find(".").insert(0, c8)
+    xml.find(".").insert(0, c7)
+    xml.find(".").insert(0, c6)
+    xml.find(".").insert(0, c5)
+    xml.find(".").insert(0, c4)
+    xml.find(".").insert(0, c3)
+    xml.find(".").insert(0, c2)
+    xml.find(".").insert(0, c1)
+    for graph in xml.findall("ml:graph",ns):
+      for node in graph.findall("ml:node",ns):
+        id = node.attrib["id"]
+        if id in self.sirius.compounds:
+          c = self.sirius.compounds[id]
+          # get quality flag
+          flag = 4
+          if c.isBadQuality(zodiac=0.8):
+            flag = 3
+          if c.isBadQuality(peakshape=True):
+            flag = 2
+          if c.isBadQuality():
+            flag = 1
+          meta = ET.Element("{http://graphml.graphdrawing.org/xmlns}data",{"key":"canopus6"})
+          meta.text = str(flag)
+          node.append(meta)
+          formula = c.formula
+          meta = ET.Element("{http://graphml.graphdrawing.org/xmlns}data",{"key":"sirius1"})
+          meta.text = str(formula)
+          node.append(meta)
+          if c in self.sirius.statistics.assignments:
+            klassname = self.sirius.statistics.assignments[c].name
+            meta = ET.Element("{http://graphml.graphdrawing.org/xmlns}data",{"key":"canopus1"})
+            meta.text = klassname
+            node.append(meta)
+            genus = self.sirius.statistics.assignments[c].classyFireGenus()
+            if "superclass" in genus:
+              meta = ET.Element("{http://graphml.graphdrawing.org/xmlns}data",{"key":"canopus3"})
+              meta.text = genus["superclass"].name
+              node.append(meta)
+            if "class" in genus:
+              meta = ET.Element("{http://graphml.graphdrawing.org/xmlns}data",{"key":"canopus4"})
+              meta.text = genus["class"].name
+              node.append(meta)
+            if "subclass" in genus:
+              meta = ET.Element("{http://graphml.graphdrawing.org/xmlns}data",{"key":"canopus5"})
+              meta.text = genus["subclass"].name
+              node.append(meta)
+            klassname2 = self.sirius.statistics.secondaryAssignments[c].name 
+            meta = ET.Element("{http://graphml.graphdrawing.org/xmlns}data",{"key":"canopus2"})
+            meta.text = klassname2
+            node.append(meta)
+            if manualAssignment is not None and c in manualAssignment:
+              klassname2 = manualAssignment[c].name 
+              meta = ET.Element("{http://graphml.graphdrawing.org/xmlns}data",{"key":"canopus7"})
+              meta.text = klassname2
+              node.append(meta)
+
+    xml.write(file)
+
+
+
   def parse(gnps):
     ns = dict(ml="http://graphml.graphdrawing.org/xmlns")
     edgeScore = None 
@@ -67,6 +346,7 @@ class MolecularNetwork:
 
     # now parse all nodes
     network = MolecularNetwork()
+    network.gnps = gnps
     for graph in xml.findall("ml:graph",ns):
       for node in graph.findall("ml:node",ns):
         u = NetworkNode(node.attrib["id"])
@@ -103,6 +383,7 @@ class MolecularNetwork:
   def feedSirius(self, sirius):
     self.ontology = sirius.ontology
     sirius.statistics.assign_most_specific_classes()
+    self.sirius = sirius
     for node in self.nodes.values():
       if node.nodeId in sirius.compounds: 
         compound = sirius.compounds[node.nodeId]
@@ -209,7 +490,9 @@ div.networkDescription {
 <form class="network">
   <input type="radio" name="network" class="networkAll" checked="checked">Display all networks</input>
   <input type="radio" name="network" class="networkSingle">Display subnetwork 
-  <input type="number" name="networkSel" class="networkSelection" disabled="disabled" min="1" max="100" step="1" value="1">
+  <input type="number" name="networkSel" class="networkSelection" disabled="disabled" min="1" max="100" step="1" value="1"><br />
+  <input type="number" name="networkFind" class="networkFind" min="0" max="99999" step="1" value="0">
+  <input type="button" name="findNetwork" class="networkFindButton">Find Cluster</button>
   </input>
 </form>
       """ + ("<a href=\"\" target=\"_blank\" class=\"clusterLink\">View network in GNPS</a></div>" if self.clusterInfo is not None else "</div>")))

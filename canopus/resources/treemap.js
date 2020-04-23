@@ -159,6 +159,28 @@ var createVisualization = function(json, mainId, id) {
         updateDescription(globalRegistry.current());
     }
 
+    var copyToClipboard = function(d) {
+    	var ary = globalRegistry["ids"].slice();
+        for (var i = 0; i < ary.length; ++i) {
+            var entity = globalRegistry[ary[i]];
+            if (!(d || d.data)) {
+                
+            } else {
+                entity["setCurrent"](entity["nodesbynames"][d.data.name]);
+
+            }
+        }
+        const svg = d3.select("#chart" + id).select("svg");
+    	const str = svg.html();
+    	console.log(str);
+  		const el = document.createElement('textarea');
+  		el.value = str;
+  		document.body.appendChild(el);
+  		el.select();
+  		document.execCommand('copy');
+  		document.body.removeChild(el);
+	};
+
     // Fade all but the current sequence, and show it in the breadcrumb trail.
     var setCurrent = function(d) {
         if (d == null) {
@@ -299,7 +321,7 @@ var createVisualization = function(json, mainId, id) {
             return colors[d.data.name];
         })
         .style("opacity", 1)
-        .on("mouseover", globalMouseOver);
+        .on("mouseover", globalMouseOver).on("dblclick",copyToClipboard);
 
     // Add the mouseleave handler to the bounding circle.
     d3.selectAll(idtag("container")).on("mouseleave", globalMouseOut);

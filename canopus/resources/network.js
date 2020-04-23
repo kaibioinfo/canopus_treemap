@@ -173,7 +173,6 @@ require(["d3"], function(d3) {
             this.svg = rootDiv.select("svg");
             this.svg.attr("width",W).attr("height",h);
             const r = 3;
-            console.log(Nodes);
             this.sim = d3.forceSimulation(Nodes)
                 .force("link", d3.forceLink(Edges).id(d=>d.nodeId))
                 .force("charge", d3.forceManyBody().strength(connected ? -20 : -40))
@@ -248,14 +247,11 @@ require(["d3"], function(d3) {
                 for (var n=0; n < currentNetwork.nodes.length; ++n) {
                     const cid = currentNetwork.nodes[n].componentId;
                     if (cid != "-1") {
-                        console.log(cid);
                         clusterLink.style("visibility","hidden");
                         var link = graph.networkLinks;
                         if (link) {
-                            console.log(link);
                             link = link[cid]
                             if (link) {
-                                console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
                                 clusterLink.style("visibility","visible");
                                 clusterLink.attr("href", link)
                             }
@@ -301,6 +297,21 @@ require(["d3"], function(d3) {
         updateRendering();
     })
 
+    form.select("input.networkFindButton").on("click", function() {
+        var clusterid = parseInt(d3.select("input.networkFind").property("value"));
+        for (var j=0; j < allNetworks.length; ++j) {
+            for (var k=0; k < allNetworks[j].nodes.length; ++k) {
+                if (allNetworks[j].nodes[k].nodeId == clusterid) {
+                    slider.property("value", j);
+                    selectedNetworkID = j;
+                    isDisplayingSubnetwork = true;
+                    updateRendering();
+                    return;
+                }
+            }
+        }
+    });
+
     function updateRendering() {
         if (isDisplayingSubnetwork) {
             slider.attr("disabled",null);
@@ -312,4 +323,6 @@ require(["d3"], function(d3) {
     }
 
     networkVisualizer.create(graph.nodes,graph.edges,false);
+    isDisplayingSubnetwork = true;
+    updateRendering();
 });

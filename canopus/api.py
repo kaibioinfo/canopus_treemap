@@ -16,11 +16,13 @@ import math
 import glob
 from pathlib import Path
 import re
+import copy
 
 class Canopus(object):
 
   def __init__(self, sirius, gnps=None):
     self.__cleanNorm__()
+    self.probabilityThreshold=0.33
     self.sirius = SiriusWorkspace(sirius)
     self.Quant = self.sirius.make_quant()
     self.conditions = dict()
@@ -72,6 +74,7 @@ class Canopus(object):
     self.conditions[name] = Condition(name,regexp,color)
     self.__conditionsHaveChanged__()
     self.__assignSamples__(self.condition(name))
+    return self.conditions[name]
 
   def defineBlank(self,regexp=".*(?i:blank).*"):
     """
@@ -83,15 +86,21 @@ class Canopus(object):
     self.__cleanNorm__()
     self.__assignSamples__(self.blank)
 
-  def condition(self, name):
+  def condition(self, name, color=None):
     """
     return the condition with the given name
     """
+    c=None
     if type(name) is Condition:
-      return name
-    if name is None:
-      return self.all
-    return self.conditions[name]
+      c=name
+    elif name is None:
+      c = self.all
+    else: 
+      c = self.conditions[name]
+    if color:
+      c = copy.copy(c)
+      c.color = color
+    return c
 
   def invert(self, condition, color, name=None):
     """invert a condition"""
@@ -126,7 +135,10 @@ class Canopus(object):
     if name is None:
       name = "&".join([self.condition(c).name for c in conditions])
     # we cannot define a proper regexp =/
-    samples = [index for index in self.Quant.columns if all(map(lambda c: self.condition(c).match(index),conditions))]
+    aset = set(self.Quant.columns)
+    for c in conditions:
+      aset = aset & set(c.samples)
+    samples = list(aset)
     pseudoReg = "^(?:" + "|".join(samples) + ")$"
     if color is None:
       for c in conditions:
@@ -138,7 +150,7 @@ class Canopus(object):
     self.__assignSamples__(condition)
     return condition
 
-  def differential(self, conditionLeft, conditionRight=None, method="robust_forest"):
+  def differential(self, conditionLeft, conditionRight=None, method="robust_forest",thresholding=True, binning=False):
     """
     Start a differential expression analysis: Find the compounds that differentiate between the two
     conditions conditionLeft and conditionRight. Order all compounds by how strongly they differentiate
@@ -155,7 +167,7 @@ class Canopus(object):
     'highest_expression' -- order compounds by fold change, but only with respect to compounds which are higher
                             expressed in the left condition than in the right condition
     """
-    return DifferentialApi(self, self.condition(conditionLeft), self.condition(conditionRight) if conditionRight else self.invert(conditionLeft, "red"), method)
+    return DifferentialApi(self, self.condition(conditionLeft), self.condition(conditionRight) if conditionRight else self.invert(conditionLeft, "red"), method,thresholding,binning=binning)
 
   def treemap(self, condition=None, method="binary",probabilities=True):
     """
@@ -267,7 +279,7 @@ class Canopus(object):
     f = Path("%s/structure_candidates.csv" % compound.directory)
     if f.exists():
       table = pd.read_csv(f,sep="\t")
-      display(table.sort_values(by="score",ascending=False).head(10))
+      display(table.sort_values(by="CSI:FingerID_Score",ascending=False).head(10))
 
   def heatmap(self, category, conditions=None, logarithmic=False):
     """
@@ -331,15 +343,16 @@ class Canopus(object):
     else: 
       return self.sirius.compounds[self.__fid__(c)]
 
-  def allFromCategory(self, category, threshold=0.33):
+  def allFromCategory(self, category, threshold=None):
+    if threshold is None:
+      threshold = self.probabilityThreshold
     i = self.__findCategoryIndex__(category)
     return [c for c in self.QuantNormalized.index if self.sirius.compounds[c].canopusfp[i] >= threshold]
 
   def __findCategoryIndex__(self,category):
     category = self.__cat__(category)
-    for index in self.sirius.mapping:
-      if self.sirius.mapping[index] == category:
-        return index
+    if category in self.sirius.revmap:
+      return self.sirius.revmap[category]
     raise ValueError("Unknown category '" + category + "'")
 
   def __assignSamples__(self,condition):
@@ -413,11 +426,28 @@ class Condition(object):
 
 class DifferentialApi(object):
 
-  def __init__(self,canopus, conditionLeft, conditionRight, method):
+  def __init__(self,canopus, conditionLeft, conditionRight, method, thresholding,binning=False):
     self.conditionLeft = conditionLeft
     self.conditionRight = conditionRight
     self.canopus = canopus
+    self.binning=binning
+    self.usedMethod = method
     self.orderCompounds(method)
+    if thresholding:
+        if type(thresholding) is bool:
+            self.threshold()
+        else:
+            self.threshold(thresholding)
+
+  def threshold(self, userdefined=None):
+    if userdefined:
+      self.ordering.loc[self.ordering[self.ordering.weight<=userdefined].index, "weight"]=0.0
+    else:
+      if self.usedMethod == "fold_change" or self.usedMethod == "highest_expression":
+        self.ordering.loc[self.ordering[self.ordering.weight<1].index, "weight"]=0.0
+      else:
+        cutoff = np.minimum(10*self.ordering.weight.median(), np.percentile(self.ordering.weight.values, 90))
+        self.ordering.loc[self.ordering[self.ordering.weight<=cutoff].index, "weight"]=0.0
 
   def _ipython_display_(self):
     display(HTML("<h5>Top differentiating compounds</h5>"))
@@ -425,27 +455,31 @@ class DifferentialApi(object):
     display(HTML("<h5>Top differentiating categories</h5>"))
     self.topCategories()
     display(HTML("<h5>Category heatmaps</h6>"))
-    t = permutationTest(self.canopus.sirius,self.ordering)
+    t = permutationTest(self.canopus.sirius,self.ordering,self.canopus.probabilityThreshold)
     for row in t.head(5).index:
       display(HTML("<h6>" + row + "</h6>"))
       self.canopus.heatmap(row, [self.conditionLeft, self.conditionRight])
       plt.figure()
 
-  def topCompounds(self,n=None):
+  def topCompounds(self,n=None,category=None):
     """
     display the top differentiating compounds
     n -- if given, only display the top n compounds. By default displays 20 compounds
     """
-    t=self.ordering.head(n if n else 20)
-    display(t)
-    return t if n else self.ordering
+    t = self.ordering
+    if category:
+      cmps = set(self.canopus.allFromCategory(category))
+      t = t.query("compound in @cmps")
+    s=t.head(n if n else 20)
+    display(s)
+    return t
 
   def topCategories(self,n=20):
     """
     display the top differentiating categories
     n -- if given, only display the top n categories. By default displays 20 categories
     """
-    t = permutationTest(self.canopus.sirius,self.ordering)
+    t = permutationTest(self.canopus.sirius,self.ordering,self.canopus.probabilityThreshold)
     display(t.head(n if n else 20))
     return t.head(n) if n else t
 
@@ -478,18 +512,26 @@ class DifferentialApi(object):
     self.__forest_ordering__(self.canopus.QuantLogarithmic)
 
   def orderByFoldChange(self,bidirection=True):
-    Quant = self.canopus.QuantNormalized
-    pseudoCount = np.percentile(Quant.where(Quant>0).stack().values,1)
+
+    Quant = Quant = self.canopus.QuantNormalized
+    pseudoCount = np.percentile(Quant.where(Quant>0).stack().values,0.1)
     A = self.conditionLeft.samples
     B = self.conditionRight.samples
-    fold_changes = (trim_mean(Quant.loc[:,A],0.2,axis=1)+pseudoCount) / (trim_mean(Quant.loc[:,B],0.2,axis=1)+pseudoCount)
+    fold_changes = (trim_mean(Quant.loc[:,A],0.05,axis=1)+pseudoCount) / (trim_mean(Quant.loc[:,B],0.05,axis=1)+pseudoCount)
+    #fold_changes = (np.mean(Quant.loc[:,A],axis=1)+pseudoCount) / (np.mean(Quant.loc[:,B],axis=1)+pseudoCount)
+
     W = np.log10(fold_changes)
+
+    if self.binning:
+      binsize = 0.5 if self.binning==True else self.binning
+      scale = 1.0/binsize
+      W = np.round(W*scale)/scale
     if bidirection:
       W = np.abs(W)
     table = pd.DataFrame(dict(compound=Quant.index, weight=W, fold_change=fold_changes, category=self.__assign_specific_class__(Quant.index)))
     table.sort_values(by="weight",ascending=False, inplace=True)
     table.set_index("compound",drop=True,inplace=True)
-    table[table.weight < 1] = 0.0 # we do not trust the lower values anyways
+    #table[table.weight < 1] = 0.0 # we do not trust the lower values anyways
     self.ordering = table
 
   def __forest_ordering__(self,Quant):
@@ -500,7 +542,8 @@ class DifferentialApi(object):
     bestFeatures = pd.DataFrame(dict(compound=Quant.index, weight=f.feature_importances_, category=self.__assign_specific_class__(Quant.index)))
     bestFeatures.sort_values(by="weight",ascending=False,inplace=True)
     bestFeatures.set_index("compound",drop=True,inplace=True)
-    bestFeatures[bestFeatures.weight < 10*bestFeatures.weight.median()] = 0.0 # we do not trust the lower values anyways
+    cutoff = np.minimum(10*bestFeatures.weight.median(), np.percentile(bestFeatures.weight.values, 90))
+    bestFeatures[bestFeatures.weight < cutoff] = 0.0 # we do not trust the lower values anyways
     self.ordering =  bestFeatures
 
   def __assign_specific_class__(self, compounds):

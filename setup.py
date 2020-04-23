@@ -13,7 +13,7 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/kaibioinfo/canopus_treemap",
     packages=setuptools.find_packages(),
-    package_data={'': ['*.js']},
+    package_data={'': ['*.js','*.txt']},
     classifiers=(
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",

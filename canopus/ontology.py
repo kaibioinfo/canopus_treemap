@@ -6,6 +6,7 @@ import re
 from pathlib import Path
 import numpy as np
 import math
+import pkg_resources
 import json
 import collections
 import pandas
@@ -84,6 +85,18 @@ class Category(object):
 
     def __repr__(self):
         return self.name
+
+    def classyFireGenus(self):
+        ys=list(reversed(self.ancestors()))
+        genus = dict()
+        genus["kingdom"] = ys[1]
+        if len(ys)>2:
+            genus["superclass"] = ys[2]
+        if len(ys)>3:
+            genus["class"] = ys[3]
+        if len(ys)>4:
+            genus["subclass"] = ys[4]
+        return genus
         
     def ancestors(self):
         node = self
@@ -92,6 +105,13 @@ class Category(object):
             xs.append(node.parent)
             node = node.parent
         return xs
+
+    def isAncestor(self, other):
+        if self == other:
+            return True
+        if other.parent is None:
+            return False
+        return self.isAncestor(other.parent)
 
     def to_tsv(self):
         return "\t".join((self.oid, self.name, self.description, self.parent_oid if self.parent_oid is not None else "-1"))
@@ -167,6 +187,23 @@ class Compound(object):
         self.directory = directory
         self.canopusfp = None
 
+    def __repr__(self):
+        return self.name
+
+    def isBadQuality(self,peakshape=False,zodiac=0):
+        if self.quality is None:
+            return False # we do not know
+        if "FewPeaks" in self.quality:
+            return True
+        if "Chimeric" in self.quality:
+            return True
+        if peakshape and "BadPeakShape" in self.quality:
+            return True
+        if self.zodiacScore < zodiac:
+            return True
+        return False
+
+
 def extract_leafs(setofcompounds):
     innerNodes = set()
     for node in setofcompounds:
@@ -183,6 +220,7 @@ class CanopusStatistics(object):
         self.probabilistic_counts = self.__category_counts__()
         self.reduced_counts = self.__category_counts__()
         self.total_count = 0.0
+        self.priority = None
         
     def setCompounds(self, compounds):
         if type(compounds) is dict:
@@ -197,21 +235,81 @@ class CanopusStatistics(object):
         self.make_class_counting_statistics()
         
     def assign_most_specific_classes(self, stats=None):
-        if stats is None:
-            stats = self.counting
-        # always decide for the most specific compound category
-        assignment = dict()
-        for compound in self.compounds_with_fingerprints():
-            assignment[compound] = min(self.leafs(compound), default=self.workspace.ontology.root, key=lambda x: stats[x])
-        self.assignments = assignment 
+        if self.priority is None:
+            self.priority = []
+            lines = pkg_resources.resource_string("canopus.resources", "class_priority.txt").decode("utf-8").split("\n")
+            for line in lines:
+                name = line.strip()
+                if name in self.workspace.ontology.categoriesByName:
+                    klass = self.workspace.ontology.categoriesByName[name]
+                    if klass in self.workspace.revmap:
+                        self.priority.append(klass)
+        if self.priority:
+            assignment = dict()
+            for compound in self.compounds_with_fingerprints():
+                for key in self.priority:
+                    if compound.canopusfp[self.workspace.revmap[key]]>=0.5:
+                        assignment[compound] = key
+                        break
+                if compound not in assignment:
+                    print("No classification for %s" % compound)
+                    assignment[compound] = self.workspace.ontology.root
+            self.assignments = assignment
+        else:
+            if stats is None:
+                stats = self.counting
+            # always decide for the most specific compound category
+            assignment = dict()
+            for compound in self.compounds_with_fingerprints():
+                assignment[compound] = min(self.leafs(compound), default=self.workspace.ontology.root, key=lambda x: stats[x])
+            self.assignments = assignment 
         reduced_counts = self.__category_counts__()
         for assignment in self.assignments.values():
             reduced_counts[assignment] += 1
             for ancestor in assignment.ancestors():
                 reduced_counts[ancestor] += 1
         self.reduced_counts = reduced_counts
-            
+        self.assignSecondaryClass(30)
     
+    def assignSecondaryClass(self, nclasses):
+        # assign secondary class
+        # first collect all classes which occur not so frequently
+        classes = set(self.assignments.values())
+        while len(classes) > nclasses:
+            # take the smallest class
+            # and remove it by its parent class
+            smallest = min(classes,key= lambda x: self.reduced_counts[x])
+            classes.remove(smallest)
+            # if smallest is part of any other class, we are fine, otherwise
+            # add its parent class
+            path = smallest.ancestors()
+            found=False
+            for p in path:
+                if p in classes:
+                    found=True
+                    break
+            if not found:
+                classes.add(smallest.parent)
+        ordered = []
+        for prio in self.priority:
+            if prio in classes:
+                ordered.append(prio)
+        assignment = dict()
+        for compound in self.compounds_with_fingerprints():
+            for key in ordered:
+                if compound.canopusfp[self.workspace.revmap[key]]>=0.5 and key.isAncestor(self.assignments[compound]) :
+                    assignment[compound] = key
+                    break
+            if compound not in assignment:
+                for k in self.assignments[compound].ancestors():
+                    if k in classes:
+                        assignment[compound] = k
+                        break
+
+                if compound not in assignment:
+                    assignment[compound] = self.workspace.ontology.root
+        self.secondaryAssignments = assignment
+
     def leafs(self, compound, threshold=0.5):
         compoundset = set()
         for index, probability in enumerate(compound.canopusfp):
@@ -276,17 +374,26 @@ class CanopusStatistics(object):
 
 class SiriusInstance(object):
 
-    def __init__(self, dirname, useFingerblast=False):
+    def __init__(self, dirname):
         self.dirname = dirname
-        self.__parse(useFingerblast)
+        self.__parse()
 
-    def __parse(self,useFingerblast):
+    def __parse(self):
         self.__parse_scores()
-        self.__parse_canopus(useFingerblast)
+        self.__parse_canopus()
+        self.__parse_msfile()
 
-    def __parse_canopus(self,useFingerblast):
+    def __parse_msfile(self):
+        self.quality = None
+        with open(Path(self.dirname,"spectrum.ms")) as fhandle:
+            for line in fhandle:
+                if line.startswith(">quality"):
+                    self.quality = set(line.split(">quality ")[1].split(","))
+                    break
+
+    def __parse_canopus(self):
         filename = None
-        if useFingerblast and self.maxFingerblast:
+        if self.maxFingerblast:
             filename = self.maxFingerblast
         elif self.maxZodiac:
             filename = self.maxZodiac
@@ -297,7 +404,10 @@ class SiriusInstance(object):
         if self.maxZodiac is not None:
             self.zodiacScore = self.maxZodiac[2]
         canopusPath = Path(self.dirname, "canopus", filename[0] + "_" + filename[1] + ".fpt")
-        self.canopusfp = np.loadtxt(canopusPath)
+        if canopusPath.exists():
+            self.canopusfp = np.loadtxt(canopusPath)
+        else:
+            self.canopusfp = None
 
     def __findAdduct(self, filename):
         formula = Formula(filename[0])
@@ -309,29 +419,37 @@ class SiriusInstance(object):
             header = fhandle.readline()
             header = header.rstrip().split("\t")
             formula = header.index("precursorFormula")
-            neutralFormula = header.index("formula")
+            neutralFormula = header.index("formula") if "formula" in header else header.index("molecularFormula")
             adduct = header.index("adduct")
-            sirius = header.index("siriusScore")
-            zodiac = header.index("zodiacScore") if "zodiacScore" in header else None
+            sirius = header.index("siriusScore") if "siriusScore" in header else header.index("TreeIsotope_Score")
+            zodiac = header.index("zodiacScore") if "zodiacScore" in header else (header.index("Zodiac_Score") if "Zodiac_Score" in header else None)
             fingerblast = header.index("TopFingerblastScore") if "TopFingerblastScore" in header else None
             maxSirius = None
             maxZodiac = None
             maxFingerblast = None
+            hits=[]
+            maxFormula = None
             for line in fhandle:
                 c=line.rstrip().split("\t")
-                (f,a,s,z,b,n) = (c[formula], c[adduct].replace(" ",""), float(c[sirius]),float(c[zodiac]) if zodiac else None, float(c[fingerblast]) if fingerblast else None, c[neutralFormula])
+                hits.append((c[formula], c[adduct].replace(" ",""), float(c[sirius]),float(c[zodiac]) if zodiac else None, float(c[fingerblast]) if fingerblast else None, c[neutralFormula]))
+            for (f,a,s,z,b,n) in hits:
                 p = Path(self.dirname, "canopus",f+"_"+a+".fpt")
                 if b and math.isnan(b):
                     b = -math.inf
-                if (maxSirius is None or s > maxSirius[2]) and p.exists():
+                if (maxSirius is None or s > maxSirius[2]):
                     maxSirius = (f,a,s,n)
-                if zodiac and (maxZodiac is None or z > maxZodiac[2]) and p.exists():
+                if zodiac and (maxZodiac is None or z > maxZodiac[2]):
                     maxZodiac = (f,a,z,n)
-                if fingerblast and (maxFingerblast is None or b > maxFingerblast[2]) and p.exists():
+                    maxFormula = f
+            if not maxFormula:
+                maxFormula = maxSirius[0]
+            for (f,a,s,z,b,n) in hits:    
+                if fingerblast and (maxFingerblast is None or b > maxFingerblast[2]) and p.exists() and f==maxFormula:
                     maxFingerblast = (f,a,b,n)
             self.maxSirius = maxSirius
             self.maxZodiac = maxZodiac
             self.maxFingerblast = maxFingerblast
+
             if (self.maxSirius is None) and (self.maxZodiac is None) and (self.maxFingerblast is None):
                 raise Exception("Error for instance %s" % self.dirname)
 
@@ -444,6 +562,9 @@ class SiriusWorkspace(object):
         for (index, name) in enumerate(columns[1:]):
             mapping[index] = ontologyByName[name]
         self.mapping = mapping
+        self.revmap = dict()
+        for key in self.mapping:
+            self.revmap[self.mapping[key]] = key
         return mapping
 
     def load_compounds(self):
@@ -459,12 +580,14 @@ class SiriusWorkspace(object):
                             name = line.strip().split(" ")[1]
                             break
                 cmp = Compound(name, compound_dir)
-                self.compounds[name] = cmp
-                siriusInstance = SiriusInstance(compound_dir, False)
-                cmp.canopusfp = siriusInstance.canopusfp
-                cmp.formula = siriusInstance.topFormula
-                cmp.adduct = siriusInstance.topAdduct
-                cmp.zodiacScore = siriusInstance.zodiacScore
+                siriusInstance = SiriusInstance(compound_dir)
+                if siriusInstance.canopusfp is not None:
+                    self.compounds[name] = cmp
+                    cmp.canopusfp = siriusInstance.canopusfp
+                    cmp.formula = siriusInstance.topFormula
+                    cmp.adduct = siriusInstance.topAdduct
+                    cmp.zodiacScore = siriusInstance.zodiacScore
+                    cmp.quality = siriusInstance.quality
             except StopIteration:
                 pass
         
@@ -485,6 +608,9 @@ class SiriusWorkspace(object):
                     oid = cols[coid].replace("CHEMONT:","CHEMONTID:")
                     mapping[int(cols[ri])] = self.ontology.categories[oid]
         self.mapping = mapping
+        self.revmap = dict()
+        for key in self.mapping:
+            self.revmap[self.mapping[key]] = key
         return mapping
                 
                     
