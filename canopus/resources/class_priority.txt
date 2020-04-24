@@ -1,0 +1,4948 @@
+Phosphorothioate polynucleotides
+Polynucleotides
+Actinide aluminates
+Actinide antimonates
+Actinide antimonites
+Actinide arsenates
+Actinide arsenites
+Actinide astatides
+Actinide bisulfites
+Actinide borates
+Actinide bromates
+Actinide bromides
+Actinide chlorates
+Actinide chlorides
+Actinide chlorites
+Actinide chromates
+Actinide chromites
+Actinide cyanates
+Actinide dithionites
+Actinide dithiophosphates
+Actinide ferrates
+Actinide fluorides
+Actinide hydrides
+Actinide hydroxides
+Actinide hypobromites
+Actinide hypochlorites
+Actinide hyponitrites
+Actinide hypophosphites
+Actinide hyposulfites
+Actinide iodates
+Actinide iodides
+Actinide manganates
+Actinide metavanadates
+Actinide molybdates
+Actinide nitrates
+Actinide nitrides
+Actinide nitrites
+Actinide organides
+Actinide orthonitrates
+Actinide orthovanadates
+Actinide oxides
+Actinide oxoanionic compounds
+Actinide perbromates
+Actinide perchlorates
+Actinide periodates
+Actinide permanganates
+Actinide peroxodisulfates
+Actinide peroxomonosulfates
+Actinide peroxynitrates
+Actinide peroxynitrites
+Actinide perrhenates
+Actinide pertechnetates
+Actinide phosphates
+Actinide phosphites
+Actinide phosphonates
+Actinide plumbates
+Actinide plumbites
+Actinide pyrophosphates
+Actinide pyrosulfates
+Actinide selenates
+Actinide selenites
+Actinide selenophosphates
+Actinide silicates
+Actinide stannates
+Actinide stannites
+Actinide sulfates
+Actinide sulfides
+Actinide sulfites
+Actinide superoxides
+Actinide tellurates
+Actinide tellurites
+Actinide tetrahydroxyborates
+Actinide tetrathionates
+Actinide thiophosphates
+Actinide thiosulfates
+Actinide tungstates
+Alkali metal aluminates
+Alkali metal antimonates
+Alkali metal antimonites
+Alkali metal arsenates
+Alkali metal arsenites
+Alkali metal astatides
+Alkali metal bisulfites
+Alkali metal borates
+Alkali metal bromates
+Alkali metal bromides
+Alkali metal chlorates
+Alkali metal chlorides
+Alkali metal chlorites
+Alkali metal chromates
+Alkali metal chromites
+Alkali metal cyanates
+Alkali metal dithionites
+Alkali metal dithiophosphates
+Alkali metal ferrates
+Alkali metal fluorides
+Alkali metal hydrides
+Alkali metal hydroxides
+Alkali metal hypobromites
+Alkali metal hypochlorites
+Alkali metal hyponitrites
+Alkali metal hypophosphites
+Alkali metal hyposulfites
+Alkali metal iodates
+Alkali metal iodides
+Alkali metal manganates
+Alkali metal metavanadates
+Alkali metal molybdates
+Alkali metal nitrates
+Alkali metal nitrides
+Alkali metal nitrites
+Alkali metal organides
+Alkali metal orthonitrates
+Alkali metal orthovanadates
+Alkali metal oxides
+Alkali metal oxoanionic compounds
+Alkali metal perbromates
+Alkali metal perchlorates
+Alkali metal periodates
+Alkali metal permanganates
+Alkali metal peroxodisulfates
+Alkali metal peroxomonosulfates
+Alkali metal peroxynitrates
+Alkali metal peroxynitrites
+Alkali metal perrhenates
+Alkali metal pertechnetates
+Alkali metal phosphates
+Alkali metal phosphites
+Alkali metal phosphonates
+Alkali metal plumbates
+Alkali metal plumbites
+Alkali metal pyrophosphates
+Alkali metal pyrosulfates
+Alkali metal selenates
+Alkali metal selenites
+Alkali metal selenophosphates
+Alkali metal silicates
+Alkali metal stannates
+Alkali metal stannites
+Alkali metal sulfates
+Alkali metal sulfides
+Alkali metal sulfites
+Alkali metal superoxides
+Alkali metal tellurates
+Alkali metal tellurites
+Alkali metal tetrahydroxyborates
+Alkali metal tetrathionates
+Alkali metal thiophosphates
+Alkali metal thiosulfates
+Alkali metal tungstates
+Alkaline earth metal aluminates
+Alkaline earth metal antimonates
+Alkaline earth metal antimonites
+Alkaline earth metal arsenates
+Alkaline earth metal arsenites
+Alkaline earth metal astatides
+Alkaline earth metal bisulfites
+Alkaline earth metal borates
+Alkaline earth metal bromates
+Alkaline earth metal bromides
+Alkaline earth metal chlorates
+Alkaline earth metal chlorides
+Alkaline earth metal chlorites
+Alkaline earth metal chromates
+Alkaline earth metal chromites
+Alkaline earth metal cyanates
+Alkaline earth metal dithionites
+Alkaline earth metal dithiophosphates
+Alkaline earth metal ferrates
+Alkaline earth metal fluorides
+Alkaline earth metal hydrides
+Alkaline earth metal hydroxides
+Alkaline earth metal hypobromites
+Alkaline earth metal hypochlorites
+Alkaline earth metal hyponitrites
+Alkaline earth metal hypophosphites
+Alkaline earth metal hyposulfites
+Alkaline earth metal iodates
+Alkaline earth metal iodides
+Alkaline earth metal manganates
+Alkaline earth metal metavanadates
+Alkaline earth metal molybdates
+Alkaline earth metal nitrates
+Alkaline earth metal nitrides
+Alkaline earth metal nitrites
+Alkaline earth metal organides
+Alkaline earth metal orthonitrates
+Alkaline earth metal orthovanadates
+Alkaline earth metal oxides
+Alkaline earth metal oxoanionic compounds
+Alkaline earth metal perbromates
+Alkaline earth metal perchlorates
+Alkaline earth metal periodates
+Alkaline earth metal permanganates
+Alkaline earth metal peroxodisulfates
+Alkaline earth metal peroxomonosulfates
+Alkaline earth metal peroxynitrates
+Alkaline earth metal peroxynitrites
+Alkaline earth metal perrhenates
+Alkaline earth metal pertechnetates
+Alkaline earth metal phosphates
+Alkaline earth metal phosphites
+Alkaline earth metal phosphonates
+Alkaline earth metal plumbates
+Alkaline earth metal plumbites
+Alkaline earth metal pyrophosphates
+Alkaline earth metal pyrosulfates
+Alkaline earth metal selenates
+Alkaline earth metal selenites
+Alkaline earth metal selenophosphates
+Alkaline earth metal silicates
+Alkaline earth metal stannates
+Alkaline earth metal stannites
+Alkaline earth metal sulfates
+Alkaline earth metal sulfides
+Alkaline earth metal sulfites
+Alkaline earth metal superoxides
+Alkaline earth metal tellurates
+Alkaline earth metal tellurites
+Alkaline earth metal tetrahydroxyborates
+Alkaline earth metal tetrathionates
+Alkaline earth metal thiophosphates
+Alkaline earth metal thiosulfates
+Alkaline earth metal tungstates
+Halogen hydrides
+Halogen nitrides
+Halogen organides
+Halogen oxides
+Halogen sulfides
+Homogeneous other non-metal compounds
+Lanthanide aluminates
+Lanthanide antimonates
+Lanthanide antimonites
+Lanthanide arsenates
+Lanthanide arsenites
+Lanthanide astatides
+Lanthanide bisulfites
+Lanthanide borates
+Lanthanide bromates
+Lanthanide bromides
+Lanthanide chlorates
+Lanthanide chlorides
+Lanthanide chlorites
+Lanthanide chromates
+Lanthanide chromites
+Lanthanide cyanates
+Lanthanide dithionites
+Lanthanide dithiophosphates
+Lanthanide ferrates
+Lanthanide fluorides
+Lanthanide hydrides
+Lanthanide hydroxides
+Lanthanide hypobromites
+Lanthanide hypochlorites
+Lanthanide hyponitrites
+Lanthanide hypophosphites
+Lanthanide hyposulfites
+Lanthanide iodates
+Lanthanide iodides
+Lanthanide manganates
+Lanthanide metavanadates
+Lanthanide molybdates
+Lanthanide nitrates
+Lanthanide nitrides
+Lanthanide nitrites
+Lanthanide organides
+Lanthanide orthonitrates
+Lanthanide orthovanadates
+Lanthanide oxides
+Lanthanide oxoanionic compounds
+Lanthanide perbromates
+Lanthanide perchlorates
+Lanthanide periodates
+Lanthanide permanganates
+Lanthanide peroxodisulfates
+Lanthanide peroxomonosulfates
+Lanthanide peroxynitrates
+Lanthanide peroxynitrites
+Lanthanide perrhenates
+Lanthanide pertechnetates
+Lanthanide phosphates
+Lanthanide phosphites
+Lanthanide phosphonates
+Lanthanide plumbates
+Lanthanide plumbites
+Lanthanide pyrophosphates
+Lanthanide pyrosulfates
+Lanthanide selenates
+Lanthanide selenites
+Lanthanide selenophosphates
+Lanthanide silicates
+Lanthanide stannates
+Lanthanide stannites
+Lanthanide sulfates
+Lanthanide sulfides
+Lanthanide sulfites
+Lanthanide superoxides
+Lanthanide tellurates
+Lanthanide tellurites
+Lanthanide tetrahydroxyborates
+Lanthanide tetrathionates
+Lanthanide thiophosphates
+Lanthanide thiosulfates
+Lanthanide tungstates
+Metalloid aluminates
+Metalloid antimonates
+Metalloid antimonites
+Metalloid arsenates
+Metalloid arsenites
+Metalloid astatides
+Metalloid bisulfites
+Metalloid borates
+Metalloid bromates
+Metalloid bromides
+Metalloid chlorates
+Metalloid chlorides
+Metalloid chlorites
+Metalloid chromates
+Metalloid chromites
+Metalloid cyanates
+Metalloid dithionites
+Metalloid dithiophosphates
+Metalloid ferrates
+Metalloid fluorides
+Metalloid hydrides
+Metalloid hydroxides
+Metalloid hypobromites
+Metalloid hypochlorites
+Metalloid hyponitrites
+Metalloid hypophosphites
+Metalloid hyposulfites
+Metalloid iodates
+Metalloid iodides
+Metalloid manganates
+Metalloid metavanadates
+Metalloid molybdates
+Metalloid nitrates
+Metalloid nitrides
+Metalloid nitrites
+Metalloid organides
+Metalloid orthonitrates
+Metalloid orthovanadates
+Metalloid oxides
+Metalloid oxoanionic compounds
+Metalloid perbromates
+Metalloid perchlorates
+Metalloid periodates
+Metalloid permanganates
+Metalloid peroxodisulfates
+Metalloid peroxomonosulfates
+Metalloid peroxynitrates
+Metalloid peroxynitrites
+Metalloid perrhenates
+Metalloid pertechnetates
+Metalloid phosphates
+Metalloid phosphites
+Metalloid phosphonates
+Metalloid plumbates
+Metalloid plumbites
+Metalloid pyrophosphates
+Metalloid pyrosulfates
+Metalloid selenates
+Metalloid selenites
+Metalloid selenophosphates
+Metalloid silicates
+Metalloid stannates
+Metalloid stannites
+Metalloid sulfates
+Metalloid sulfides
+Metalloid sulfites
+Metalloid superoxides
+Metalloid tellurates
+Metalloid tellurites
+Metalloid tetrahydroxyborates
+Metalloid tetrathionates
+Metalloid thiophosphates
+Metalloid thiosulfates
+Metalloid tungstates
+Miscellaneous aluminates
+Miscellaneous antimonates
+Miscellaneous antimonites
+Miscellaneous arsenates
+Miscellaneous arsenites
+Miscellaneous borates
+Miscellaneous chromates
+Miscellaneous chromites
+Miscellaneous ferrates
+Miscellaneous manganates
+Miscellaneous metavanadates
+Miscellaneous molybdates
+Miscellaneous orthovanadates
+Miscellaneous plumbates
+Miscellaneous plumbites
+Miscellaneous silicates
+Miscellaneous stannates
+Miscellaneous stannites
+Miscellaneous tellurates
+Miscellaneous tellurites
+Miscellaneous tetrahydroxyborates
+Miscellaneous tungstates
+Non-metal bisulfites
+Non-metal bromates
+Non-metal chlorates
+Non-metal chlorites
+Non-metal chromates
+Non-metal chromites
+Non-metal cyanates
+Non-metal dithionites
+Non-metal dithiophosphates
+Non-metal hydroxides
+Non-metal hypobromites
+Non-metal hypochlorites
+Non-metal hyponitrites
+Non-metal hypophosphites
+Non-metal hyposulfites
+Non-metal iodates
+Non-metal metavanadates
+Non-metal nitrates
+Non-metal nitrites
+Non-metal orthonitrates
+Non-metal orthovanadates
+Non-metal oxoanionic compounds
+Non-metal perbromates
+Non-metal perchlorates
+Non-metal periodates
+Non-metal permanganates
+Non-metal peroxodisulfates
+Non-metal peroxomonosulfates
+Non-metal peroxynitrates
+Non-metal peroxynitrites
+Non-metal perrhenates
+Non-metal pertechnetates
+Non-metal phosphates
+Non-metal phosphites
+Non-metal phosphonates
+Non-metal pyrophosphates
+Non-metal pyrosulfates
+Non-metal selenates
+Non-metal selenites
+Non-metal selenophosphates
+Non-metal sulfates
+Non-metal sulfites
+Non-metal superoxides
+Non-metal tetrathionates
+Non-metal thiophosphates
+Non-metal thiosulfates
+Organic bromates
+Organic metavanadates
+Other non-metal halides
+Other non-metal hydrides
+Other non-metal nitrides
+Other non-metal organides
+Other non-metal oxides
+Other non-metal sulfides
+Post-transition metal aluminates
+Post-transition metal antimonates
+Post-transition metal antimonites
+Post-transition metal arsenates
+Post-transition metal arsenites
+Post-transition metal astatides
+Post-transition metal bisulfites
+Post-transition metal borates
+Post-transition metal bromates
+Post-transition metal bromides
+Post-transition metal chlorates
+Post-transition metal chlorides
+Post-transition metal chlorites
+Post-transition metal chromates
+Post-transition metal chromites
+Post-transition metal cyanates
+Post-transition metal dithionites
+Post-transition metal dithiophosphates
+Post-transition metal ferrates
+Post-transition metal fluorides
+Post-transition metal hydrides
+Post-transition metal hydroxides
+Post-transition metal hypobromites
+Post-transition metal hypochlorites
+Post-transition metal hyponitrites
+Post-transition metal hypophosphites
+Post-transition metal hyposulfites
+Post-transition metal iodates
+Post-transition metal iodides
+Post-transition metal manganates
+Post-transition metal metavanadates
+Post-transition metal molybdates
+Post-transition metal nitrates
+Post-transition metal nitrides
+Post-transition metal nitrites
+Post-transition metal orthonitrates
+Post-transition metal orthovanadates
+Post-transition metal oxides
+Post-transition metal oxoanionic compounds
+Post-transition metal perbromates
+Post-transition metal perchlorates
+Post-transition metal periodates
+Post-transition metal permanganates
+Post-transition metal peroxodisulfates
+Post-transition metal peroxomonosulfates
+Post-transition metal peroxynitrates
+Post-transition metal peroxynitrites
+Post-transition metal perrhenates
+Post-transition metal pertechnetates
+Post-transition metal phosphates
+Post-transition metal phosphites
+Post-transition metal phosphonates
+Post-transition metal plumbates
+Post-transition metal plumbites
+Post-transition metal pyrophosphates
+Post-transition metal pyrosulfates
+Post-transition metal selenates
+Post-transition metal selenites
+Post-transition metal selenophosphates
+Post-transition metal silicates
+Post-transition metal stannates
+Post-transition metal stannites
+Post-transition metal sulfates
+Post-transition metal sulfides
+Post-transition metal sulfites
+Post-transition metal superoxides
+Post-transition metal tellurates
+Post-transition metal tellurites
+Post-transition metal tetrahydroxyborates
+Post-transition metal tetrathionates
+Post-transition metal thiophosphates
+Post-transition metal thiosulfates
+Post-transition metal tungstates
+Transition metal aluminates
+Transition metal antimonates
+Transition metal antimonites
+Transition metal arsenates
+Transition metal arsenites
+Transition metal astatides
+Transition metal bisulfites
+Transition metal borates
+Transition metal bromates
+Transition metal bromides
+Transition metal chlorates
+Transition metal chlorides
+Transition metal chlorites
+Transition metal chromates
+Transition metal chromites
+Transition metal cyanates
+Transition metal dithionites
+Transition metal dithiophosphates
+Transition metal ferrates
+Transition metal fluorides
+Transition metal hydrides
+Transition metal hydroxides
+Transition metal hypobromites
+Transition metal hypochlorites
+Transition metal hyponitrites
+Transition metal hypophosphites
+Transition metal hyposulfites
+Transition metal iodates
+Transition metal iodides
+Transition metal manganates
+Transition metal metavanadates
+Transition metal molybdates
+Transition metal nitrates
+Transition metal nitrides
+Transition metal nitrites
+Transition metal organides
+Transition metal orthonitrates
+Transition metal orthovanadates
+Transition metal oxides
+Transition metal oxoanionic compounds
+Transition metal perbromates
+Transition metal perchlorates
+Transition metal periodates
+Transition metal permanganates
+Transition metal peroxodisulfates
+Transition metal peroxomonosulfates
+Transition metal peroxynitrates
+Transition metal peroxynitrites
+Transition metal perrhenates
+Transition metal pertechnetates
+Transition metal phosphates
+Transition metal phosphites
+Transition metal phosphonates
+Transition metal plumbates
+Transition metal plumbites
+Transition metal pyrophosphates
+Transition metal pyrosulfates
+Transition metal selenates
+Transition metal selenites
+Transition metal selenophosphates
+Transition metal silicates
+Transition metal stannates
+Transition metal stannites
+Transition metal sulfates
+Transition metal sulfides
+Transition metal sulfites
+Transition metal superoxides
+Transition metal tellurates
+Transition metal tellurites
+Transition metal tetrahydroxyborates
+Transition metal tetrathionates
+Transition metal thiophosphates
+Transition metal thiosulfates
+Transition metal tungstates
+Amatoxins
+Polypeptides
+Homogeneous actinide compounds
+Homogeneous alkali metal compounds
+Homogeneous alkaline earth metal compounds
+Homogeneous halogens
+Homogeneous lanthanide compounds
+Homogeneous metalloid compounds
+Homogeneous noble gases
+Homogeneous post-transition metal compounds
+Homogeneous transition metal compounds
+Intermetallic actinide compounds
+Intermetallic alkali metal compounds
+Intermetallic alkaline earth metal compounds
+Intermetallic lanthanide compounds
+Intermetallic metalloid compounds
+Intermetallic post-transition metal compounds
+Intermetallic transition metal compounds
+Cobalamin derivatives
+Galb1-4GlcNAcb1-3Galb1-4Glc- (Neolacto series)
+Phallotoxins
+GalNAcb1-3Gala1-3Galb1-4Glc- (Isoglobo series)
+GalNAcb1-3Gala1-4Galb1-4Glc- (Globo series)
+Very long-chain 3-hydroxyacyl CoAs
+Very-long-chain (3R)-3-hydroxyacyl CoAs
+Very-long-chain 3-oxoacyl CoAs
+Steroidal acyl CoAs
+Polycarbamates
+Very long-chain 2-enoyl CoAs
+Very long-chain 3-enoyl CoAs
+Very long-chain fatty acyl CoAs
+Galb1-3GlcNAcb1-3Galb1-4Glc- (Lacto series)
+GalNAcb1-4Galb1-4Glc- (Ganglio series)
+GlcNAcb1-2Mana1-3Manb1-4Glc- (Mollu series)
+Oligonucleotides
+Phosphorothioate oligonucleotides
+Polysaccharide phosphates
+Polysaccharide sulfates
+GalNAcb1-4GlcNAcb1-3Manb1-4Glc- (Arthro series)
+Long-chain (3R)-3-hydroxyacyl CoAs
+Long-chain 3-hydroxyacyl CoAs
+Long-chain 3-oxoacyl CoAs
+Delta-11-acyl CoAs
+Gangliosides
+Long-chain 2-enoyl CoAs
+Long-chain 3-enoyl CoAs
+Long-chain enoyl CoAs
+Long-chain fatty acyl CoAs
+(S)-3-hydroxy-3-alkylglutaryl CoAs
+3-hydroxy-3-alkylglutaryl CoAs
+3-oxo-acyl CoAs
+Okadaic acids and derivatives
+(R)-3-hydroxyacyl CoAs
+(S)-3-hydroxyacyl CoAs
+3-hydroxyacyl CoAs
+Gal- (Gala series)
+Medium-chain 2-enoyl CoAs
+Neutral Glycosphingolipids
+2,3,4-saturated fatty acyl CoAs
+Medium-chain fatty acyl CoAs
+Pectenotoxins and derivatives
+Precorrins
+2,4-dienoyl CoAs
+2,5-dienoyl CoAs
+2-enoyl CoAs
+3,4-dienoyl CoAs
+3-enoyl CoAs
+Enoyl CoAs
+Phosphoglycosphingolipids
+Acyl CoAs
+Polysaccharides
+Alkyl-CoA disulfides
+Glucuronosphingolipids
+Pandoline alkaloids
+Polyureas
+Condylocarpan alkaloids
+S-alkyl-CoAs
+Aspidofractine alkaloids
+Coenzyme A and derivatives
+Fumonisins
+Polystyrenes
+Phosphatidylinositol dimannosides
+Pleiocarpaman alkaloids
+Gelsemium alkaloids
+Kopsane alkaloids
+Thio-lactosylceramides
+Melodinus alkaloids
+Cyclosporins
+Ervatamia alkaloids
+Bilirubins
+Ergotamines, dihydroergotamines, and derivatives
+Schizozygine alkaloids
+5'-phospho-(2'->5')-dinucleotides
+5'-phospho-(3'->5')-dinucleotides
+Cucurbitacin glycosides
+(3'->5')-cyclic dinucleotide bis(phosphoromonothioate) analogues
+(3'->5')-cyclic dinucleotide phosphoromonothioate analogues
+(3'->5')-cyclic dinucleotide phosphorotrithioate analogues
+(3'->5')-cyclic dinucleotides
+(3'->5')-cyclic dinucleotides and analogues
+Flavin nucleotides
+Macroline alkaloids
+Sophorolipids
+Xanthophylls
+Carotenes
+Carotenoids
+Complex tannins
+Sulfatides
+Tetraterpenoids
+(3'->5')-cyclic dinucleotide bis(carbamate) analogues
+1-phosphatidyl-1D-myo-inositol-3,4,5-trisphosphates
+Ceramide phosphoinositols
+Lupane triterpenoids
+Molybdopterin dinucleotides
+Phosphatidylinositol-3,4,5-trisphosphates
+Steroidal saponins
+Vinca alkaloids
+(2'->5')-dinucleotides
+(3'->5')-dinucleotide phosphorodithioates
+(3'->5')-dinucleotide phosphorothioates
+(3'->5')-dinucleotides
+(3'->5')-dinucleotides and analogues
+(5'->5')-dinucleotides
+Milbemycins
+Polyprenyl phospho carbohydrates
+Triterpene glycosides
+Triterpene saponins
+Withanolide glycosides and derivatives
+1-phosphatidyl-1D-myo-inositol-3,4-bisphosphates
+1-phosphatidyl-1D-myo-inositol-3,5-bisphosphates
+1-phosphatidyl-1D-myo-inositol-4,5-bisphosphates
+Anthocyanidin 3-O-2-p-coumaroyl glycosides
+Anthocyanidin 3-O-6-p-coumaroyl glycosides
+Anthocyanidin 3-O-p-coumaroyl glycosides
+Anthocyanidin 3p-O-2-p-coumaroyl glycosides
+Anthocyanidin 3p-O-6-p-coumaroyl glycosides
+Anthocyanidin 3p-O-p-coumaroyl glycosides
+Anthocyanidin 5-O-2-p-coumaroyl glycosides
+Anthocyanidin 5-O-6-p-coumaroyl glycosides
+Anthocyanidin 5-O-p-coumaroyl glycosides
+Anthocyanidin 7-O-2-p-coumaroyl glycosides
+Anthocyanidin 7-O-6-p-coumaroyl glycosides
+Anthocyanidin 7-O-p-coumaroyl glycosides
+Betacyanins and derivatives
+Carbopeptoids
+Flavonoid 3-O-p-coumaroyl glycosides
+Flavonoid 3p-O-p-coumaroyl glycosides
+Flavonoid 5-O-p-coumaroyl glycosides
+Flavonoid 7-O-p-coumaroyl glycosides
+Phosphatidylinositol monomannosides
+Phosphatidylinositol-4,5-bisphosphates
+Type 1 wax diesters
+Type 2 wax diesters
+Wax diesters
+4-hydroxy-3-polyprenylbenzoic acids
+Bacteriohopanoids
+Bisphosphatidic acids
+Cardenolide glycosides and derivatives
+Lysosphingomyelins and lysoglycosphingolipids
+Purine ribonucleoside polyphosphates
+Sesquaterpenoids
+Simplexides
+2-polyprenyl-6-methoxyphenols
+A-type proanthocyanidins
+Anthracyclines
+Azatides
+B-type proanthocyanidins
+Bactoprenol diphosphates
+Bactoprenol monophosphates
+Biflavonoids and polyflavonoids
+Brassinolides and derivatives
+Bufanolide glycosides and derivatives
+C-type proanthocyanidins
+CDP-diacylglycerols
+D-glucosyl-N-acylsphinganines
+D-glucosyl-N-acylsphingosines
+Ergopeptams
+Glucosylceramides
+Glycosphingolipids
+Glycosyl-N-acylsphingosines
+Long-chain ceramides
+Neutral glycosphingolipids
+Polyprenyl diphosphates
+Proanthocyanidins
+Purine 2'-deoxyribonucleoside polyphosphates
+Purine 3'-deoxyribonucleoside polyphosphates
+Simple glycosylceramides
+Cycloalkynes
+Dolichyl diphosphates
+Epothilones and analogues
+Polyprenyl quinols
+Polyprenylbenzene-1,2-diols
+Polyprenylbenzoquinones
+Purine 2',3'-dideoxyribonucleoside polyphosphates
+Purine deoxyribonucleoside polyphosphates
+Pyrimidine ribonucleoside polyphosphates
+Taurinated bile acids and derivatives
+13,28-epoxyoleananes
+5'-O-tritylated nucleosides and derivatives
+7,8-dihydrofolic acids
+7,8-dihydrofolic acids and derivatives
+Alpha-phosphonopeptides
+Benzopyrenes
+CDP-monoacylglycerols
+Cardiolipins
+Catechin gallates
+Chaetoglobosins
+Dihydrofolic acids
+Dihydrofolic acids and derivatives
+Folic acids
+Folic acids and derivatives
+Furospirostanes and derivatives
+Holostanes
+Mannosylerythritol lipids
+Phenanthro-perylenequinones
+Phosphatidylinositol phosphates
+Phthalocyanines
+Polyprenylphenols
+Pyrimidine 2'-deoxyribonucleoside polyphosphates
+Pyrimidine 3'-deoxyribonucleoside polyphosphates
+Rotenoid O-glycosides
+Sphingomyelins
+Steviol glycosides
+Tetrahydrofolic acids
+Tetrahydrofolic acids and derivatives
+30-hydroxysteroids
+Ceramide phosphoethanolamines
+Cholesteryl esters
+Ergopeptines
+Hybrid glycopeptides
+Limonoids
+Oligosaccharide phosphates
+Oligosaccharide sulfates
+Purine ribonucleoside triphosphates
+Pyrimidine 2',3'-dideoxyribonucleoside polyphosphates
+Pyrimidine deoxyribonucleoside polyphosphates
+(5L-glutamyl)-alpha-peptides
+1,2-diacyl-3-O-beta-D-digalactosyl-sn-glycerols
+12,13-diacylphorbols and derivatives
+3-aminospirostanes
+Acyclic triterpenoids
+Adianane, fernane, filicane, and neohopane triterpenoids
+Arborinane and stictane triterpenoids
+Azapeptides
+Bactoprenols
+Batrachotoxins and derivatives
+C24-propyl sterols and derivatives
+CDP-glycerols
+Carbonucleotoids
+Cucurbitacins
+Cyclic glycodepsipeptides
+Cyclic glycopeptides and derivatives
+Cyclic glycosylpeptides and derivatives
+Cycloartanols and derivatives
+Dammarane triterpenoids
+Diketopiperazines
+Diterpene glycosides
+Furostanes and derivatives
+Gamma-glutamyl peptides
+Glycinated bile acids and derivatives
+Glycodepsipeptides
+Glycopeptides and derivatives
+Glycosylpeptides and derivatives
+Gorgostanes and derivatives
+Hopane triterpenoids
+Hopanoids
+Oleanane triterpenoids
+Oligopeptides
+Pachysanane triterpenoids
+Perfluorooctane phosphonic acid and derivatives
+Perfluorooctane phosphoric acid and derivatives
+Podophyllotoxins
+Polypodane, malabaricane and podiodane triterpenoids
+Polyprenyl monophosphates
+Protostane and fusidane triterpenoids
+Purine 2'-deoxyribonucleoside triphosphates
+Purine 3'-deoxyribonucleoside triphosphates
+Semilysobisphosphatidic acids
+Serratane and onocerane triterpenoids
+Steroid glucuronide conjugates
+Stigmastanes and derivatives
+Taraxastane, ursane, and bauerane triterpenoids
+Taraxerane, multiflorane, glutinane and friedelane triterpenoids
+Tirucallane and euphane triterpenoids
+Tocopherols
+Tocotrienols
+Triterpenoids
+Urea peptoids
+Very long-chain 1-monoacylglycerols
+Very long-chain 2-monoacylglycerols
+1-phosphatidyl-1D-myo-inositol-3-phosphates
+1-phosphatidyl-1d-myo-inositol-4-phosphates
+Acylamino oligosaccharides
+Ceramide 2-N-methylaminoethylphosphonates
+Ciguatera toxins
+Dolichyl monophosphates
+Leukotrienes
+Lysophosphatidylinositol monophosphates
+Perfluorooctane sulfonic acid and derivatives
+Phosphatidylinositol monophosphates
+Purine 2',3'-dideoxyribonucleoside triphosphates
+Purine deoxyribonucleoside triphosphates
+Pyrimidine ribonucleoside triphosphates
+Pyripyropenes
+Spirosolanes and derivatives
+Spirostanes and derivatives
+Steroidal alkaloid glycosides
+Vitamin E compounds
+Withanolides and derivatives
+ceramide aminoethylphosphonate
+1'-(acyl-sn-glycero-3-phospho),3'-(acyl-sn-glycero-3-phospho)-sn-glycerols
+1-acyl-3-O-beta-D-digalactosyl-sn-glycerols
+3-O-beta-D-digalactosyl-sn-glycerols
+Acyltrehaloses
+CDP-ethanolamines
+Ceramide aminoethylphosphonates
+Ceramide-1-phosphates
+Cholesterols and derivatives
+Di-rhamnolipids
+Ergostane steroids
+Ergosterols and derivatives
+Melleolides and analogues
+Mono-rhamnolipids
+Other glycerophosphoinositol phosphates
+Pentahydroxy bile acids, alcohols and derivatives
+Perfluorooctanoic acid and derivatives
+Phosphoceramides
+Protostemonine-type alkaloids
+Purine nucleotide sugars
+Pyrichalasins
+Pyridoazepine alkaloids
+Pyrimidine 2'-deoxyribonucleoside triphosphates
+Pyrimidine 3'-deoxyribonucleoside triphosphates
+Rhamnolipids
+Solanidines and derivatives
+Sphingosylphosphorylcholines
+3-amino-22,26-epiminocholestanes
+3-oxo-22,26-epiminocholestanes
+Acyldolichols
+Amino oligosaccharides
+Brevetoxins and derivatives
+Bufanolides and derivatives
+Cholestane steroids
+Emetine alkaloids
+Flavonoid O-glucuronides
+Flavonoid-3-O-glucuronides
+Flavonoid-7-O-glucuronides
+Flavonoid-8-O-glucuronides
+Ochratoxins and related substances
+Phorbol esters
+Phosphosphingolipids
+Pleuromutilin and derivatives
+Purine ribonucleoside 2',5'-bisphosphates
+Purine ribonucleoside 3',5'-bisphosphates
+Purine ribonucleoside bisphosphates
+Purine ribonucleoside diphosphates
+Pyrimidine 2',3'-dideoxyribonucleoside triphosphates
+Pyrimidine deoxyribonucleoside triphosphates
+Sphingosine base 1-phosphates
+Steroidal glycosides
+Stichoneurine-type alkaloids
+Sulfoquinovosyldiacylglycerols
+Tetracyclines
+Tetrahydroxy bile acids, alcohols and derivatives
+22,23-secosolanidanes and derivatives
+22,26-epiminocholestanes
+Annonaceous acetogenins
+Anthraquinone glycosides
+Aurone O-glycosides
+Camptothecins
+Cytochalasins
+Diacylglycosylglycerophospholipids
+Ecdysteroids
+Glycerophosphoinositol phosphates
+Purine 2'-deoxyribonucleoside diphosphates
+Purine 3'-deoxyribonucleoside diphosphates
+Purine deoxyribonucleoside 2',5'-bisphosphates
+Purine deoxyribonucleoside 3',5'-bisphosphates
+Purine deoxyribonucleoside bisphosphates
+Pyrimidine nucleotide sugars
+Sesterterpene lactones
+Spironolactones and derivatives
+Trihydroxy bile acids, alcohols and derivatives
+Yohimbine alkaloids
+1-(1Z-alkenyl),2-acylglycerophosphoinositols
+1-phosphatidyl-1D-myo-inositols
+2',3'-dideoxy-3'-thionucleoside triphosphates
+25-azasteroids and derivatives
+3-carboxy-20-oxosteroid
+3-carboxy-20-oxosteroids
+4,5-disubstituted 2-deoxystreptamines
+4,6-disubstituted 2-deoxystreptamines
+5'-acylphosphoadenosines
+Acyclic sesterterpenoids
+Anthocyanidin-3-O-glycosides
+Anthocyanidin-5-O-glycosides
+Anthocyanidin-7-O-Glycosides
+Anthocyanin-3'-O-glycosides
+Anthocyanin-4'-O-glycosides
+Anthocyanins
+Cardenolides and derivatives
+Cerveratrum-type alkaloids
+Chalcone- and dihydrochalcone O-glycosides
+Cheilanthane sesterterpenoids
+Clavulones and derivatives
+Cyclohexane sesterterpenes
+Dihydroxy bile acids, alcohols and derivatives
+Dolichols
+Endocannabinoids
+Jerveratrum-type alkaloids
+Lysobisphosphatidic acids
+Metalloporphyrins
+N-acylneuraminate-9-phosphates
+Naphthopyranone glycosides
+Ophiobolane sesterterpenoids
+Phosphatidylinositols
+Phosphonosphingolipids
+Physalins and derivatives
+Phytoceramides
+Polyprenyl phosphates
+Protopine alkaloids
+Punaglandins and related compounds
+Purine 2',3'-dideoxyribonucleoside diphosphates
+Purine deoxyribonucleoside diphosphates
+Pyrimidine ribonucleoside 2',5'-bisphosphates
+Pyrimidine ribonucleoside 3',5'-bisphosphates
+Pyrimidine ribonucleoside bisphosphates
+Pyrimidine ribonucleoside diphosphates
+Scalarane sesterterpenoids
+Sesquiterpene glycosides
+Sesterterpenes
+Sesterterpenoids
+Solanocapsine-type alkaloids
+Sulfoquinovosyl 1-monoacylglycerols
+Sulfoquinovosyl 2-monoacylglycerols
+Sulfoquinovosylmonoacylglycerols
+Vitamin D and derivatives
+1-alkyl,2-acylglycerophosphoinositols
+Aromatic urea oligo- and polyamides
+Aspochalasins
+Beta-sulfonopeptides
+Ceramides
+Chlorins
+Chlorogenic acids and derivatives
+Difurocoumarolactones
+Fentanyls
+Flavaglines
+Glycero-3-dithiophosphocholines
+Glycero-3-thiophosphocholines
+Glycerophosphoglycerophosphoglycerols
+Hydroxy bile acids, alcohols and derivatives
+Leucothol and grayanotoxane diterpenoids
+Lignan glycosides
+Lipoxins
+Long-chain N-acylserotonins
+Metallotetrapyrroles
+Molybdopterins
+Monohydroxy bile acids, alcohols and derivatives
+N-acylsphinganines
+N-acylsphingosines
+O-galloylquinic acids and derivatives
+Pentacenequinones
+Perylenequinones
+Porphyrins
+Prostaglandins and related compounds
+Pyrimidine 2'-deoxyribonucleoside diphosphates
+Pyrimidine 3'-deoxyribonucleoside diphosphates
+Pyrimidine deoxyribonucleoside 2',5'-bisphosphates
+Pyrimidine deoxyribonucleoside 3',5'-bisphosphates
+Pyrimidine deoxyribonucleoside bisphosphates
+S-(2-hydroxyacyl)glutathiones
+Sterigmatocystins
+Stilbene glycosides
+Stilbenolignans
+Very long-chain fatty acids
+Vincosan alkaloids
+1-(1Z-alkenyl),2-acylglycerophosphoglycerophosphates
+1-(1Z-alkenyl)glycerophosphoinositols
+1-acyl-sn-glycerol-3-phosphoinositols
+2-acyl-sn-glycerol-3-phosphoinositols
+4-arylsulfanyl-substituted kainoids
+7,8-dihydropteroic acids
+7,8-dihydropteroic acids and derivatives
+Aflatoxins
+Alpha,beta-sulfonopeptides
+Androcymbine alkaloids
+Aristolochic acids and derivatives
+Arylnaphthalene lignans
+Bile acids, alcohols and derivatives
+C19-gibberellin 6-carboxylic acids
+C20-gibberellin 20-carboxylic acids
+C20-gibberellin 6-carboxylic acids
+Cembranolides
+Conanine-type alkaloids
+Corrinoids
+Corroles
+Croomine-type alkaloids
+Curcuminoids
+Dialkylglycerophosphoglycerophosphates
+Dialkylglycerophosphoinositols
+Difurocoumarocyclopentenones
+Dihydropteroic acids
+Dihydropteroic acids and derivatives
+Epoxyeicosatrienoic acids
+Ginkgolides and bilobalides
+Glycinamide ribonucleotides
+Glycosyldiacylglycerols
+Hepoxilins
+Hydrolyzable tannins
+Hydroperoxyeicosapentaenoic acids
+Hydroperoxyeicosatetraenoic acids
+Hydroperoxyeicosatrienoic acids
+Hydroxyeicosapentaenoic acids
+Hydroxyeicosatetraenoic acids
+Hydroxyeicosatrienoic acids
+Long-chain 1-acylglycerol-3-phosphates
+Lysophosphatidylinositols
+Mutilin derivatives
+Ormosia-type alkaloids
+Other hydroperoxyeicosapolyenoic acids
+Other hydroxyeicosapolyenoic acids
+Oxoeicosapolyenoic acids
+Phenylpiperazinyl-cyclohexylsulfonamides
+Phosphatidylglycerophosphates
+Pteroic acids
+Pteroic acids and derivatives
+Purine ribonucleoside monophosphates
+Pyrimidine deoxyribonucleoside diphosphates
+Quinacridones
+Steroid lactones
+Strigolactones
+Sulfated steroids
+Tetrahydropteroic acids
+Tetrahydropteroic acids and derivatives
+Thiamine phosphates
+Vallesiachotaman alkaloids
+Very long-chain fatty aldehydes
+Zearalenones
+1,1'-azonaphthalenes
+1-alkyl,2-acylglycerophosphoglycerophosphates
+17-furanylsteroids and derivatives
+2'-prenylated flavanones
+2'-prenylated flavones
+2'-prenylated isoflavanones
+2'-prenylated isoflavones
+21-hydroxysteroids
+3'-prenylated flavones
+3'-prenylated isoflavones
+3-prenylated flavones
+6-prenylated flavones
+6-prenylated isoflavones
+8-prenylated flavones
+8-prenylated isoflavones
+Akageran and related alkaloids
+Alachalasins
+Alpha-sulfonopeptides
+Buxus alkaloids
+Correantan alkaloids
+Corynanthean-type alkaloids
+Cytochalasans
+Daphniphylline-type alkaloids
+Dihydrobenzophenanthridine alkaloids
+Ellagic acids and derivatives
+Epigallocatechins
+Flavonoid O-glycosides
+Flavonoid-3-O-glycosides
+Flavonoid-7-O-glycosides
+Flavonoid-8-O-glycosides
+Gluco/mineralocorticoids, progestogins and derivatives
+Glycopeptidomimetics
+Hexahydrobenzophenanthridine alkaloids
+Isoflavonoid O-glycosides
+Lysophosphatidylglycerophosphates
+Menaquinones
+Monoalkylglycerophosphoinositols
+N-acylglutathiones
+Neoflavonoid 5-O-glycosides
+Neoflavonoid 7-O-glycosides
+Nicotinamide nucleotides
+Nicotinic acid nucleotides
+Oligothioureas
+Other glycerophosphates
+Other glycerophosphoinositols
+Pentacenes
+Peptoids
+Phenanthroquinolizidines
+Phenylpiperazinyl-cyclohexylureas
+Phorbines
+Purine 2'-deoxyribonucleoside monophosphates
+Purine 3'-deoxyribonucleoside monophosphates
+Pyrethrins
+Quaternary benzophenanthridine alkaloids
+Quinacridines
+Retinoid esters
+Rotenones
+S-acylglutathiones
+Samandarines
+Steroid esters
+Strictosidine alkaloids
+Tetrapyrroles and derivatives
+Wax esters
+Wax monoesters
+Waxes
+Yuzurimine-type alkaloids
+1,2-diacyl-3-O-beta-D-galactosyl-sn-glycerols
+1,2-substituted phosphonated cyclopentyl purine nucleosides
+1,3-substituted phosphonated cyclopentyl purine nucleosides
+1-(1Z-alkenyl),2-acyl-glycerophosphocholines
+1-(1Z-alkenyl),3-acyl-glycerol-2-phosphocholines
+1-acyl,2-(1Z-alkenyl)-glycerophosphocholines
+1-phosphoribosyl-imidazolecarboxamides
+12-oxophytodienoic acid metabolites
+2',3'-cyclic purine nucleoside phosphorothioates
+2',3'-cyclic purine nucleotides
+2',5'-cyclic purine nucleotides
+2-hydroxy,20-norgibberellanes
+3',5'-cyclic purine nucleoside phosphorothioates
+3',5'-cyclic purine nucleotides
+3'-prenylated chalcones
+3'-prenylated flavanones
+3'-prenylated isoflavanones
+3-(3-hydroxyalkanoyloxy)alkanoic acids
+3-beta-hydroxysteroid-4-alpha-carboxylates
+3-prenylated chalcones
+3-prenylated flavanones
+3-sulfated flavonoids
+4-prenylated flavanones
+6-prenylated flavanones
+6-prenylated isoflavanones
+7-prenylated flavanones
+8,2'-cyclic purine nucleotides
+8-prenylated flavanones
+8-prenylated isoflavanones
+Akuammilan and related alkaloids
+Benzofuran-2-O-glycosides
+Benzofuran-4-O-glycosides
+Benzofuran-5-O-glycosides
+Benzophenanthridine alkaloids
+Biphenylbenzimidazoles
+Catechins
+Cinchona alkaloids
+Coumarin glycosides
+Coumarinolignans
+Cyclic purine nucleotides
+Diacylglycerophosphodiradylglycerols
+Diacylglycerophosphomonoradylglycerols
+Dinaphtho[2,1-b;2',3'-d]furans
+Dinaphthofurans
+Dioxoisoquinoline-4-carboxanilides
+Eburnan-type alkaloids
+Eicosanoids
+Flavonoid 3-phosphates
+Flavonoid 6-C-glycosides
+Flavonoid 8-C-glycosides
+Flavonoid C-glycosides
+Flavonoid glycosides
+Flavonolignans
+Gliotoxins
+Glycerophosphoinositols
+Glycosylmonoacylglycerols
+Hybrid peptides
+Isoflavonoid C-glycosides
+Kainoids
+Lumicolchicine alkaloids
+N-acylneuraminic acids
+N-acylneuraminic acids and derivatives
+N-demethylbenzophenanthridine alkaloids
+Naphthoylindoles
+Peptoid-peptide hybrids
+Phenanthroindolizidines
+Polyprenols
+Pregnane steroids
+Pterofurans
+Purine 2',3'-dideoxyribonucleoside monophosphates
+Purine deoxyribonucleoside monophosphates
+Purine deoxyribonucleotides
+Purine nucleotides
+Purine ribonucleotides
+Pyrimidine ribonucleoside monophosphates
+Pyrrolin-4-one oligomers
+Quebrachamine alkaloids
+Rhazinilam alkaloids
+Secobenzophenanthridine alkaloids
+Sphingolipids
+Stemonamine-type alkaloids
+Strychnos alkaloids
+Sulfated flavonoids
+Tacaman alkaloids
+Tazettine-type amaryllidaceae alkaloids
+Thromboxanes
+1,2-diacyl-sn-glycerol-3(2'-trimethylaminoethyl)phosphonates
+1-(1Z-alkenyl),2-acylglycerophosphoserines
+1-acyl,2-alkylglycero-3-phosphocholines
+1-alkyl,2-acetylglycero-3-phosphocholines
+1-alkyl,2-acylglycero-3-phosphocholines
+1-aryltetralin lactones
+1-hydroxynaphthalene-2-carboxanilides
+17-carboxy steroid
+17-carboxy steroids
+19-oxosteroids
+2',3'-dideoxy-3'-thionucleoside diphosphates
+2'-prenylated flavans
+2-prenylated xanthones
+20-oxosteroids
+3'-prenylated flavans
+3'-quaternary ammonium cephalosporins
+3-carboxy steroid
+3-carboxy steroids
+3-prenylated flav-3-enes
+3-prenylated flavans
+4'-prenylated 2-arybenzofurans
+4'-prenylated flavans
+4,5-dioxoaporphines
+4-carboxy steroids
+4-prenylated 2-arybenzofurans
+4-prenylated flavans
+4-prenylated xanthones
+5-prenylated 2-arybenzofurans
+5L-glutamyl alpha-amino-acids
+6-hydroxynaphthalene-2-carboxanilides
+6-prenylated flavans
+7-prenylated 2-arybenzofurans
+7-prenylated flavans
+8-hydroxynaphthalene-2-carboxanilides
+8-prenylated flavans
+8-prenylated xanthones
+9,9p-dihydroxyaryltetralin lignans
+Aconitane-type diterpenoid alkaloids
+Acyclic diterpenoids
+Acyl glycines
+Ajmaline-sarpagine alkaloids
+Alkylglucosinolates
+Amphilectane, neoamphilectane, cycloamphilectane , and elisabethane diterpenoids and derivatives
+Amphilectane, neoamphilectane, cycloamphilectane, and adociane diterpenoids
+Androgens and derivatives
+Angucyclines
+Aphidicolane and stemodane diterpenoids
+Aspidospermatan-type alkaloids
+Atisane diterpenoids
+Atisine-type diterpenoid alkaloids
+Avenanthramides
+Benzofuran-2-C-glycosides
+Benzofuran-5-C-glycosides
+Biflorane and serrulatane diterpenoids
+Briarane diterpenoids
+C19-gibberellins
+C20-gibberellins
+Cembrane diterpenoids
+Cephalosporin 3'-carbamates
+Cephalosporin 3'-esters
+Cephalotaxus alkaloids
+Cladiellane diterpenoids
+Colensane and clerodane diterpenoids
+Colensane and clerodane diterpenoidss
+Crinine- and Haemanthamine-type amaryllidaceae alkaloids
+Curan alkaloids
+Cyathane diterpenoids
+Cyclic depsipeptides
+Cyclic peptides
+Cyclobutane lignans
+Cylindrospermopsins
+Danudatine-type diterpenoid alkaloids
+Depsipeptides
+Dibenzylbutanediol lignans
+Dibenzylbutyrolactols
+Dibenzylbutyrolactone lignans
+Dipeptides
+Diterpene lactones
+Dolabellane and neodolabellane diterpenoids
+Elisabethane diterpenoids
+Elisapterane, elisabane, cumbiane or colombiane diterpenoids
+Eunicellane and asbestinane diterpenoids
+Furanoflavones
+Fusicoccane diterpenoids
+Galanthindole-type amaryllidaceae alkaloids
+Gamma-glutamyl amino acids
+Glucosinolates
+Glyco-alpha-amino acids
+Glycosyl-alpha-amino acids
+Glycosyl-amino acids
+Glycosylalkylacylglycerols
+Glycosylglycerophospholipids
+Gracilline-type amaryllidaceae alkaloids
+Grayanoids
+Hetidine-type diterpenoid alkaloids
+Hetisine-type diterpenoid alkaloids
+Hexacarboxylic acids and derivatives
+Homoproaporphines
+Ileabethane, pseudopterane or nor-sandresane diterpenoids
+Indolocarbazoles
+Isoatisine-type diterpenoid alkaloids
+Isocopalane and spongiane diterpenoids
+Jatrophane and cyclojatrophane diterpenoids
+Jatropholane and crotopholane diterpenoids
+Kalmanes and 1,5-seco-kalmanes
+Kaurane diterpenoids
+Lappaconitine-type diterpenoid alkaloids
+Long-chain 1-monoacylglycerols
+Long-chain 2-monoacylglycerols
+Lycoctonine-type diterpenoid alkaloids
+Meta,para-diphenylether diarylheptanoids
+Mitomycins
+Mutilane diterpenoids
+N-epsilon-acyl lysines
+Napelline-type diterpenoid alkaloids
+Naphthylisoquinolines
+Naphthylquinolines
+Pachydictyane and cneorubin diterpenoids
+Peptides
+Phosphatidylcholines
+Phosphatidylethanolamines
+Phosphatidylserines
+Phthalide isoquinolines
+Plicamine-type amaryllidaceae alkaloids
+Prenylated neoflavonoids
+Prenyleudesmane, prenylbicyclogermacrane, and prenylgermacranes
+Purine nucleoside phosphorothioates
+Pyrano[3,2-d]pyrimidine glycosides
+Pyrano[3,2-d]pyrimidine nucleosides
+Pyranoflavonoids
+Pyranoisoflavonoids
+Pyrethroids
+Pyrimidine 2',3'-dideoxyribonucleoside diphosphates
+Pyrimidine 2'-deoxyribonucleoside monophosphates
+Pyrimidine 3'-deoxyribonucleoside monophosphates
+Pyrophosphatidic acids
+Quassinoids
+Ranaconitine-type diterpenoid alkaloids
+Retinoids
+Rhamnofolane and daphnane diterpenoids
+Spatane and 4,10-secospatane diterpenoids
+Sphaerane diterpenoids
+Sphaeroane diterpenoids
+Sphenolobane diterpenoids
+Stemarane diterpenoids
+Steroid acids
+Tanshinones, isotanshinones, and derivatives
+Taxanes and derivatives
+Tetracenequinones
+Tigliane and ingenane diterpenoids
+Vallesaman alkaloids
+Valparane and mulinane diterpenoids
+Veatchine-type diterpenoid alkaloids
+Villanovane, atisane, trachylobane or helvifulvane diterpenoids
+Vobasan alkaloids
+Xeniaphyllane and xenicane diterpenoids
+1,2,4-triazolopyrimidine-2-sulfonanilides
+1,2-diacylglycero-3-phosphosulfocholines
+1,2-epoxy-3-oxosteroids
+1-(1Z-alkenyl),2-acylglycerophosphoglycerols
+1-acyl-3-O-beta-D-galactosyl-sn-glycerols
+1-alkyl,2-acyl-glycerol-3-phosphoserines
+1-alpha,2-epoxy-3-oxo-5-alpha-steroids
+1-azaoxoaporphines
+1-pyranosylbenzimidazoles
+1-pyranosylbenzotriazoles
+1-pyranosylindazoles
+1-pyranosylindoles
+2',3'-cyclic pyrimidine nucleotides
+2',5'-cyclic pyrimidine nucleotides
+2-pyranosylbenzimidazoles
+2-pyranosylbenzothiazoles
+2-pyranosylbenzotriazoles
+2-pyranosylbenzoxazoles
+2-pyranosylindazoles
+3',5'-cyclic pyrimidine nucleotides
+3'-O-methylisoflavones
+3'-hydroxy,4'-methoxyisoflavonoids
+3-beta-hydroxy-6-oxo-5-alpha-steroids
+4'-O-methylisoflavones
+4'-methoxyisoflavones
+4'-methylisoflavones
+4-azaandrostanes
+5'-azido-5'-deoxyribonucleosides
+5-amino-2-aroylquinolines
+5-methoxypsoralens
+7,7'-epoxylignans
+7,8'-epoxylignans
+7,9'-epoxylignans
+7-O-methylisoflavones
+8,2'-cyclic pyrimidine nucleotides
+8-methoxypsoralens
+9,9'-epoxylignans
+Abscisic acids and derivatives
+Alkyloxyphenoxypropionic acid esters
+Allocolchicine alkaloids
+Androstane steroids
+Angular furanoflavonoids
+Angular furanoflavonoids and dihydrofuranoflavonoids
+Aromatic oligo- and polyamides
+Aryloxyphenoxypropionic acid esters
+Atisine alkaloids
+Azahomoaporphines
+C2-aryl pyrrolo[2,1-c][1,4]benzodiazepines
+C2-aryl pyrrolo[2,1-c][1,4]benzodizepines
+Cadinanolides
+Colchicines
+Coumaroyl glycosides
+Cyclic diarylheptanoids
+Cyclic pyrimidine nucleotides
+Diarylheptanoids
+Dibenzocyclooctadiene lignans
+Dihydrobenzofuran and benzofuran lignans
+Dimethylphosphatidylethanolamines
+Diphenhydramines
+Diterpenoids
+Estrogens and derivatives
+Furan lignans
+Furanochalcones
+Furanoflavonoids and dihydrofuranoflavonoids
+Furanoid lignans
+Furo[3,2-d]pyrimidine glycosides
+Furo[3,2-d]pyrimidine nucleosides
+Furo[3,4-d]pyrimidine glycosides
+Furo[3,4-d]pyrimidine nucleosides
+Gibberellins
+Glycerophosphoglycerophosphates
+Glycosyldialkylglycerols
+Glycosyldiradylglycerols
+Homoaporphines
+Homolycorine-type amaryllidaceae alkaloids
+Hydroxycinnamic acid glycosides
+Indole-3-glycerol-3-phosphates
+Iridoid O-glycosides
+Lignan lactones
+Linear diarylheptanoids
+Linear furanoflavonoids
+Linear furanoflavonoids and dihydrofuranoflavonoids
+Lycoctonine alkaloids
+Lycorine-type amaryllidaceae alkaloids
+Lysergamides
+Lysergic acids
+Lysergic acids and derivatives
+M-coumaroyl glycosides
+Meta,meta-bridged biphenyls
+Meta,meta-bridged-biphenyls
+Monoacylglycerophosphomonoradylglycerols
+Montanine-type amaryllidaceae alkaloids
+N-acyl-alpha-hexosamine-1-phosphates
+N-acyl-alpha-hexosamine-6-phosphates
+N-acyl-phosphatidylethanolamines
+N-cinnamoylanthranilic acids
+Naphthalene-1-carboxanilides
+Naphthalene-2-carboxanilides
+O-coumaroyl glycosides
+O-methylated flavonoids
+O-methylated isoflavonoids
+Oligocarbamates
+Oxoisoaporphines
+P-coumaroyl glycosides
+Phosphatidylglycerols
+Phosphonated 2'-oxa,3'-aza purine nucleosides
+Plumeran-type alkaloids
+Pregnane-type alkaloids
+Proaporphines
+Purine ribonucleoside phosphonates
+Pyranoxanthones
+Pyrazolo[3,4-d]pyrimidine glycosides
+Pyridine nucleotides
+Pyrimidine 2',3'-dideoxyribonucleoside monophosphates
+Pyrimidine deoxyribonucleoside monophosphates
+Pyrimidine deoxyribonucleotides
+Pyrimidine nucleotides
+Pyrimidine ribonucleotides
+Rhoeadine alkaloids
+Rotenoids
+Samamine-type alkaloids
+Steroidal alkaloids
+Tetrahydrofuran lignans
+Thieno[2,3-d]pyrimidine glycosides
+Triacylglycerols
+Triphenyl compounds
+Vinylogous peptides
+v-triazolo[4,5-d]pyrimidine glycosides
+1,2-diacyl-sn-glycerol-3(2'-aminopropyl)phosphonates
+1-(1Z-alkenyl)-glycero-3-phosphocholines
+1-acyl,2-alkylglycerophosphoglycerols
+1-acyl-glycerol-3-phosphoserines
+1-acyl-sn-glycero-3-phosphocholines
+1-alkyl,2-acylglycerophosphoglycerols
+1-benzothiophene-2-carboxanilides
+1-hydroxysteroids
+1-phenethylisoquinolines
+1-phenethyltetrahydroisoquinolines
+1-phosphoribosyl-imidazoles
+11-alpha-hydroxysteroids
+11-beta-hydroxysteroids
+11-hydroxysteroids
+11-oxosteroids
+12-alpha-hydroxysteroids
+12-beta-hydroxysteroids
+12-hydroxysteroids
+14-alpha-methylsteroids
+14-hydroxysteroids
+16-alpha-hydroxysteroids
+16-beta-hydroxysteroids
+16-hydroxysteroids
+16-oxosteroids
+17-alpha-hydroxysteroids
+17-beta-hydroxysteroids
+17-hydroxysteroids
+17-oxosteroids
+18-hydroxysteroids
+1Z-alkenylglycero-3-phosphoserines
+1Z-alkenylglycerophosphocholines
+2',3'-cyclic pyrimidine nucleoside phosphorothioates
+2'-O-methylated flavonoids
+2'-O-methylated isoflavonoids
+2-O-methylated flavonoids
+2-O-methylated isoflavonoids
+2-acyl-glycerol-3-phosphoserines
+2-acyl-sn-glycero-3-phosphocholines
+2-aroylquinolines
+2-ribofuranosylbenzimidazoles
+2-ribofuranosylbenzotriazoles
+2-ribofuranosylindazoles
+3',5'-cyclic pyrimidine nucleoside phosphorothioates
+3'-O-methylated flavonoids
+3'-O-methylated isoflavonoids
+3-O-methylated flavonoids
+3-O-methylated isoflavonoids
+3-alpha-hydroxysteroids
+3-beta-hydroxy delta-5-steroids
+3-beta-hydroxy-delta-7-steroids
+3-beta-hydroxysteroids
+3-hydroxy delta-1,4-steroids
+3-hydroxy delta-1-steroids
+3-hydroxy delta-4-steroids
+3-hydroxy delta-5-steroids
+3-hydroxy delta-7-steroids
+3-hydroxysteroids
+3-oxo delta-1,4-steroids
+3-oxo delta-1-steroids
+3-oxo delta-4-steroids
+3-oxo delta-5-steroids
+3-oxo delta-7-steroids
+3-oxo-4-azasteroids
+3-oxo-5-alpha-steroids
+3-oxo-5-beta-steroids
+3-oxosteroids
+4'-O-methylated flavonoids
+4'-O-methylated isoflavonoids
+4-O-methylated flavonoids
+4-O-methylated isoflavonoids
+4-aroylquinolines
+4-azasteroids and derivatives
+4a-homomorphinans
+5'-S-alkylthio-5'-deoxyribonucleosides
+5,6-epoxysteroids
+5-O-methylated flavonoids
+5-O-methylated isoflavonoids
+5-hydroxypsoralens
+6,6a-secoaporphines
+6-O-methylated flavonoids
+6-O-methylated isoflavonoids
+6-azasteroids and derivatives
+6-beta-hydroxysteroids
+6-hydroxysteroids
+6-oxosteroids
+7-O-methylated flavonoids
+7-O-methylated isoflavonoids
+7-alpha-hydroxysteroids
+7-beta-hydroxysteroids
+7-hydroxysteroids
+7-oxosteroids
+8-O-methylated flavonoids
+8-O-methylated isoflavonoids
+8-azasteroids and derivatives
+8-hydroxypsoralens
+Acylaminosugars
+Alkyloxyphenoxypropionic acids
+Aminocyclitol glycosides
+Aporphines
+Aryloxyphenoxypropionic acids
+Aryltetralin lignans
+Auronols
+Benzacridines
+Benzimidazole ribonucleosides and ribonucleotides
+Benzotriazole ribonucleosides and ribonucleotides
+Benzoxanthenes
+Benzoyl peroxides
+Biotin and derivatives
+Chrysenes
+Clavines and derivatives
+Coumaronochromones
+Coumestans
+Cularin alkaloids and derivatives
+Decamethonium compounds
+Dialkylglycerol-3-phosphocholines
+Dialkylglycerophosphoserines
+Dibenzazecins
+Dibenzylbutane lignans
+Dimethoxybenzyl-N-methylpiperazines
+Epoxide amino acids and derivatives
+Estrane steroids
+Flavanonols
+Flavins
+Flavonols
+Glycosylmonoalkylglycerols
+Glycosylmonoradylglycerols
+Halogenated steroids
+Hasubanan alkaloids
+Homoisoflavanones
+Homoisoflavones
+Hydroxy-7-aporphines
+Hydroxysteroids
+Ibogan-type alkaloids
+Indazole ribonucleosides and ribonucleotides
+Indole ribonucleosides and ribonucleotides
+Isoaporphines
+Isoflavanquinones
+Isoflavone epoxides
+Isoflavonequinones
+Isopavine alkaloids
+Leucoanthocyanidins
+Lysophosphatidylcholines
+Lysophosphatidylserines
+M-terphenyls
+Matrine alkaloids
+Methyl-7-aporphines
+Monomethylphosphatidylethanolamines
+N-benzoyl-N'-phenylureas
+Naphthacenes
+Neuraminic acids
+Neuraminic acids and derivatives
+Nonoses
+Norbeladdine-type amaryllidaceae alkaloids
+Norbelladine-type amaryllidaceae alkaloids
+O-terphenyls
+Other glycerophosphocholines
+Other steroids and derivatives
+Oxosteroids
+P-terphenyls
+Parvistemoline-type alkaloids
+Peltogynoid flavonoids
+Phenethylisoquinoline alkaloids
+Pheniramines
+Phenylacetylindoles
+Phosphonated cyclopropyl purine nucleosides
+Protoberberine alkaloids and derivatives
+Purine 2'-deoxyribonucleosides
+Purine 3'-deoxyribonucleosides
+Pyranoneoflavonoids
+Pyrido[2,3,4-kl]acridones
+Pyridoacridones
+Pyrrolopyrimidine nucleosides and nucleotides
+Quinolo[1,2-a]quinazolines
+Ribonucleoside phosphoramidates
+Saccharolipids
+Streptamine aminoglycosides
+Sulfonated stilbenes
+Tametralines
+Tanshinlactones and derivatives
+Terphenyls
+Tetrodotoxins
+Thiamines
+Thienamycins
+Triphenylenes
+Type 1 cyanolipids
+Type 2 cyanolipids
+Tyrosine and derivatives
+Vitamin K compounds
+monomethylphosphatidylethanolamine
+1,2-diacyl-sn-glycerol-3(2'-aminoethyl)phosphonates
+1,2-diaryl-2-propen-1-ols
+1,2-substituted phosphonated cyclopentyl nucleosides
+1,2-substituted phosphonated cyclopentyl pyrimidine nucleosides
+1,3-substituted phosphonated cyclopentyl nucleosides
+1,3-substituted phosphonated cyclopentyl pyrimidine nucleosides
+1,5-diarylbiguanides
+1-(1Z-alkenyl),2-acylglycerophosphoethanolamines
+1-(1Z-alkenyl),3-acylglycerophosphoethanolamines
+1-(1Z-alkenyl)glycerophosphoglycerols
+1-arylbiguanides
+1-benzylquinolines
+1-ribosyl-imidazolecarboxamides
+17-azasteroids and derivatives
+2'-Hydroxy-dihydrochalcones
+2'-Hydroxychalcones
+2,3-diphenylfurans
+2,4-diphenylfurans
+2,5-diphenylfurans
+2-Anilinoquinolines
+2-aminoanthraquinones
+2-deoxystreptamine aminoglycosides
+2-hydroxyisoflavanones
+3'-hydroxyflavonoids
+3,4-diphenylfurans
+3-Anilinoquinolines
+3-O-beta-D-monogalactosyl-sn-glycerols
+3-arylcoumarin flavonoids
+3-arylsulfonyl-pyrazolo[1,5-a]pyrimidines
+3-hydroxyflavonoids
+4'-hydroxyflavonoids
+4,5-epoxy-10-normorphinans
+4-Anilinoquinazolines
+4-Anilinoquinolines
+4-hydroxy-2-alkylquinolines
+4-hydroxyflavonoids
+5-hydroxyflavonoids
+6-Amino-4-phenyltetrahydroquinolines
+6-hydroxyflavonoids
+7-aryloxycoumarins
+7-hydroxyflavonoids
+8-hydroxyflavonoids
+Acutumine and related alkaloids
+Acyclic 2,4-diaminopyrimidine nucleoside phosphonates
+Acyclic purine nucleoside phosphonates
+Aloperine and related alkaloids
+Alpha-methyldeoxybenzoin flavonoids
+Ambrosanolides and secoambrosanolides
+Aminoglycosides
+Anthracenecarboxylic acids
+Anthracenecarboxylic acids and derivatives
+Arginine and derivatives
+Aristolactams
+Aurone flavonoids
+Azasteroids and derivatives
+Bakkenolides
+Benzoylindoles
+Benzylisoquinolines
+Bicyclic amino acids and derivatives
+Biopterins and derivatives
+Biphenyltetrazoles and derivatives
+Bis-arenediazo oxides
+Bis-arenediazo sulfides
+Bisphenols
+Cephamycins
+Coumaronochromenes
+Cyclopyrrolones
+Dalbergiones
+Delta-1,4-steroids
+Delta-1-steroids
+Delta-4-steroids
+Delta-5-steroids
+Delta-7-steroids
+Dialkylglycerolphosphoglycerols
+Difurocoumarins
+Diphenylfurans
+Diphenylpyrroles
+Diphenyltetrazoles and derivatives
+Elemanolides
+Ellipticine alkaloids
+Eremophilanolides and secoeremophilanolides
+Eudesmanolides, secoeudesmanolides, and derivatives
+Flavan-3-ols
+Flavan-4-ols
+Flavanones
+Flavones
+Furanoflavonoids
+Furanoisoflavonoids
+Furofuran lignans
+Galanthamine-type amaryllidaceae alkaloids
+Germacranolides and derivatives
+Gingerdiols
+Gingerdiones
+Guaianolides and derivatives
+Histrionicotoxins
+Homoerythrinane alkaloids
+Homoisoflavans
+Homoisoflavonoids
+Hydroxyanthraquinones
+Hydroxyflavonoids
+Hydroxyisoflavonoids
+Imidazole oligoamides
+Indolizinoquinolines
+Indolo[2,3-b]quinoxalines
+Indoloquinazolines
+Isoflav-3-enones
+Isoflavanols
+Isoflavanones
+Isoflavones
+Isoindolo[2,1-a]quinoxalines
+Isporenylated bicyclo [2.2.2] alkaloids
+Isporenylated bicyclo[2.2.2]alkaloids
+Kavalactones
+Leontidine-type alkaloids
+Lignans, neolignans and related compounds
+Lysophosphatidylglycerols
+Mitomycins, mitosane and mitosene derivatives
+Monoalkylglycerol-3-phosphoserines
+Monoalkylglycerophosphocholines
+Monohydroxyflavonoids
+Morphinans
+N-acyl-aromatic L-alpha-amino-acids
+N-acyl-aromatic-alpha amino acids
+N-benzylalanines
+Neoflavones
+Other glycerophosphoserines
+Oxamorphinans
+Oxasteroids and derivatives
+Pavine alkaloids
+Phenanthridine- and phenanthridone-type amaryllidaceae alkaloids
+Phenylalanine and derivatives
+Phlorotannins
+Phosphonated cyclopentyl nucleosides
+Pteridine nucleosides and nucleotides
+Pterocarpans
+Purine 2',3'-dideoxyribonucleosides
+Purine nucleosides
+Pyrido[2,3,4-kl]acridines
+Pyridoacridines
+Pyrimidine nucleoside phosphorothioates
+Pyrrole oligoamides
+Quindolines
+Retro-dihydrochalcones
+Retrochalcones
+Ribonucleoside phosphoramidites
+Sparteine, lupanine, and related alkaloids
+Stenine-type alkaloids
+Steroids and steroid derivatives
+Tannins
+Terpene glycosides
+Thiasteroids and derivatives
+Thioflavones
+Trichothecenes
+Tropoloisoquinolines
+Xanthanolides
+1,2-diacylglycerol-3-phosphates
+1,2-substituted cyclopentyl nucleosides
+1,2-substituted cyclopentyl purine nucleosides
+1,3-diacylglycerol-2-phosphates
+1,3-substituted cyclopentyl nucleosides
+1,3-substituted cyclopentyl purine nucleosides
+1-acyl,2-alkylglycerophosphoethanolamines
+1-alkyl,2-acylglycerophosphoethanolamines
+1-azafluoranthenes
+1-phenyltetrahydroisoquinolines
+10,11-secoergolines
+2',3'-dideoxy-3'-thionucleoside monophosphates
+2',5'-dideoxyribonucleosides
+2-MCPD diesters
+2-pyrimidinylthiobenzoic acids
+3,3'-dihalogenated benzidines
+3,3'-disubstituted benzidines
+3-MCPD diesters
+4-phenyltetrahydroisoquinolines
+5'-deoxy-5'-thionucleosides
+6,7-secoergolines
+Alloxazines and isoalloxazines
+Alpha-amino acyl ester of carbohydrates
+Amaryllidaceae alkaloids
+Anagyrine-type alkaloids
+Anthocyanidins
+Anthraquinones
+Artemisinins
+Benzoins
+Benzoisochromanequinones
+Benzotriazine organothiophosphates
+Benzoylcyclohexane-1,3-diones
+Betaxanthins and derivatives
+C-cinnamoyl glycosides
+C8-prenylated coumarins
+Chalcones and dihydrochalcones
+Coumarino-alpha-pyrones
+Coumarino-gamma-pyrones
+Cyclobutyl nucleosides
+Cyclopentyl nucleosides
+Dalbergiquinols
+Depsides and depsidones
+Diacylglycerophosphates
+Dialkylglycerophosphoethanolamines
+Ergoline and derivatives
+Erythrina alkaloids
+Erythrinanes
+Flav-3-enes
+Flavans
+Flavonoids
+Furanonaphthodioxoles
+Gingerols
+Glycerophosphoglycerols
+Glycerophosphoserines
+Glycosylglycerols
+Hexose phosphates
+Histidine and derivatives
+Imidazole-pyrrole oligo- and polyamides
+Imidazole[4,5-c]pyridine ribonucleosides and ribonucleotides
+Indolonaphthyridine alkaloids
+Indoloquinolines
+Inositol phosphates
+Isochromanequinones
+Isoflav-2-enes
+Isoflav-3-enes
+Isoflavans
+Isoflavonoids
+Monoalkylglycerophosphoglycerols
+N,N-diphenylcarbamic acids
+N-benzylbenzamides
+Neoflavans
+Neoflavenes
+Neoflavonoids
+O-cinnamoyl glycosides
+Octoses
+Oligosaccharides
+Oxaergolines
+Paradols
+Pentacarboxylic acids and derivatives
+Perfluoroalkane sulfonamidoacetals
+Phenanthraquinones
+Phenyl phenylphosphonothioates
+Phenylbenzo-1,3-dioxanes
+Phenylbenzo-1,4-dioxanes
+Phenylbenzo-2,3-dioxanes
+Phenylbenzodioxanes
+Phenylnaphthalenes
+Phenylquinolines
+Phosphatidic acids
+Phosphatidylethanols
+Phosphonated 2'-oxa,3'-aza pyrimidine nucleosides
+Pumiliotoxins, homopumiliotoxins, and allopumiliotoxins
+Pyranopterins and derivatives
+Pyrenes
+Pyridoxine-5'-phosphates
+Pyrimidine 2'-deoxyribonucleosides
+Pyrimidine 3'-deoxyribonucleosides
+Pyrrolo[2,3,4-kl]acridines
+Pyrrolo[2,3-a]carbazoles
+Pyrroloacridines
+Pyrrolocarbazoles
+Ribonucleoside 3'-phosphates
+S-sulfo-L-cysteines
+Salicylianilides
+Saxitoxins, gonyautoxins, and derivatives
+Sesquiterpene lactones
+Shogaols
+Terpene lactones
+Thiaergolines
+Thienoquinolines
+Thioflavans
+Triarylamines
+Urofuranic acids
+1,8-naphthalic anhydrides
+1-(1Z-alkenyl)-glycero-3-phosphoethanolamines
+1-acyl-sn-glycero-3-phosphoethanolamines
+1-phenylcoumarans
+2'-prenylated flavanone
+2'-prenylated flavone
+2,6-dimethyl-3-benzazocines
+2-acyl-sn-glycero-3-phosphoethanolamines
+2-amino-3-aroyl-4,5-alkylthiophenes
+2-arylbenzofuran flavonoids
+2-phenylbenzofurans
+2-phenylindoles
+5'-deoxyribonucleosides
+5,10-cycloaromadendrane sesquiterpenoids
+5-Benzyl-2,4-diamonopyrimidines
+5-Benzylpyrimidine-2,4-diamines
+5-piperazinylimidazo[1,2-a]pyridines
+6-piperazinylimidazo[1,2-a]pyridines
+7-piperazinylimidazo[1,2-a]pyridines
+8-piperazinylimidazo[1,2-a]pyridines
+Acridones
+Acyclic sesquiterpenoids
+Acyl glucuronides
+Agarofurans
+Alkyl glycosides
+Ambrosane sesquiterpenoids
+Amino acids, peptides, and analogues
+Angular pyranocoumarins
+Angular triquinanes
+Aristolane sesquiterpenoids
+Aromadendrane sesquiterpenoids
+Benzanilides
+Benzo[c]quinolizin-3-ones
+Benzo[f]quinolin-3-ones
+Benzochromones
+Benzocycloheptapyridines
+Betalains
+Bicyclogermacrane and isolepidozane sesquiterpenoids
+Capnellane and isocapnellane sesquiterpenoids
+Capnellane, isocapnellane and precapnellane sesquiterpenoids
+Carbacephems
+Cedrane and isocedrane sesquiterpenoids
+Cephalosporins
+Chamigranes
+Chlorinated dibenzo-p-dioxins
+Chromeno[2,3-b]pyridine-5-ones
+Cinnamylphenols
+Cyanogenic glycosides
+Cyclopropyl purine nucleosides
+Deoxyribo- and ribonucleoside phosphonates
+Desulfoglucosinolates
+Dibenzazepines
+Dibenzocycloheptenes
+Dibenzodiazepines
+Dibenzothiazepines
+Dibenzothiepins
+Dibenzothiophene-5,5-dioxides
+Dibenzoxazepines
+Dibenzoxepines
+Diphenylacetonitriles
+Dipyrido[1,4]diazepines
+Disaccharide phosphates
+Disaccharide sulfates
+Elemane sesquiterpenoids
+Eremophilane, 8,9-secoeremophilane and furoeremophilane sesquiterpenoids
+Eudesmane, isoeudesmane or cycloeudesmane sesquiterpenoids
+Fatty acyl glycosides
+Fatty acyl glycosides of mono- and disaccharides
+Germacrane sesquiterpenoids
+Glutamic acid and derivatives
+Glutamine and derivatives
+Glycero-3-phospho-N-acyl-ethanolamines
+Glycero-3-phosphosulfocholines
+Glycerol-3-phosphonocholines
+Glycerophosphonocholines
+Guaianes
+Himachalane and lippifoliane sesquiterpenoids
+Illudanes and illudins
+Isoindole organothiophosphates
+Jasmonic acids
+Linear 1,3-diarylpropanoids
+Linear pyranocoumarins
+Linear triquinanes
+Lineolic acids and derivatives
+Lysophosphatidylethanolamines
+Maaliane sesquiterpenoids
+N-acyl-alpha-hexosamines
+N-acylcarbazoles
+N-acylserotonins
+N-substituted phenoxazines
+Naphthopyranones
+Pentalenane and rearranged pentalenane sesquiterpenoids
+Perfluoroalkane sulfonamidoethanols
+Phenanthrols
+Phenolic glycosides
+Phenylbenzimidazoles
+Phenylbenzofurans
+Phenyltropanes
+Polybrominated dibenzofurans
+Polychlorinated dibenzofurans
+Precapnellane sesquiterpenoids
+Propellane triquinanes
+Pseudoguaianes
+Pterin carboxylates
+Pyranocoumarins
+Pyranoid amino acids and derivatives
+Pyrazolopyrimidine ribonucleosides and ribonucleotides
+Pyridine nucleosides
+Pyridoxal 5'-phosphates
+Pyridoxamine 5'-phosphates
+Pyrimidine 2',3'-dideoxyribonucleosides
+Pyrimidine nucleosides
+Pyrimidine ribonucleoside phosphonates
+Pyrimidinyloxybenzylamines
+Pyrroloquinoline quinones
+Rotundane sesquiterpenoids
+S-prenyl-L-cysteines
+Sesquiterpenoids
+Thioxanthones
+Triquinane sesquiterpenoids
+Tuberostemospironine-type alkaloids
+Type 3 cyanolipids
+Xanthones
+angular triquinane sesquiterpenoid
+cyclopentane sesquiterpenoid
+glycero-3-phosphosulfocholines
+linear triquinane sesquiterpenoid
+modhephane sesquiterpenoid
+p-Dioxolo[2,3-g]coumarins
+p-Dioxolo[2,3-h]coumarins
+pentalenane sesquiterpenoid
+presilphiperfoliane sesquiterpenoid
+propellane triquinane sesquiterpenoid
+rearranged pentalenane sesquiterpenoid
+triquinane sesquiterpenoid
+1,2,4-triazolo[4,3-a][1,4]benzodiazepines
+1,3-oxazolobenzo-1,4-diazepines
+1,3-thiazole carboxanilides
+1-(1Z-alkenyl),2-acyl-glycerophosphates
+1-(1Z-alkenyl),3-acyl-glycerophosphates
+1-benzoylpiperidines
+1-naphthalene sulfonamides
+1-naphthalene sulfonates
+1-naphthalene sulfonic acids and derivatives
+2',3'-dideoxy-3'-thionucleosides
+2-benzimidazolylcarbamic acid esters
+2-benzylaminopyridines
+2-furanilides
+2-naphthalene sulfonamides
+2-naphthalene sulfonates
+2-naphthalene sulfonic acids and derivatives
+3'-thia pyrimidine nucleosides
+3-Oxo-acyl homoserines
+3-furanilides
+3-ribofuranosylpyrazoles
+4-hydroxy-6,7-benzomorphans
+4-nitroquinoline N-oxides
+7-benzofuranyl methylcarbamates
+Acridines
+Acyclic pyrimidine nucleoside phosphonates
+Acyl carnitines
+Angular furanocoumarins
+Anthracenes
+Arenediazo aryl sulfides
+Aromatic anilides
+Asparagine and derivatives
+Aspartic acid and derivatives
+Azobenzenes
+Benzidines
+Benzofuranyl 5-alkylsulfonates
+Benzophenones
+Benzoquinolines
+Biphenols
+Biphenylcarbonitriles
+Brominated dibenzofurans
+Bromodiphenyl ethers
+C-glucuronides
+C2-linked imidazole ribonucleosides and ribonucleotides
+C4-linked imidazole ribonucleosides and ribonucleotides
+Chlorinated dibenzofurans
+Chromeno[2,3-b]pyridines
+Chromenopyridines
+Cytisine and derivatives
+Dibenzo-p-dioxins
+Dibenzopyrans
+Dibenzothiophene-5-oxides
+Epibatidine analogues
+Furanilides
+Furanochromones
+Furanocoumarins
+Furanoid amino acids and derivatives
+Furo[2,3-b]chromones
+Glucuronides
+Glycero-3-pyrophosphates
+Harmala alkaloids
+Heptoses
+Hexamethonium compounds
+Hydrazinopeptides
+Hydrophenanthrenes
+Imidazo[1,5-a][1,4]benzodiazepines
+Indan-1-spirocyclohexanes
+Indenoazepines
+Isofamides
+Isoleucine and derivatives
+Leucine and derivatives
+Linear furanocoumarins
+Long-chain fatty acids
+Macrolide lactams
+Methionine and derivatives
+Monoalkylglycerophosphoethanolamines
+Monobactams
+N-benzoylpiperidines
+N-glucuronides
+N-phenylbenzamides
+Naphthalene sulfonamides
+Naphthalene sulfonates
+Naphthalene sulfonic acids and derivatives
+Naphthopyrans
+O-glucuronides
+Oligoanthrilamides
+Oligosulfones
+Other glycerophosphoethanolamines
+Other glycerophosphoglycerols
+Pentose phosphates
+Peptidosulfonamides
+Phenalenones
+Phenanthrenes and derivatives
+Phenanthridines and derivatives
+Phenanthrolines
+Phenarsazines and derivatives
+Phenazines and derivatives
+Phenoselenazines
+Phenothiazines
+Phenoxathiins
+Phenoxazines
+Phenyl-beta-methoxyacrylates
+Phenylbenzamines
+Phosphonated cyclopropyl nucleosides
+Phosphonated cyclopropyl pyrimidine nucleosides
+Polybrominated biphenyls
+Polychlorinated biphenyls
+Polyisoxazolines
+Precocenes
+Psoralens
+Pyranochromenes
+Pyranoquinolines
+Pyranosyl nitrile oxides
+Pyrazole ribonucleosides and ribonucleotides
+Pyrazolo[1',5':1,6]pyrimido[4,5-d]pyridazin-4-ones
+Pyrido[2,3-b]quinoxalines
+Pyrido[2,3-g]quinoxalines
+Pyridoindolones
+Pyrimidinyl-2-sulfonylureas
+Pyrrolo[1,2-c][1,3]benzodiazepines
+Pyrrolo[2,1-c][1,4]benzodiazepines
+Quinoline-3-sulfonamides
+S-alkyl-thiohydroximates
+S-glucuronides
+S-triazinyl-2-sulfonylureas
+Selenanthrenes
+Stilbenes
+Thianthrenes
+Thienobenzoxepines
+Thiopyranoquinolines
+Thioxanthenes
+Triazole ribonucleosides and ribonucleotides
+Xanthenes
+azobenzene
+1,2,4-triazolo[3,4-a]phthalazines
+1,2,4-triazolopyrimidine-2-sulfonamides
+1,2-substituted cyclopentyl pyrimidine nucleosides
+1,3,5-triazine ribonucleosides and ribnucleotides
+1,3,5-triazine ribonucleosides and ribonucleotides
+1,3-substituted cyclopentyl pyrimidine nucleosides
+1-(1Z-alkenyl)-glycero-3-phosphates
+1-(1z-alkenyl)-glycero-3-phosphates
+1-alkyl,2-acylglycerophosphates
+1Z-alkenylglycero-3-phosphates
+2-(1Z-alkenyl)-glycero-3-phosphates
+2-(1z-alkenyl)-glycero-3-phosphates
+2-amino-3-aroylthiophenes
+2-amino-3-benzoylthiophenes
+2-benzimidazolylcarbamic acids
+2-benzylpiperidines
+2-methoxychromones
+2-phenoxypropionic acid esters
+2-sulfobenzoic acids
+3-benzylpiperidines
+3-methoxychromones
+3-sulfobenzoic acids
+4-benzylpiperidines
+4-sulfobenzoic acids
+6,7-benzomorphans
+6,7-dihydroxycoumarins
+7,8-dihydroxycoumarins
+7-alkoxylcoumarins
+9b-azaphenalenes
+Acyl D-homoserines
+Acyl L-homoserines
+Acyl homoserines
+Acylaminobenzoic acid and derivatives
+Alkyl-phenylketones
+Alpha amino acid esters
+Alpha carbolines
+Anilinopyrimidines
+Aryl dialkyl phosphates
+Aryl-phenylketones
+Azetidino[1,2-d][1,4]benzodiazepines
+Benzodioxinopyrroles
+Benzotropolones
+Benzoylpyrazoles
+Benzylpiperidines
+Beta carbolines
+Brominated biphenyls
+Carbazoles
+Chlorinated biphenyls
+Chromene-3-carbothioamides
+Coumaric acid esters
+Cyclohexylphenols
+Cyclopropyl nucleosides
+Delta amino acids and derivatives
+Delta carbolines
+Dibenzofurans
+Dibenzothiophenes
+Dichlorophenyl dicarboximides
+Dihydrofuranoquinolines
+Dinitroanilines
+Dinitrophenols
+Dinitrotoluenes
+Diphenylethers
+Diphenylmethanes
+Fatty aldehydes
+Fluorenes
+Furanoquinolines
+Galloyl esters
+Gamma carbolines
+Glucuronic acid derivatives
+Glycerophosphocholines
+Glycerophosphoethanolamines
+Guanidinobenzoic acids
+Guanidinobenzoic acids and derivatives
+Hippuric acids
+Hippuric acids and derivatives
+Hydroxycinnamic acid esters
+Imidazole ribonucleosides and ribonucleotides
+Imidazoquinolines
+Indole-3-acetic acid derivatives
+L-cysteine-S-conjugates
+Long-chain fatty alcohols
+Long-chain fatty aldehydes
+Macrolactams
+Macrolides and analogues
+N,N-disubstituted p-toluenesulfonamides
+N-acyl-L-alpha-amino acids
+N-acyl-aliphatic L-alpha-amino-acids
+N-acyl-aliphatic-alpha amino acids
+N-acyl-alpha amino acids
+N-acyl-alpha amino acids and derivatives
+N-acyl-phenylthioureas
+N-acyl-phenylureas
+N-amidino-alpha amino acids
+N-aryl-N-phenylhydroxylamines
+N-benzoylpyrazoles
+N-benzylpiperidines
+N-carbamoyl-alpha amino acids
+N-carbamoyl-alpha amino acids and derivatives
+Naphthalenecarboxamides
+Naphthalenecarboxylic acids
+Naphthalenecarboxylic acids and derivatives
+Naphthofurans
+Naphthothiazoles
+Naphthothiophenes
+Naphthyridine carboxylic acids and derivatives
+Nitronaphthalenes
+Nitroquinolines and derivatives
+Nucleoside and nucleotide analogues
+Nucleosides, nucleotides, and analogues
+Oligoureas
+Oxetane amino acids and derivatives
+P-nitrobenzenesulfonates
+Penicillins
+Perfluoroalkane N,N-alkylsulfonamides
+Perimidines
+Phenalanes
+Phenalenes
+Phenyl ethylphosphonothioates
+Phenylhydantoins
+Phthalate esters
+Prenylated hydroquinones
+Prenylquinones
+Proline and derivatives
+Pyranoindolizines
+Pyrazolo[1',5':1,6]pyrimido[4,5-d]pyridazines
+Pyridazinoindazoles
+Pyridoindoles
+Pyridoisoindoles
+Pyridopyrimidine carboxylic acids and derivatives
+Pyrrolo[3,2-c]quinolines
+Pyrrolo[4,3,2-de]quinolines
+Pyrroloquinolines
+Pyrroloquinoxalines
+Quinic acids and derivatives
+Quinoline carboxamides
+Quinoline carboxylic acids
+Quinoline-3-carboxamides
+Quinolizine carboxylic acids and derivatives
+Quinone and hydroquinone lipids
+Serotonins
+Stemoamide-type alkaloids
+Stemona alkaloids
+Sugar amino acids and derivatives
+Sulfobenzoic acids
+Sulfosalicyclic acids
+Sulfosalicylic acids and derivatives
+Tetracarboxylic acids and derivatives
+Thionucleosides
+Toluene diisocyanates
+Triazoloquinazolines
+Ubiquinols
+Ubiquinones
+Valine and derivatives
+Vinylogous sulfonylpeptides
+cyclobutyl nucleoside
+cyclobutyl pyrimidine nucleoside
+m-Phthalate esters
+o-Phthalate esters
+p-Nitrobenzenesulfonates
+p-Phthalate esters
+1,2,4-benzothiadiazine-1,1-dioxides
+1,3,4-thiadiazol-3-yl-organothiophosphates
+1,3-isoquinolinediones
+1,4-disubstituted quinolizidines
+1,4-isoquinolinediones
+1-acylglycerol-2-phosphates
+1-acylglycerol-3-phosphates
+1Z-alkenyldiacylglycerols
+2,2-dimethyl-1-benzopyrans
+2,3-Cyclopentanoindolines
+2,4-Diaminoquinazolines
+2-acylglycerol-3-phosphates
+2-azidobenzoic acids
+2-phenoxypropionic acids
+3-aroylthiophenes
+3-phenoxypropionic acids
+4,6-disubstituted quinolizidines
+4-hydroxycoumarins
+4-quinolinemethanols
+7-hydroxycoumarins
+Acenaphthenes and derivatives
+Acenaphthylenes
+Acyl-L-homoserine lactones
+Acylsalicylamides
+Acylsalicylic acids
+Acylsalicylic acids and derivatives
+Alkyldiarylamines
+Alkyldimethylbenzylammonium chlorides
+Alkyldimethylbenzylammonium halides
+Alpha amino acid amides
+Anatoxins
+Angular benzodifurans
+Aryl phosphotriesters
+Aryl phosphotrioesters
+Arylbiguanides
+Azaphilones
+Benzazocines
+Benzodifurans
+Biphenyls and derivatives
+Bipyridines and oligopyridines
+Bipyrimidines and oligopyrimidines
+Chlorophenoxtacetates
+Cinnamic acid amides
+Cinnamic acid esters
+Coumaric acids
+Coumaric acids and derivatives
+Cyanolipids
+Cyclopropyl pyrimidine nucleosides
+Cysteine and derivatives
+Dialkylglycerophosphates
+Dialkylmonoacylglycerols
+Fatty alcohol esters
+Fluoroquinolones
+Furobenzofurans
+Furoindazoles
+Gallic acid and derivatives
+Gallic acids
+Gamma amino acids and derivatives
+Gluconolactones
+Glycerol-3-phosphonoethanolamines
+Glycerophosphonoethanolamines
+Guanidinoglycosides
+Hexoses
+Hydroxycinnamic acids
+Hydroxycinnamic acids and derivatives
+Hydroxycoumarins
+Hydroxyquinolones
+Imidazo[2,1-b]benzothiazoles
+Indanediones
+Indazole-3-carboxamides
+Indeno[1,2-c]pyrazoles
+Indolecarboxamides and derivatives
+Indolecarboxylic acids
+Indolecarboxylic acids and derivatives
+Indolyl carboxylic acids and derivatives
+Isoquinoline quinones
+Linear benzodifurans
+Lipoamides
+Lipoic acids and derivatives
+Long-chain alkyl amine oxides
+Lupin alkaloids
+Lupinine-type alkaloids
+Lysophosphatidic acids
+M-phthalic acid and derivatives
+Methoxylated amphetamines
+Methoxyphenylisopropylamines
+N-acyl amines
+N-acyl-L-glutamines
+N-acyldopamines
+N-arylpiperazines
+N-formyl-alpha amino acids
+N-formyl-alpha amino acids and derivatives
+Naphthohydroquinones
+Naphthoquinones
+Nitrobenzoic acids and derivatives
+O-acylglycerone-phosphates
+O-phthalic acid and derivatives
+Oligosulfoxides
+Oligourea amides
+Other glycerolipids
+P-phthalic acid and derivatives
+Peptidomimetics
+Perfluoroalkane N-alkylsulfonamides
+Phenyldithiazolethiones
+Phenylmorpholines
+Phenylpiperazines
+Phenylpiperidines
+Phenylpyridazines
+Phenylpyridines
+Phenylpyrimidines
+Phenylpyruvic acid derivatives
+Phenylthiomorpholines
+Phthalic acid and derivatives
+Piperidinylpiperazines
+Piperidinylpyridines
+Pterins and derivatives
+Pyrazolo[4,3-e]pyrrolo[1,2-a]pyrazines
+Pyridinylpiperazines
+Pyridinylpyrimidines
+Pyridoxals and derivatives
+Pyridoxamines
+Pyridoxines
+Pyrimidinyl phosphorothioates
+Pyrimidinylpiperazines
+Pyrrolo[1,2-a]benzimidazoles
+Pyrroloindoles
+Pyrroloindolizines
+Pyrrolopyrimidinecarboxylic acids and derivatives
+Quinoline quinones
+S-alkyl-L-cysteine S-oxides
+Serine and derivatives
+Shikimic acids and derivatves
+Sulfonylanilines
+Triazolobenzothiazoles
+Tryptamines and derivatives
+Type 4 cyanolipids
+Tyrosol esters
+1,2-allenyl phenyl sufoxides
+1,2-allenyl phenyl sulfoxides
+1,4-benzodiazepines
+1-acyl-sn-glycerol-2,3-cyclic-phosphates
+2(hydroxyphenyl)acetic acids
+2,4-Diaminothieno[2,3-d]pyrimidines
+2-Hydroxymercuribenzoic acids
+3(hydroxyphenyl)acetic acids
+3,4-dihydrocoumarins
+3-Hydroxymercuribenzoic acids
+3-MCPD monoesters
+3-aminosalicyclic acids and derivatives
+3-aminosalicylic acids
+3-aminosalicylic acids and derivatives
+4-Hydroxymercuribenzoic acids
+4-aminoquinolines
+4-aminosalicyclic acids and derivatives
+4-aminosalicylic acids
+4-benzenesulfonic acids
+4-halophenylacetic acids
+5-alkoxy-2-carboxypyrimidines
+6-alkylaminopurines
+8-hydroxyquinolines
+Acylphloroglucinols and derivatives
+Adamantanones
+Alanine and derivatives
+Alkyldiacylglycerols
+Allantoins
+Allyl trifluoromethanesulfonates
+Alpha-imino acid esters
+Aminobenzenesulfonamides
+Aminoquinolines and derivatives
+Aminosalicylic acids
+Aminosalicylic acids and derivatives
+Aryl 1,2,4-triazolones
+Aryl phosphodiesters
+Aziridinylquinones
+Benzazepines
+Benzenesulfonate esters
+Benzodiazepines
+Benzothiazepines
+Benzothiepins
+Benzoxazepines
+Benzoxazinones
+Benzoxepines
+Benzyl esters
+Beta amino acids and derivatives
+Butyrophenones
+C-glycosyl compounds
+Carbapenams
+Carbapenems
+Carnitines
+Catecholamines and derivatives
+Chloronaphthalenes
+Chloropropanol esters
+Chloroquinolines
+Chromones
+Cinnamic acids
+Cinnamic acids and derivatives
+Coumarins and derivatives
+Cyclamates
+Cycloheptapyrans
+Diarylamines
+Diarylethers
+Diarylthioethers
+Dichlorobenzoic acids
+Dipyrrins
+Disaccharides
+Dithioxanthines
+Fluoromethoxy benzamides
+Furanoid fatty acids
+Glycidol esters
+Glycosyl compounds
+Glycosylamines
+Haloacetanilides
+Haloquinolines
+Heterocyclic diaryl ethers
+Homocyclic diaryl ethers
+Hydroquinolones
+Hydroxymercuribenzoic acids
+Hydroxyquinolines
+Indanones
+Indole-3-carbinol and derivatives
+Indolequinones
+Iridoids and derivatives
+Isocoumarins and derivatives
+Isoquinolones and derivatives
+Loline alkaloids and derivatives
+M-haloacetanilides
+M-methoxybenzoic acids and derivatives
+Metal p-nitrophenoxides
+Methoxybenzoic acids and derivatives
+Monoacylglycerophosphates
+Monoalkylglycerophosphates
+N,N-dialkyl-m-toluamides
+N,N-dialkyl-p-toluamides
+N-acetyl-2-arylethylamines
+N-aryl-N-hydroxylamides
+N-aryl-N-hydroxylamines
+N-hydroxyl-alpha-amino acids
+N-linked disaccharides
+N-substituted alpha-imino acids
+Naphthols and derivatives
+Nitrobenzaldehydes
+Nitrophenyl ethers
+O-alkylglycerone phosphates
+O-glycosyl compounds
+O-haloacetanilides
+O-methoxybenzoic acids and derivatives
+Organic peroxodisulfates
+Organic tetrathionates
+P-bromobenzenesulfonates
+P-haloacetanilides
+P-methoxybenzoic acids and derivatives
+P-toluenesulfonamides
+Perfluoroalkanesulfonyl fluorides
+Perfluoroalkyl phosphonic acid and derivatives
+Perfluoroalkyl phosphoric acid and derivatives
+Perfluoroalkyl sulfonamides
+Perfluorooalkyl sulfonic acid and derivatives
+Phenoxyacetic acid derivatives
+Phenyl methylcarbamates
+Phenyl phosphates
+Phenyl thiophosphates
+Phenyl-1,2,3-triazoles
+Phenyl-1,2,4-oxadiazoles
+Phenyl-1,2,4-triazoles
+Phenyl-1,3-oxazoles
+Phenylacetic acid esters
+Phenylbutylamines
+Phenylcarbamic acid esters
+Phenyldithiazoles
+Phenylimidazoles
+Phenylimidazolidines
+Phenylisoxazolidines
+Phenyloxadiazoles
+Phenyloxazolidines
+Phenylphosphonothioates
+Phenylpropanoic acids
+Phenylpyrazoles
+Phenylpyrroles
+Phenylpyrrolidines
+Phenylpyrrolines
+Phenylsulfates
+Phenyltetrazoles and derivatives
+Phenyltetrazolines and derivatives
+Phenylthiazoles
+Phenyltriazoles
+Phosphocholines
+Phthalazinones
+Phthalic anhydrides
+Phthalimides
+Piperazinoazepines
+Polyphenyl ethers
+Polyphenyl thioethers
+Pyrazolylpyridines
+Pyridodiazepines
+Pyridyl-1,2,3-triazoles
+Pyridyl-1,2,4-triazoles
+Pyridyltriazoles
+Pyrimidodiazepines
+Pyrrolidinylpyridines
+Quinazolinamines
+Quinolizidinones
+Quinolones and derivatives
+S-alkyl-L-cysteines
+Selenoglycosides
+Sn1-2-MCPD monoesters
+Sn1-3-MCPD monoesters
+Sn2-3-MCPD monoesters
+Sulfated fatty acids
+Sulfinylbenzimidazoles
+Sulfonphthalides
+Thio-linked disaccharides
+Thioglycosides
+Thiophthalic anhydrides
+Thiopurine S-methylethers
+Thioxanthines
+Triradylcglycerols
+Tris(ketoximino)silanes
+Xanthines
+m-Hydroxybenzoic acid esters
+o-Hydroxybenzoic acid esters
+p-Bromobenzenesulfonates
+p-Hydroxybenzoic acid alkyl esters
+p-Hydroxybenzoic acid esters
+p-Methylbenzenesulfonates
+1,1-dinitrodifluoramines
+1,2-benzodithiins
+1,2-diacylglycerols
+1,3-benzodithiins
+1,3-diacylglycerols
+1,4-benzodithiins
+1-(1Z-alkenyl),2-acyl-glycerols
+1-acyl,2-alkylglycerols
+1-alkyl,2-acylglycerols
+1-alkyl,3-acylglycerols
+1-benzopyrans
+1Z-alkenylacylglycerols
+2'-Aminoanilides
+2,3-benzodithiins
+2-Mercuribenzoic acids
+2-amino-pyrido[2,3-d]pyrimidines
+2-aminobenzamides
+2-aminothieno[3,4-c]pyridazines
+2-aminothieno[3,4-d]pyridazines
+2-benzopyrans
+2-halobenzoic acids
+2-halobenzoic acids and derivatives
+2-nitrohalothiophenes
+3-Mercuribenzoic acids
+3-alkylindoles
+3-halobenzoic acids
+3-halobenzoic acids and derivatives
+3-methylindoles
+3-nitrohalothiophenes
+4-Mercuribenzoic acids
+4-halobenzoic acids
+4-halobenzoic acids and derivatives
+5,6,7,8-tetrahydropteridines
+5-alkyl-2-carboxypyrimidines
+6,7-dihydropteridines
+6-aminopurines
+6-oxopurines
+6-thiopurines
+7-oxo-1,3-thiazolo[5,4-d]pyrimidines
+Acenes and derivatives
+Acetanilides
+Acyclic monoterpenoids
+Acyl homoserine lactones
+Alpha amino acids
+Alpha amino acids and derivatives
+Alpha-imino acid and derivatives
+Alpha-imino acids
+Amino sugars
+Aminobenzamides
+Aminobenzoic acids
+Aminobenzoic acids and derivatives
+Amphetamines and derivatives
+Anthranilamides
+Arenediazoates
+Aromatic 3-cyanotriazenes
+Aromatic monoterpenoids
+Aryl phosphates
+Aryl phosphomonoesters
+Aryl thiophosphates
+Arylsulfates
+Azaspirodecane derivatives
+Azulenes
+Benzarsazines and derivatives
+Benzenesulfonamides
+Benzenesulfonates
+Benzenesulfonic acids and derivatives
+Benzenesulfonyl chlorides
+Benzenesulfonyl halides
+Benzisoxazolones
+Benzo-1,2,3-triazines
+Benzo-1,2-dioxanes
+Benzo-1,3-dioxanes
+Benzo-1,4-dioxanes
+Benzo-2,3-dioxanes
+Benzo-m-dioxins
+Benzo-o-dioxins
+Benzo-p-dioxins
+Benzodioxanes
+Benzodioxins
+Benzodithiins
+Benzofuranones
+Benzoic acid esters
+Benzomorpholines
+Benzopyrans
+Benzothiadiazines
+Benzothiazines
+Benzoxazines
+Benzoxazolones
+Benzyl alkyl sulfoxides
+Benzyl isothiocyanates
+Benzyl sulfoxides
+Benzyl thiocyanates
+Benzyloxycarbonyls
+Bi- and oligothiophenes
+Bicyclic monoterpenoids
+Cinnamaldehydes
+Cinnamyl alcohols
+Cinnolines
+Cycloheptafurans
+Cycloheptathiophenes
+D-alpha-amino acids
+Diacylglycerols
+Dialkylglycerols
+Diazanaphthalenes
+Dicarboxdiimides
+Dihydroisoquinolines
+Dimethoxybenzenes
+Diradylglycerols
+Epipolythiodioxopiperazines
+Ethylene bisdithiocarbamates
+Fluorotelomer alcohols
+Glyceraldehyde-3-phosphates
+Glycerone phosphates
+Glycerophosphates
+Glycerophospholipids
+Glycerophosphonolipids
+Glycine and derivatives
+Halobenzoic acids
+Halobenzoic acids and derivatives
+Halonitrobenzenes
+Hydroquinolines
+Hydroxyanilides
+Hydroxybenzoic acid derivatives
+Hydroxyindoles
+Hypoxanthines
+Imidazo[1,2-a]pyrazin-8-ones
+Imidazodiazepines
+Imidazopyridinones
+Indolizidinones
+Isobenzofuranones
+Isoindolones
+Isoprenoid phosphates
+Isoquinolines and derivatives
+Isosorbides
+Isothiochromanes
+Isothiochromenes
+L-alpha-amino acids
+M-sulfanylbenzoic acids
+M-sulfanylbenzoic acids and derivatives
+Menthane monoterpenoids
+Mercuribenzoic acids
+Methoxyphenols
+Monocyclic monoterpenoids
+Monosaccharide phosphates
+Monosaccharide sulfates
+Monoterpenoids
+N,N'-diacyl ureas
+N-acetoxyarylamines
+N-alkylindoles
+N-phenylthioureas
+N-phenylureas
+N-piperazineacetamides
+N-substituted nicotinamides
+N-sulfenyl-N'-sulfonyl-ureas
+Naphthalenes
+Naphthyridines
+Nitrohalothiophenes
+Nitrophenols
+O-sulfanylbenzoic acids
+O-sulfanylbenzoic acids and derivatives
+Organic dichromates
+Organic pyrophosphates
+Organic pyrosulfates
+P-sulfanylbenzoic acids
+P-sulfanylbenzoic acids and derivatives
+Pentoses
+Perfluoroalkyl carboxylic acid and derivatives
+Perfluoroalkyl sulfonic acid and derivatives
+Peroxybenzoic acids and derivatives
+Phenol esters
+Phenylacetamides
+Phenylacetic acid derivatives
+Phenylacetic acids
+Phenylazetidines
+Phenylcarbamic acids
+Phenylisopropylamines
+Phenylpropanoids and polyketides
+Phenylpropylamines
+Phenylthiazetidines
+Phthalazines
+Phthalides
+Piperazinesulfonamides
+Piperazinopiperidines
+Piperidinesulfonamides
+Polyethylene glycols
+Polyterpenoids
+Prenol lipids
+Pteridines and derivatives
+Purinethiones
+Purinones
+Pyrano[3,4-c]pyridazines
+Pyranodioxins
+Pyranopyridines
+Pyranopyrimidines
+Pyrazolo[1,5-a]pyrimidines
+Pyridinesulfonamides
+Pyrido[2,3-d]pyrimidines
+Pyrido[3,4-c]pyridazines
+Pyrido[3,4-d]pyrimidines
+Pyridopyrazines
+Pyridopyrimidines
+Pyrrolizidine oximes
+Pyrroloazepines
+Quinazolines
+Quinolidines
+Quinolines and derivatives
+Quinolizidines
+Quinolizines
+Quinoxalines
+Salicylamides
+Salicylic acid and derivatives
+Salicylic acids
+Substituted imidazole-4-acetic acid and analogues
+Sulfanilides
+Sulfanylbenzoic acids
+Sulfanylbenzoic acids and derivatives
+Tetrahydroisoquinolines
+Tetralins
+Thienodiazepines
+Thiochromanes
+Thiochromenes
+Thiosalicylic acids
+Thiosalicylic acids and derivatives
+Tosyl compounds
+Triazolodiazepines
+Triazolopyridinones
+Trifluoromethylbenzenes
+Tyrosols
+Tyrosols and derivatives
+cycloheptane monoterpenoid
+1,2,3-thiadiazolopyridines
+1,2,4,5-tetrasubstituted imidazoles
+1,3,4-thiadiazol-2-ylureas
+1,3-thiazolo[5,4-d]pyrimidines
+1,4-dihydroxy-2-halobenzenoids
+1,4-oxathiin carboxamides
+1-benzothiophenes
+1-benzothiopyrans
+1-sulfamoyl-1,2,3-triazoles
+1-sulfo,2-unsubstituted aromatic compounds
+2-benzothiophenes
+2-benzothiopyrans
+2-nitrothiophenes
+3,4,5-trisubstituted-2-aminothiophenes
+3-chlorocatechols
+3-nitrothiophenes
+4-alkoxyphenols
+4-chlorocatechols
+5-unsubstituted pyrrogallols
+6-substituted-2-pyridinylmethylamines
+Acetophenones
+Acyl cholines
+Alkaloids and derivatives
+Aminohydroquinones
+Aminophenyl ethers
+Anilides
+Aryl azides
+Arylsufonic acids
+Arylsulfonic acids
+Arylsulfonic acids and derivatives
+Barbituric acid derivatives
+Benzamides
+Benzarsoles
+Benzenecarbothioic S-acids
+Benzenesulfonyl compounds
+Benzenetriols and derivatives
+Benzimidazoles
+Benzisoxazoles
+Benzodioxoles
+Benzofurans
+Benzoic acids
+Benzoic acids and derivatives
+Benzopyrazoles
+Benzothiadiazoles
+Benzothiazoles
+Benzothiophenes
+Benzothiopyrans
+Benzotriazoles
+Benzoxadiazoles
+Benzoxathioles
+Benzoxazoles
+Benzoxazolines
+Benzyl cyanides
+Benzylethers
+Bisphosphonates
+Carbocyclic fatty acids
+Cephams
+Cephems
+Chlorocatechols
+Chloroethylnitrosoureas
+Chlorohydroquinones
+Coumarans
+Cumenes
+Cyclohexene oximes
+Dialkyltin dicarboxylates
+Diaminotoluenes
+Diazaspirononane derivatives
+Dihydropyridinecarboxylic acids and derivatives
+Dioxolopyrans
+Disiloxanes
+Fatty N-acylethanolamines
+Fatty alcohols
+Furo[2,3-c]pyridines
+Furo[2,3-d]pyrimidines
+Furo[3,2-c]pyridines
+Furoic acid esters
+Furopyrans
+Furopyridines
+Glycerol vinyl ethers
+Hydropyrimidine carboxylic acids and derivatives
+Hydroxybenzaldehydes
+Hydroxybenzonitriles
+Hydroxyquinols and derivatives
+Imidazo-[4,5-c]-pyridines
+Imidazo-[4,5-c]pyridines
+Imidazo[1,2-a][1,2,4]triazines
+Imidazo[1,2-a]pyridines
+Imidazo[1,2-a]pyrimidines
+Imidazo[1,2-d][1,2,4]triazines
+Imidazo[1,5-a]pyrazines
+Imidazo[2,1-c][1,2,4]triazines
+Imidazo[4,3-c][1,2,4]triazines
+Imidazo[5,1-d]-1,2,3,5-tetrazines
+Imidazodithiazolethiones
+Imidazopiperidines
+Imidazopyrazines
+Imidazopyridines
+Imidazopyrimidines
+Imidazotetrazines
+Imidazotriazines
+Iminoquinones
+Indanes
+Indazoles
+Indenes and isoindenes
+Indoles
+Indoles and derivatives
+Indolines
+Indolizidines
+Indolizines
+Isobenzofurans
+Isocoumarans
+Isoindoles
+Isoindoles and derivatives
+Isoindolines
+Isoxazolopyrazines
+Isoxazolopyridines
+M-iminoquinones
+Medium-chain hydroxy acids and derivatives
+Medium-chain keto acids and derivatives
+Metallobisdithiocarbamates
+Methoxyanilines
+Morpholine carboxylic acids
+Morpholine carboxylic acids and derivatives
+N-acetylarylamines
+N-acylpiperidines
+N-alkyl-O-phenylhydroxylamines
+N-sulfonyl-1,2,3-triazoles
+N-sulfonyl-1,2,4-triazoles
+Nicotinamides
+Nitro fatty acids
+Nitrobenzenes
+Nitropyrimidines
+Nitrothiophenes
+Nitrotoluenes
+O-iminoquinones
+Oxacephems
+Oxazolopyrazines
+Oxazolopyridines
+P-iminoquinones
+P-toluquinols
+P-toluquinols and derivatives
+P-toluquinones
+Phenethylamines
+Phenyl sulfoxides
+Phenylacetaldehydes
+Phenylaziridines
+Phenylazirines
+Phenylboronic acids
+Phenylketones
+Phenylpropanes
+Phenylpropenes
+Phloroglucinols and derivatives
+Piperazine carboxamides
+Piperazine carboxylic acids
+Piperazine carboxylic acids and derivatives
+Piperdidinecarboxamides
+Piperidinecarboxamides
+Piperidinecarboxylic acids
+Piperidinecarboxylic acids and derivatives
+Purines and purine derivatives
+Pyran carboxylic acids
+Pyran carboxylic acids and derivatives
+Pyrazine carboxylic acids
+Pyrazine carboxylic acids and derivatives
+Pyrazinecarboxamides
+Pyrazolo[1,5-a][1,3,5]triazines
+Pyrazolo[1,5-b]pyridazines
+Pyrazolo[1,5-d][1,2,4]triazines
+Pyrazolo[3,4-b]pyrazines
+Pyrazolo[3,4-d]pyrimidines
+Pyrazolopyridines
+Pyrazolopyrimidines
+Pyrazolotriazines
+Pyridine-2-carboxylic acids
+Pyridine-3-carboxylic acids
+Pyridinecarboxamides
+Pyridinecarboxylic acids
+Pyridinecarboxylic acids and derivatives
+Pyrimidinecarboxamides
+Pyrimidinecarboxylic acids
+Pyrimidinecarboxylic acids and derivatives
+Pyrogallols and derivatives
+Pyrrolizidinones
+Pyrrolo[2,1-f][1,2,4]triazines
+Pyrrolo[2,3-d]pyrimidines
+Pyrrolo[3,4-d]pyridazines
+Pyrrolopyrazines
+Pyrrolopyridines
+Pyrrolopyrimidines
+Pyrrolotriazines
+Quinuclidones
+Siloxanes
+Sulfonyl-1,2,3-triazoles
+Sulfonyl-1,2,4-triazoles
+Tetrasubstituted imidazoles
+Thiadiazole sulfonamides
+Thieno[3,4-c]pyridazines
+Thieno[3,4-d]pyridazines
+Thienopyrans
+Thienopyridazines
+Thienopyridines
+Thienopyrimidines
+Thienothiazines
+Thiobarbituric acid derivatives
+Thiobenzoic acids and derivatives
+Thiodiacetic acid derivatives
+Thiodioxopiperazines
+Thiomorpholine carboxylic acids
+Thiomorpholine carboxylic acids and derivatives
+Thiophenol esters
+Toluamides
+Trialkylglycerols
+Triazolopyrazines
+Triazolopyridazines
+Triazolopyridines
+Triazolopyrimidines
+Tricarboxylic acids and derivatives
+Tropane alkaloids
+Tropolones
+Xylenols
+imidazopyrazine
+m-Toluamides
+m-Xylenols
+o-Toluamides
+o-Xylenols
+p-Toluamides
+p-Xylenols
+1,2,4-trisubstituted imidazoles
+1,2,5-trisubstituted imidazoles
+1,2-dithiolane-3-carboxylic acids
+1,2-dithiolane-4-carboxylic acids
+1,2-dithiolanecarboxylic acids
+1,3,5-triazine-2,4-diamines
+1,3-dithiolane-2-carboxylic acids
+1,3-dithiolane-4-carboxylic acids
+1,3-dithiolanecarboxylic acids
+1-O-alkyl-sn-glycerols
+1-O-alkylglycerols
+1-bromo,2-chlorobenzenes
+1-carboxy-2-haloaromatic compounds
+1-hydroxylamino, 2-unsubstituted benzenoids
+1-hydroxylamino, 4-unsubstituted benzenoids
+1-monoacylglycerols
+2,3,5-trisubstituted thiophenes
+2,4,5-trisubstituted imidazoles
+2,4,5-trisubstituted oxazoles
+2,4,5-trisubstituted thiazoles
+2,5-dioxopiperazines
+2,5-disubstituted morpholines
+2-arylethylamines
+2-benzylamino-s-triazines
+2-bromoanilines
+2-heteroaryl carboxamides
+2-methoxy-1,3,5-triazines
+2-monoacylglycerols
+2-pyridylmethylamines
+3-Acylpyruvic acids
+3-aroylfurans
+3-cyclopropylisoxazoles
+3-pyridinecarbonitriles
+4-cyclopropylisoxazoles
+4-methoxy-1,2,3-triazines
+5-cyclopropylisoxazoles
+5-monosubstituted hydantoins
+5-monounsubstituted hydantoins
+6-Thiathiophenes
+Acetylenedicarboxylates
+Alkoxy-S-triazines
+Alkyl-2-thio-S-triazines
+Alkyl-2-thio-s-triazines
+Aminocyclitols
+Aminocyclitols and derivatives
+Aminophenols
+Aminotoluenes
+Anisoles
+Aryl alkyl ketones
+Aryl ketones
+Aryl thioethers
+Arylhydroxamates
+Azomethine ylides
+Benzaldehydes
+Benzenediols
+Benzonitriles
+Benzoquinones
+Benzoyl derivatives
+Benzyl alcohols
+Benzyl bromides
+Benzyl chlorides
+Benzyl fluorides
+Benzyl halides
+Benzylamines
+Bromophenols
+Caprolactams
+Caprolactones
+Catechols
+Chloroanilines
+Chlorophenols
+Clavams
+Cresols
+Cyanoacrylates
+Cyclopropylisoxazoles
+Delta sultams
+Delta sultims
+Delta sultones
+Dialkylarylamines
+Diazonium perchlorates
+Diazonium sulfates
+Diazonium tetrahaloborates
+Dichlorobenzenes
+Dioxopiperazines
+Dithiolanecarboxylic acids
+Enol ester epoxides
+Ethoxyethynyl alcohols
+Fluorodinitromethyl compounds
+Fluorophenols
+Formamidine disulfides
+Furan-3-carboxylic acid amides
+Furan-3-carboxylic acid and derivatives
+Furan-3-carboxylic acid esters
+Furan-3-carboxylic acids
+Furancarboxamides
+Furofurans
+Furoic acid and derivatives
+Furoic acids
+Furopyrroles
+Gamma-keto acids and derivatives
+Halophenols
+Halotoluenes
+Hydroperoxy fatty acids
+Hydroquinones
+Imidazodithiazoles
+Imidazole carboxamides
+Imidazole carboxylic acids
+Imidazole carboxylic acids and derivatives
+Imidazolyl carboxylic acids and derivatives
+Imidazothiazoles
+Iodophenols
+Isoquinulcidines
+Ketazines
+Ketoxime carbamates
+M-benzoquinones
+M-bromophenols
+M-chlorophenols
+M-fluorophenols
+M-iodophenols
+M-phenylenediamines
+M-quinodimethanes
+M-quinomethanes
+M-quinones
+M-quinonimines
+Medium-chain fatty acids
+Meta cresols
+Methoxy fatty acids
+Methoxybenzenes
+Methoxypyrazines
+Methylthio-s-triazines
+Mono-(1Z-alkenyl)-glycerols
+Monoacylglycerols
+Monoalkylglycerols
+Monoradylglycerols
+N-acylethanolamines
+N-acylpyrrolidines
+N-alkyl sulfonyl hydrazones
+N-arylamides
+N-nitrosated N-hydroxyguanidines
+N-phenylhydroxylamines
+Nitroaromatic compounds
+Nitrofurans
+Nitrogen mustard compounds
+Nitroimidazoles
+Nitrosopiperidines
+Nitrothiazoles
+O-alkylpyrimidines
+O-benzoquinones
+O-bromophenols
+O-chlorophenols
+O-fluorophenols
+O-iodophenols
+O-phenylenediamines
+O-phenylhydroxylamines
+O-quinodimethanes
+O-quinomethanes
+O-quinones
+O-quinonimines
+Organic phosphoric acid triamides
+Organic sulfonic anhydrides
+Organosulfonic anhydrides
+Ortho cresols
+Oxime organothiophosphates
+Oxocins
+Oxoprolines
+P-benzoquinones
+P-bromophenols
+P-chlorophenols
+P-fluorophenols
+P-idophenols
+P-iodophenols
+P-phenylenediamines
+P-quinodimethanes
+P-quinomethanes
+P-quinones
+P-quinonimines
+Para cresols
+Penams
+Penems
+Pentalenes
+Phenol ethers
+Phenoxy compounds
+Phenyl sulfides
+Phenylalkylamines
+Phenylazides
+Phenylenediamines
+Phenylhydrazines
+Phenylmethylamines
+Phosphoethanolamines
+Phosphoric diester monoamides
+Phosphoric monoester monoamides
+Piperidinediones
+Polyhalopyridines
+Pyrazole carboxylic acids and derivatives
+Pyrazole-4-carboxamides
+Pyrazole-5-carboxamides
+Pyrazolopyrazoles
+Pyridine carboxaldehydes
+Pyrrole 2-carboxylic acids
+Pyrrole carboxamides
+Pyrrole carboxylic acids
+Pyrrole carboxylic acids and derivatives
+Pyrrolidine carboxylic acids
+Pyrrolidine carboxylic acids and derivatives
+Pyrrolidinecarboxamides
+Pyrroline 2-carboxylic acids
+Pyrroline carboxylic acids
+Pyrroline carboxylic acids and derivatives
+Pyrrolizidines
+Pyrrolizines
+Pyrrolopyrazoles
+Pyrrolothiazoles
+Quinodimethanes
+Quinomethanes
+Quinones
+Quinonimines
+Quinuclidines
+Resorcinols
+Semioxamazones
+Semiquinones
+Styrenes
+Sulfonic anhydrides
+Sulfonyl azides
+Sulfonyl isothiocyanates
+Tertiary alkylarylamines
+Tetroses
+Thiazolecarboxamides
+Thiazolecarboxylic acids
+Thiazolecarboxylic acids and derivatives
+Thienoimidazoles
+Thienoimidazolidines
+Thienopyrroles
+Thienothiazoles
+Thienothiophenes
+Thioanisoles
+Thiohydroquinones
+Thiophene carboxamides
+Thiophene carboxylic acids
+Thiophene carboxylic acids and derivatives
+Thiophenol ethers
+Thiophenols
+Thiophosphate triesters
+Thiuram disulfides
+Trialkoxysilanes
+Trialkyl phosphates
+Triazole carboxamides
+Triazole carboxylic acids
+Triazole carboxylic acids and derivatives
+Triazolothiazoles
+Trifluoromethanesulfonates
+Trisubstituted imidazoles
+Tropones
+Xylenes
+m-Xylenes
+o-Xylenes
+p-Xylenes
+1,2-diacyl-1-alkylhydrazines
+1,2-diazepanes
+1,2-diazepines
+1,2-dihalobenzenes
+1,2-dioxepanes
+1,2-dioxepines
+1,2-oxazepines
+1,3-diazepanes
+1,3-diazepines
+1,3-dihalobenzenes
+1,3-dioxepanes
+1,3-dioxepines
+1,3-oxazepines
+1,4-diazepanes
+1,4-diazepines
+1,4-dihalobenzenes
+1,4-dioxepanes
+1,4-dioxepines
+1,4-oxazepines
+1-aminocyclopropane-1-carboxylic acids
+1-aminocyclopropane-1-carboxylic acids and derivatives
+1-aminopyrazinium compounds
+1-hydroxy-2-unsubstituted benzenoids
+1-hydroxy-4-unsubstituted benzenoids
+2,3-dienoyl  fatty acyl thioesters
+2,3-dihydro-4-pyridones
+2,4-disubstituted oxazoles
+2,4-disubstituted thiazoles
+2,5-disubstituted oxazoles
+2,5-disubstituted thiazoles
+2,5-disubstituted thiophenes
+2-Thiopyrimidines
+2-Thiopyrimidones
+2-amino-5-substituted-1,3,4-thiadiazoles
+2-aminopyrazinium compounds
+2-halopyridines
+2-halopyrimidines
+3-thia fatty acids
+4,5-disubstituted oxazoles
+4,5-disubstituted thiazoles
+4-Hydrocarbylideneazlactones
+4-Thiopyrimidines
+4-Thiopyrimidones
+4-thia fatty acids
+Acyl monophosphates
+Acyl phosphates
+Acylals
+Acylguanidines
+Aldoxime carbamates
+Alkyl aryl ethers
+Alkyl trialkyllead peroxides
+Alkylarylthioethers
+Alpha-acyloxy ketones
+Alpha-diazo esters
+Amino fatty acids
+Aminopiperidines
+Aminopyrazines
+Aminopyridazines
+Aminopyridines and derivatives
+Aminopyrimidines and derivatives
+Aminosaccharides
+Aminotetrazines
+Aminotriazines
+Aniline and substituted anilines
+Aralkylamines
+Aryl-aldehydes
+Arylmagnesium halides
+Azepanes
+Azepines
+Azetidinecarboxylic acids
+Azetidinecarboxylic acids or derivatives
+Azomethine imides
+Beta hydroxy acids and derivatives
+Beta-diketones
+Beta-keto acids and derivatives
+Biguanides
+Branched fatty acids
+Bromobenzenes
+Carbonylimidazoles
+Carboxylic acid orthoesters
+Chloro-s-triazines
+Chlorobenzenes
+Cholines
+Cyclohexanols
+Cyclohexanones
+Cyclohexenones
+Cyclohexyl halides
+Cyclohexylamines
+Delta lactams
+Delta valerolactones
+Dialkyl alkylphosphonates
+Dialkyl phosphates
+Diazepanes
+Diazepines
+Dicarbonic acids and derivatives
+Dihydropyranones
+Dioxepanes
+Dioxepines
+Dithioketals
+Dithiophosphate S,S-diesters
+Enol ethers
+Epoxy fatty acids
+Epoxypiperidines
+Fatty acid esters
+Fatty acid methyl esters
+Fatty acyl thioesters
+Fluorobenzenes
+Gamma sultams
+Gamma sultims
+Gamma sultones
+Glycerol ethers
+Glycerolipids
+Halo-S-triazines
+Halobenzenes
+Halogenated fatty acids
+Halopyridines
+Halopyrimidines
+Heterocyclic fatty acids
+Hydantoins
+Hydroxy acids and derivatives
+Hydroxy fatty acids
+Hydroxylamine O-sulfonic acids
+Hydroxypyridines
+Hydroxypyrimidines
+Imidazolidinediones
+Iodobenzenes
+Isoxazolidinediones
+Ketals
+Keto fatty acids
+Maleimides
+Medium-chain aldehydes
+Meta thiazepines
+Methyl-branched fatty acids
+Methylpyridines
+Monoalkyl phosphates
+Monothioketals
+N'-substituted-N,N'-diacylhydrazines
+N-acyl ureas
+N-acylimidazoles
+N-acylphosphoramidothioic acid and derivatives
+N-aliphatic s-triazines
+N-alkylpiperazines
+N-arylated-2-aminothiophenes
+N-methylnitrosoureas
+N-methylpiperazines
+N-methylpyridinium compounds
+N-sulfonyloxaziridines
+Nitroguanidines
+O-aklylglycerones
+O-alkylglycerones
+Organic dithionites
+Organic peroxomonosulfates
+Organic phosphoric acid diamides
+Organic thiosulfate salts
+Organoboroxines
+Ortho esters
+Ortho thiazepines
+Oxazepines
+Oxazolidinediones
+Oxazolidinones
+Oxepanes
+Oxime carbamates
+Para thiazepines
+Peroxyacyl nitrates
+Phenols
+Phenoxides
+Phenylphosphines and derivatives
+Phosphonic acid diesters
+Phosphonic dihydrazides
+Phosphoramidothioic-acid-O,S-diesters
+Phosphoric monoester diamides
+Phosphorodithioic acid O,O-diesters
+Phosphorus mustard compounds
+Piperidinones
+Pyranones and derivatives
+Pyrazinium compounds
+Pyridazinones
+Pyridinolates
+Pyridinones
+Pyrimidinethiones
+Pyrimidones
+S-alkylisothiosemicarbazones
+Secondary alkylarylamines
+Short-chain hydroxy acids and derivatives
+Short-chain keto acids and derivatives
+Sugar acids and derivatives
+Sulfonyl isocyanates
+Sulfonylureas
+Sulfur mustard compounds
+Sulfuric acid diesters
+Thia fatty acids
+Thiazepines
+Thiazinanethiones
+Thiazolidinediones
+Thiepanes
+Thiepins
+Thiophosphate diesters
+Thiopyrimidines
+Thiopyrimidones
+Thiuram monosulfides
+Toluenes
+Trialkylphosphites
+Triazinethiones
+Triazinones
+Trimethylsilyl esters
+Urazoles
+Ureides
+b'-hydroxy-alpha,beta-unsaturated ketones
+m-Aminophenols
+o-Aminophenols
+p-Aminophenols
+(2R)-hydroxy acids
+(2R)-hydroxy acids and derivatives
+1,2,3,6-Tetrahydropyridines
+1,2,3-oxadiazines
+1,2,3-triazinanes
+1,2,3-triazines
+1,2,4-dithiazole-3-thiones
+1,2,4-oxadiazines
+1,2,4-triazinanes
+1,2,4-triazines
+1,2,5-oxadiazines
+1,2-dioxanes
+1,2-diselenins
+1,2-dithiole-3-ones
+1,2-dithiole-3-thiones
+1,2-oxazinanes
+1,2-oxazines
+1,2-thiazines
+1,3,4-oxadiazines
+1,3,5-dithiazinanes
+1,3,5-oxadiazines
+1,3,5-triazinanes
+1,3,5-triazines
+1,3-dicarbonyl compounds
+1,3-dioxanes
+1,3-diselenins
+1,3-oxazinanes
+1,3-oxazines
+1,3-thiazines
+1,4-dioxanes
+1,4-diselenins
+1,4-oxazines
+1,4-thiazines
+2-amino-1,3,4-thiadiazoles
+2-amino-1,3-thiazoles
+2-aminothiophenes
+Acrylic acid esters
+Acyl nitrates
+Acyloins
+Acylsulfonic acids
+Acylsulfonic acids and derivatives
+Aldazines
+Alkatriynes
+Alkyl imides
+Alkyl perchlorates
+Alkyl phosphates
+Alkyl sulfates
+Alpha hydroxy acids and derivatives
+Alpha-acyloxy aldehydes
+Alpha-acyloxy carbonyl compounds
+Alpha-branched alpha,beta-unsaturated ketones
+Alpha-diazo ketones
+Alpha-diketones
+Alpha-keto acids and derivatives
+Aminoimidazoles
+Aminosulfonodithioyl compounds
+Aminothiadiazoles
+Aminothiazoles
+Aminothiophenes
+Aromatic amines
+Arsonous acid esters
+Aryl bromides
+Aryl chlorides
+Aryl fluorides
+Aryl halides
+Aryl iodides
+Aryl mercury compounds
+Azaborinanes
+Azaborines
+Azaborinines
+Azarsinanes
+Azines
+Aziridinecarboxylic acids
+Aziridinecarboxylic acids or derivatives
+Azlactones
+Benzene and substituted derivatives
+Benzenoids
+Benzoxathiins
+Beta ketoaldehydes
+Beta sultams
+Beta sultims
+Beta sultones
+Beta-amino ketones
+Beta-hydroxy aldehydes
+Beta-hydroxy ketones
+Borinanes
+Boronic acid esters
+Butenolides
+Carbodithiolactones
+Carbohydrates and carbohydrate conjugates
+Carbonic acid diesters
+Carboxylic acid amide acetals
+Cyclitols
+Cyclitols and derivatives
+Cyclopentanols
+Cyclopropanecarboxylic acids
+Cyclopropanecarboxylic acids and derivatives
+Diacyl peroxides
+Diacylhydrazines
+Dialkyl hyponitrites
+Diazinanes
+Diazines
+Dicarboxylic acids and derivatives
+Dihydropyridines
+Diorganotrihaloarsoranes
+Dioxanes
+Dioxathiolanes
+Dioxins
+Diselenins
+Dithianes
+Dithiazinanes
+Dithiazolethiones
+Dithiins
+Dithiolethiones
+Dithiophosphate O-esters
+Dithiophosphate S-esters
+Epithionitriles
+Fatty Acyls
+Fatty acids and conjugates
+Fatty amides
+Furanones
+Furoxans
+Gamma butyrolactones
+Gamma lactams
+Gamma-amino ketones
+Glycerone and derivatives
+Hemiketals
+Hydrazinecarboxylic acid esters
+Hydrazineselenoamides
+Hydrazinesulfinic acids
+Hydrazinosulfonyl compounds
+Hydropyridines
+Hydropyrimidines
+Imidazolethiones
+Imidazolidinones
+Imidazolinones
+Imidolactams
+Imidolactones
+Imidothiolactones
+Inorganic pentavalent arsenic compounds
+Isothiosemicarbazones
+Isoxazolidinones
+Isoxazolinones
+Keto acids and derivatives
+Lipids and lipid-like molecules
+Metal aryls
+Monosaccharides
+Morpholines
+N-alkylpyrrolidines
+N-hydroxyguanidines
+N-methylpyrroles
+N-substituted N'-hydroxyguanidines
+N-substituted carboxylic acid imides
+N-substituted imidazoles
+N-substituted pyrroles
+N-sulfinylhydrazines
+Nitrosoureas
+Organic arsenates
+Organic bromate salts
+Organic chromates
+Organic fluorophosphonic acids and derivatives
+Organic iodate salts
+Organic orthonitrates
+Organic orthovanadates
+Organic perbromates
+Organic perchlorate salts
+Organic perchlorates
+Organic periodates
+Organic permanganates
+Organic peroxynitrates
+Organic perrhenates
+Organic pertechnetates
+Organic phosphite salts
+Organic phosphoramides
+Organic phosphoric acid halides
+Organic phosphoric acid monoamides
+Organic phosphoric acids
+Organic phosphoric acids and derivatives
+Organic selenates
+Organic selenite salts
+Organic sulfate salts
+Organic sulfite salts
+Organic sulfuric acids
+Organic sulfuric acids and derivatives
+Organic sulfuryl bromides
+Organic sulfuryl chlorides
+Organic sulfuryl fluorides
+Organic sulfuryl halides
+Organic sulfuryl iodides
+Organic thiophosphonic acid derivatives
+Organic thiophosphoric acid amides
+Organic thiophosphoric acid derivatives
+Organic thiophosphoric acid esters
+Organic thiophosphoric acid halides
+Organic thiophosphoric acids
+Organic thiophosphoric acids and derivatives
+Organic thiosulfates
+Organic thiosulfuric acids and derivatives
+Organoarsinous acid esters
+Organoarsinous acids
+Organophosphorotrithioic acids and derivatives
+Organosulfonic acid esters
+Organotetrahaloarsoranes
+Ortho dioxins
+Oxaborine derivatives
+Oxadiazines
+Oxanes
+Oxathianes
+Oxathiins
+Oxazaphosphinanes
+Oxazinanes
+Oxazines
+Oxirane carboxylic acids
+Oxirane carboxylic acids and derivatives
+Para dioxins
+Pentaorganoarsanes
+Pentavalent inorganic arsenic compounds
+Pentavalent organic arsenic compounds
+Phosphate esters
+Phosphinines
+Phosphonic acid esters
+Phosphonic amide esters
+Phosphoramidothioic acid O-esters
+Phosphoramidothioic acid S-esters
+Phosphorodiamides
+Phosphorodithioic acid O-monoesters
+Phosphoromonoamides
+Piperazines
+Piperidines
+Polycyclic acetylenes
+Primary aromatic amines
+Pyrans
+Pyrazines
+Pyrazolidinones
+Pyrazolones
+Pyridazines and derivatives
+Pyridines and derivatives
+Pyridinium derivatives
+Pyrimidines and pyrimidine derivatives
+Pyrrolidine-2-ones
+Pyrrolidine-3-ones
+Pyrrolidones
+S-alkyl thiosulfates
+S-hydrazinosulfonimidoyl compounds
+Selenonohydrazides
+Semicarbazones
+Stannines
+Straight chain fatty acids
+Substituted imidazoles
+Substituted pyrroles
+Sugar alcohols
+Sulfamic acid derivatives
+Sulfinohydrazonoperoxoic acids
+Sulfinyl sulfones
+Sulfonic acid esters
+Sulfono(thioperoxoic) SO-acids
+Sulfonodiimidoperoxoic acids
+Sulfonohydrazides
+Sulfonohydrazonamides
+Sulfonohydrazonic acids
+Sulfonohydrazonimidic acids
+Sulfonohydrazonothioic s-acids
+Sulfonoperoxoic acids
+Sulfuric acid amide esters
+Sulfuric acid diamides
+Sulfuric acid esters
+Sulfuric acid monoamides
+Sulfuric acid monoesters
+Telluronohydrazides
+Tetraalkylphosphonium halides
+Tetrahydropyridines
+Tetraorganoalkoxyarsoranes
+Tetraorganoarsonium salts
+Tetraorganostibonium salts
+Tetrathianes
+Tetrazines
+Thiadiazinanes
+Thiadiazines
+Thianes
+Thiazinanes
+Thiazines
+Thiazolidinethiones
+Thiazolidinones
+Thioamide-S,S-dioxides
+Thioamide-s,s-dioxides
+Thiocarbonic acid diesters
+Thiocarbonic acid ester halides
+Thiocarbonic acid monoesters
+Thiolane-2-thiones
+Thiolane-3-thiones
+Thiomorpholines
+Thiophene sulfoxides
+Thiophosphate esters
+Thiophosphate monoesters
+Thiophosphoric acid esters
+Thiopyrans
+Thiosemicarbazones
+Triazines
+Triorganodialkoxyarsoranes
+Triorganodihaloarsoranes
+Trioses
+Trioxanes
+Trioxolanes
+Trithianes
+Unsaturated fatty acids
+Vinylogous thioesters
+Ynones
+1,1-diunsubstituted alkanesulfonic acids
+1,1-diunsubstituted alkanesulfonic acids and derivatives
+1,2,3-oxadiazoles
+1,2,4-oxadiazoles
+1,2-dioxolanes
+1,2-dioxoles
+1,2-dithiolanes
+1,2-dithioles
+1,3,4-oxadiazoles
+1,3-aminoalcohols
+1,3-dioxolanes
+1,3-dioxoles
+1,3-dithiolanes
+1,3-dithioles
+3-cyanotriazenes
+Acetamides
+Acetate salts
+Acetohydroxamic acids
+Acetohydroximates
+Acetylenic peroxides
+Acrylic acids
+Acrylic acids and derivatives
+Acryloyl compounds
+Acyl nitrites
+Alkali metal carbonate salts
+Alkanesulfonic acids
+Alkanesulfonic acids and derivatives
+Alkatetraenes
+Alkenyl azides
+Alkoxysilanes
+Alkyl nitrates
+Alkylchloroformates
+Alkylphosphonofluoridic acids and esters
+Allylic alcohols
+Allylic hydroperoxides
+Alpha ketoaldehydes
+Alpha,beta-unsaturated aldehydes
+Alpha,beta-unsaturated carboxylic esters
+Alpha,beta-unsaturated ketones
+Alpha-amino ketones
+Alpha-bromoaldehydes
+Alpha-chloroketones
+Alpha-halocarboxylic acid derivatives
+Alpha-halocarboxylic acids
+Alpha-halocarboxylic acids and derivatives
+Alpha-haloketones
+Alpha-hydrogen aldehydes
+Alpha-hydroxy ketones
+Alpha-hydroxyaldehydes
+Amidoximes
+Aminosulfonyl compounds
+Aromatic hydrocarbons
+Arsoles
+Azoles
+Azolidines
+Azolines
+Azomethines
+Azonic acids and derivatives
+Azoxy compounds
+Beta lactams
+Beta propiolactones
+Borate esters
+Borinic acid esters
+Carbamate esters
+Carbo-azosulfones
+Carbohydrazonohydrazides
+Carbonic acid ester halides
+Carbonic acid monoesters
+Carbothioic O-lactones
+Carbothioic S-lactones
+Carboxylic acid anhydrides
+Carboxylic acid azides
+Carboxylic acid imides
+Chloroacetamides
+Chloroformic acid esters
+Cyclic carboximidic acids
+Cyclic dithiocarbamates
+Cyclic dithiocarbamic acid esters
+Cyclic imidothioic acids
+Cyclic imidoyl halides
+Cyclic sulfite esters
+Dialkylsilanediols
+Diarsolanes
+Diazaphospholanes
+Diazaphospholes
+Diazaphospholines
+Dicarboximides
+Dihydrofurans
+Dihydrothiophenes
+Dioxaborolanes
+Dioxaboroles
+Dioxaphospholanes
+Dioxolanes
+Dioxoles
+Dithiazoles
+Dithioacetals
+Dithiocarbamate salts
+Dithiocarbamic acid esters
+Dithiolanes
+Dithioles
+Dithiosulfonic O-acids
+Dithiosulfonic S-acids
+Enals
+Enoate esters
+Enol esters
+Enones
+Episulfones
+Formazans
+Furans
+Furazans
+Heteroaromatic compounds
+Hydrazidines
+Hydrazinecarboxamides
+Hydrazinecarboxylic acids
+Hydrazinecarboxylic acids and derivatives
+Hydroxamic acid esters
+Imidazoles
+Imidazolidines
+Imidazolines
+Inorganic 3-nitrosotriazenes
+Inorganic phosphorotrithioic acids and derivatives
+Inorganic sulfuryl bromides
+Inorganic sulfuryl chlorides
+Inorganic sulfuryl fluorides
+Inorganic sulfuryl halides
+Inorganic sulfuryl iodides
+Isocyanide dichlorides
+Isothiocyanate acids
+Isoxazoles
+Isoxazolidines
+Isoxazolines
+Ketene silyl acetals
+Ketoximes
+Lactams
+Metal carbonate salts
+Methanesulfonates
+Methyl esters
+Methylcarbamates
+Monoalkylsilanetriols
+Monothioacetals
+N,S-acetals
+N-unsubstituted carboxylic acid imides
+N-vinylaziridines
+Nitramines
+Nitrate esters
+Nitrimines
+Nitrosamides
+O-thiocarbamates
+Organic antimonates
+Organic chlorates
+Organic chromium trioxides
+Organic dithiophosphoric acids and derivatives
+Organic iodates
+Organic nitrates
+Organic peroxynitrites
+Organic phosphites
+Organic phosphonic acid diamides
+Organic phosphonic acids
+Organic phosphonic acids and derivatives
+Organic selenites
+Organic stannates
+Organic sulfites
+Organic sulfonamides
+Organic sulfonic acids
+Organic sulfonic acids and derivatives
+Organic thiophosphoric acid and derivatives
+Organolead sulfides
+Organophosphine oxides
+Organosulfonamides
+Organosulfonic acids
+Organosulfonic acids and derivatives
+Organotin selenides
+Organotin sulfides
+Organotin tellurides
+Oxaborole derivatives
+Oxadiazoles
+Oxadiazolidines
+Oxaphospholanes
+Oxathiaphospholanes
+Oxathiazolidines
+Oxathiolanes
+Oxathioles
+Oxatriazoles
+Oxatriazolidines
+Oxazoles
+Oxazolidines
+Oxazolines
+Oxime esters
+Oxolanes
+Peroxycarboxylic acids
+Peroxycarboxylic acids and derivatives
+Perselenic acids
+Perselenic acids and derivatives
+Phospholanes
+Phospholes
+Pyrazoles
+Pyrazolidines
+Pyrazolines
+Pyrroles
+Pyrrolidines
+Pyrrolines
+Quaternary ammonium salts
+S-Alkyl-thiocarbamates
+S-aminosulfonimidothioyl compounds
+S-thiocarbamates
+Secondary carboxylic acid amides
+Secondary ketimines
+Selenazoles
+Seleninohydrazides
+Selenodiimidic acids
+Selenoesters
+Selenophenes
+Semicarbazides
+Silyl dihalides
+Silyl monohalides
+Silyl trihalides
+Stannoles
+Sulfinic acid esters
+Sulfinic acids
+Sulfinohydrazonic acids
+Sulfinohydroximic acids
+Sulfinoimidoperoxoic acids
+Sulfite esters
+Sulfonediimides
+Sulfones
+Sulfonimidic acids
+Sulfonimidodithioic acids
+Sulfonodihydrazonic acids
+Sulfonodiimidamides
+Sulfonodiimidic acids
+Sulfonohydrazonothioic o-acids
+Sulfonoselenoic Se-acids
+Sulfonothioic O-acids
+Sulfonothioic S-acids
+Sulfonyl bromides
+Sulfonyl chlorides
+Sulfonyl fluorides
+Sulfonyl halides
+Sulfonyl iodides
+Sulfonylamines
+Sulfonylnitrenes
+Sulfonyls
+Sultams
+Sultims
+Tellurinohydrazides
+Tellurones
+Tertiary alcohols
+Tertiary carboxylic acid amides
+Tetraalkylammonium salts
+Tetraalkylphosphonium compounds
+Tetraalkyltins
+Tetrahydrofurans
+Tetrahydropyrans
+Tetraorganolead compounds
+Tetraorganotin compounds
+Tetrazoles
+Tetrazolidines
+Tetrazolines
+Thiadiazoles
+Thiadiazolidines
+Thiadiazolines
+Thiatriazoles
+Thiazoles
+Thiazolidines
+Thiazolines
+Thioacetals
+Thioamide-S-oxides
+Thioamide-s-oxides
+Thioamides
+Thiocarbamic acid esters
+Thiocarbamic acids
+Thioketone s-oxides
+Thiolactams
+Thiolanes
+Thiophenes
+Thiosemicarbazides
+Thiosulfinic acid esters
+Thiosulfonic acids
+Thiosulfonimidic o-acids
+Thiosulfonimidic s-acids
+Trialkyl amine oxides
+Trialkylantimony halides
+Trialkylarsane oxides
+Trialkylarsine oxides
+Trialkylchlorosilanes
+Trialkylheterosilanes
+Trialkylphosphane oxides
+Trialkylsilanols
+Triazoles
+Triazolidines
+Triazolidinones
+Triazolines
+Triazolones
+Triorganotin halide salts
+Triorganotin metal salts
+Trisubstituted amine oxides and derivatives
+Trithiolanes
+Trithiosulfonic acids
+Vinylaziridines
+Vinylogous acids
+Vinylogous amides
+Vinylogous esters
+Vinylogous halides
+Ynals
+Ynoate esters
+alpha-Mercaptocarboxylic acids
+1,2-aminoalcohols
+1,2-diols
+Aldoximes
+Alkadiynes
+Alkanesulfinic acids
+Alkanesulfinic acids and derivatives
+Alkatrienes
+Alkyl azides
+Alkyl nitrites
+Alkylaluminium halides
+Alkyldiazohydroxides
+Alkylhaloboranes
+Alkylhalophosphines
+Allyl sulfur compounds
+Alpha,beta-unsaturated carbonyl compounds
+Alpha-aminonitriles
+Alpha-hydroxynitriles
+Amidrazones
+Amino acids
+Amino acids and derivatives
+Aminosulfinyl compounds
+Azalactones
+Azetidines
+Aziridinones
+Azo imides
+Borinic acid derivatives
+Borinic acids
+Boronic acid derivatives
+Boronic acids
+Branched alkanes
+Branched cycloalkanes
+Branched unsaturated hydrocarbons
+Bromohydrins
+C-nitro compounds
+Carbamic acid halides
+Carbamic acids
+Carbamic acids and derivatives
+Carbodithioic acid esters
+Carbodithioic acids
+Carbonate salts
+Carboperoxoic acids
+Carboperoxoselenoic acids
+Carboperoxothioic OO-acids
+Carboselenoamides
+Carboselenoic acids
+Carboselenoic acids and derivatives
+Carbotelluroamides
+Carbotelluroic acids and derivatives
+Carbothioic O-acids
+Carbothioic O-esters
+Carbothioic S-acids
+Carbothioic S-esters
+Carboximidohydrazides
+Carboxylic acid esters
+Carboxylic acid hydrazides
+Carboxylic acid salts
+Chlorohydrins
+Cumulenes
+Cyanate esters
+Cyanohydrins
+Cyclic alcohols and derivatives
+Cyclic ketones
+Dialkyl peroxides
+Dialkyldisulfides
+Dialkylsilanols
+Dialkyltin salts
+Diazetidines
+Diazo compounds
+Diazoethers
+Difluoroamino compounds
+Dihaloarsines
+Dihydroxyphosphanes
+Dioxetanes
+Diselenides
+Disubstituted amine oxides and derivatives
+Ditellurides
+Dithietanes
+Dithiocarbamic acids
+Dithiocarbamic acids and derivatives
+Dithiocarboxylic acid esters
+Dithiohemiacetals
+Enediols
+Enynes
+Fluorohydrins
+Guanidines
+Halohydrins
+Hemiacetals
+Hemiaminals
+Hydroxamic acids
+Idoxy compounds
+Imidoesters
+Imidothioesters
+Imidoyl bromides
+Imidoyl chlorides
+Imidoyl fluorides
+Imidoyl halides
+Imidoyl iodides
+Inorganic antimony salts
+Inorganic chromium trioxides
+Inorganic thionylimides
+Inorganic trivalent arsenic compounds
+Internal alkynes
+Iodohydrins
+Isocyanates
+Isodiazenes
+Isothiocyanates
+Isothioureas
+Isoureas
+Ketene acetals
+Ketimines
+Ketones
+Lactims
+Lactones
+Metal acetylides
+Metal allyls
+Metal cyanates
+Metal thiocyanates
+Methylated trivalent arsenic compounds
+Monoalkylsilanediols
+Monohaloarsines
+N-acylimines
+N-alkylated hydrazones
+Nitrite esters
+Nitrones
+Nitronic acids
+Nitrosimines
+Nitrosothiols
+Oligophosphenes
+Organic N-nitroso compounds
+Organic O-nitroso compounds
+Organic S-nitroso compounds
+Organic antimony salts
+Organic azides
+Organic carbonic acids
+Organic carbonic acids and derivatives
+Organic chlorite salts
+Organic chlorites
+Organic chromites
+Organic diazonium salts
+Organic hydroperoxides
+Organic hypophosphites
+Organic hyposulfites
+Organic nitric acids
+Organic nitric acids and derivatives
+Organic nitrites
+Organic nitro compounds
+Organic nitrosamines
+Organic phosphines and derivatives
+Organic plumbates
+Organic sulfonium compounds
+Organic thiocarbonic acid derivatives
+Organic thiocarbonic acids
+Organic thionitrous acids
+Organic thionylimides
+Organic thioperoxides
+Organic thiosulfinic acids
+Organic triazanes
+Organic triazenes
+Organic trisulfides
+Organoarsonous acids
+Organoazides
+Organometallic peroxides
+Organophosphinic acids and derivatives
+Ortho acids
+Ortho amides
+Orthocarboxylic acid derivatives
+Oxathietanes
+Oxetanes
+Oxetenes
+Oxime ethers
+Phosphinamidines
+Phosphinic acid esters
+Polycyclic hydrocarbons
+Primary carboxylic acid amides
+Primary ketimines
+Secondary alcohols
+Selenimidic acids
+Seleninic acids and derivatives
+Selenonyl compounds
+Selenoxides
+Selones
+Shiff bases
+Silyl ethers
+Sulfenes
+Sulfenic acid esters
+Sulfinamidines
+Sulfinic acid amides
+Sulfinic acid halides
+Sulfinic acids and derivatives
+Sulfinyl halides
+Sulfinylamines
+Sulfonimidamides
+Sulfonimidoselenoic acids
+Sulfoxides
+Telluric acids
+Telluric acids and derivatives
+Tellurinohydrazonic acids
+Telluronyl compounds
+Telluroxides
+Tertiary amines
+Tertiary arsines
+Tertiary stibines
+Thiazetidines
+Thietanes
+Thietes
+Thioaldehyde s-oxides
+Thiocarbamate salts
+Thiocarbamic acid bromides
+Thiocarbamic acid chlorides
+Thiocarbamic acid derivatives
+Thiocarbamic acid fluorides
+Thiocarbamic acid halides
+Thiocarbamic acid iodides
+Thiocarbonyl s-imides
+Thiocarboxylic acids and derivatives
+Thiodiarsines
+Thiodisulfinates
+Thioenol ethers
+Thioesters
+Thiohydroximic acids
+Thiohydroximic acids and derivatives
+Thioketones
+Thiolactones
+Thioureas
+Trialkylaluminiums
+Trialkylamines
+Trialkylarsanes
+Trialkylboranes
+Trialkylphosphanes
+Trialkylsilanes
+Trialkylstibanes
+Trialkyltins
+Trihalomethanes
+Triorganolead compounds
+Triorganotin compounds
+Trivalent inorganic arsenic compounds
+Trivalent organic arsenic compounds
+Ureas
+Ynamines
+isodiazene
+silyl ether
+sulfinyl halides
+1,1-diols
+Acetals
+Acetylides
+Acyclic allenes
+Acyl astatides
+Acyl bromides
+Acyl carbenes
+Acyl chlorides
+Acyl cyanides
+Acyl fluorides
+Acyl halides
+Acyl iodides
+Aldimines
+Alkadienes
+Alkanolamines
+Alkyl hydroperoxides
+Alkylarsine oxides
+Alkylarylsilanes
+Alkylhalosilanes
+Alkylhydrazines
+Alkylmagnesium halides
+Alkylthiols
+Allenes
+Allyl-type 1,3-dipolar inorganic compounds
+Allyl-type 1,3-dipolar organic compounds
+Allylamines
+Amidines
+Aminals
+Aminoxides
+Aromatic alcohols
+Arsine imides
+Arsine oxides
+Arsine sulfides
+Azacyclic compounds
+Aziridines
+Azirines
+Bromoalkenes
+C-nitroso compounds
+Carbene-type 1,3-dipolar compounds
+Carbodiimides
+Carbodiselenoic acids
+Carbonyl hydrates
+Carbonyl imides
+Carbonyl oxides
+Carbonyl ylides
+Carbonylnitrenes
+Carboselenothioic S-acids
+Carboselenothioic Se-acids
+Carbothioic halides
+Carboxamidines
+Carboximidamides
+Carboximidic acids
+Carboximidic acids and derivatives
+Carboxylic acid amides
+Carboxylic acid derivatives
+Carboxylic acids
+Carboxylic acids and derivatives
+Chloroalkenes
+Chlorofluorocarbons
+Cyanates
+Cyanide salts
+Cyanogens
+Cyclic acetylenes
+Cyclic allenes
+Cyclic olefins
+Cycloalkanes
+Cycloalkenes
+Dialkyl ethers
+Dialkylamines
+Dialkylboranes
+Dialkylmagnesiums
+Dialkylthioethers
+Dialkyltins
+Dialkylzincs
+Diazirines
+Dioxiranes
+Diphosphenes
+Dithiocarboxylic acid amides
+Dithiocarboxylic acids
+Dithiocarboxylic acids and derivatives
+Enamines
+Enolates
+Enols
+Epoxides
+Ethers
+Fluoroalkenes
+Formamidines
+Fulminates
+Geminal diols
+Haloacetylenes and derivatives
+Haloalkenes
+Heterocyclic compounds
+Hydrazones
+Idoso compounds
+Imidocarbonyl compounds
+Imidothioic acids
+Imidothioic acids and derivatives
+Imidoyl carbenes
+Inorganic 1,3-dipolar compounds
+Inorganic azides
+Inorganic nitrites
+Inorganic nitrosamines
+Iodoalkenes
+Isoselenocyanates
+Ketenes
+Metal alkyl halides
+Metalloheterocyclic compounds
+Monoalkylsilanols
+Monocarboxylic acids and derivatives
+Monocyclic acetylenes
+Monosubstituted amine oxides and derivatives
+N-organohydroxylamines
+N-silyl compounds
+Nitrile imides
+Nitrile oxides
+Nitrile selenides
+Nitrile sulfides
+Nitrile ylides
+Nitriles
+Nitroso compounds
+OS-thioperoxols
+Organic 1,3-dipolar compounds
+Organic acids and derivatives
+Organic alkali metal salts
+Organic aluminates
+Organic beryllium salts
+Organic calcium salts
+Organic cyanamides
+Organic disulfides
+Organic hydroxides
+Organic hypobromites
+Organic hypochlorites
+Organic hyponitrites
+Organic isocyanides
+Organic lithium salts
+Organic metal bromide salts
+Organic metal halides
+Organic metal salts
+Organic metalloid salts
+Organic nitroso compounds
+Organic nitrosonium compounds
+Organic oxoazanium compounds
+Organic peroxides
+Organic post-transition metal salts
+Organic superoxides
+Organic transition metal salts
+Organoarsenic sulfides
+Organochlorosilanes
+Organoheterocyclic compounds
+Organoheterosilanes
+Organomagnesium halides
+Organosulfenic acid amides
+Organosulfenic acid halides
+Organosulfenic acids
+Organosulfenic acids and derivatives
+Organothiophosphorus compounds
+Oxacyclic compounds
+Oxaziridines
+Oximes
+Oxirenes
+Oxonium ylides
+Oxygen-containing organoarsenic compounds
+Peroxols
+Phosphacyclic compounds
+Phosphine imides
+Phosphine sulfides
+Phosphiranes
+Polyols
+Primary alcohols
+Primary aldimines
+Propargyl-type 1,3-dipolar inorganic compounds
+Propargyl-type 1,3-dipolar organic compounds
+S-alkylsulfenates
+SO-thioperoxols
+Secondary amines
+Secondary stibines
+Selenenic acids
+Selenenyl halides
+Seleninyl compounds
+Seleniranes
+Selenocarbonyl compounds
+Selenocyanates
+Selenoethers
+Selenols
+Short-chain aldehydes
+Silanols
+Silyl enol ethers
+Sulfenyl compounds
+Sulfenyl halides
+Sulfimides
+Sulfines
+Sulfinyl compounds
+Sulfur-containing organoarsenic compounds
+Telluraldehydes
+Tellurinyl compounds
+Tellurocarbonyl compounds
+Telluroethers
+Terminal alkynes
+Thiaziridines
+Thiiranes
+Thiirenes
+Thioaldehydes
+Thiocarboxylic acid amides
+Thiocarboxylic acids
+Thiocyanates
+Thioenols
+Thioethers
+Thiohemiaminal derivatives
+Thioperoxols
+Thioselenides
+Transition metal cyanide salts
+Triazinanes
+Triazirines
+Vinyl bromides
+Vinyl carbenes
+Vinyl chlorides
+Vinyl fluorides
+Vinyl halides
+Vinyl iodides
+Ynolates
+Ynols
+cyanogen
+silanol
+Acetylenes
+Actinide salts
+Acyclic acetylenes
+Acyclic olefins
+Alcohols and polyols
+Aldehydes
+Alkali metal salts
+Alkaline earth metal salts
+Alkenes
+Alkoxides
+Alkyl bromides
+Alkyl chlorides
+Alkyl fluorides
+Alkyl halides
+Alkyl iodides
+Alkyl lead compounds
+Alkyl mercury compounds
+Alkylaluminium and derivatives
+Alkylboranes
+Alkylsilanes
+Alkynes
+Amine oxides and derivatives
+Amines
+Ammonium ylides
+Arsines
+Azo compounds
+Carbides
+Carbonyl compounds
+Formamides
+Halomethanes
+Hydrazines and derivatives
+Hydrobromides
+Hydrocarbon derivatives
+Hydrochlorides
+Hydrofluorocarbons
+Imines
+Inorganic arsenides
+Inorganic beryllium salts
+Inorganic cadmium salts
+Inorganic calcium salts
+Inorganic chloride salts
+Inorganic cobalt salts
+Inorganic copper salts
+Inorganic cyanides
+Inorganic hydrides
+Inorganic hydroxylamines
+Inorganic isocyanides
+Inorganic lead salts
+Inorganic lithium salts
+Inorganic nitrides
+Inorganic oxides
+Inorganic phosphides
+Inorganic salts
+Inorganic selenides
+Inorganic silicides
+Inorganic silver salts
+Inorganic sodium salts
+Inorganic sulfides
+Inorganic tin salts
+Inorganic zwitterions
+Lanthanide salts
+Metal alkyls
+Metalloid salts
+Methoxides
+Miscellaneous metallic oxoanionic compounds
+Miscellaneous mixed metal/non-metals
+Mixed metal/non-metal compounds
+Monoalkylamines
+Monoalkylboranes
+Monoalkyltins
+Olefins
+Organic aluminium salts
+Organic bromide salts
+Organic cadmium salts
+Organic chloride salts
+Organic chromium salts
+Organic cobalt salts
+Organic copper salts
+Organic cyanides
+Organic hydrochlorides
+Organic iodide salts
+Organic lead salts
+Organic nitrenes
+Organic nitrogen compounds
+Organic oxides
+Organic oxoanionic compounds
+Organic oxygen compounds
+Organic post-transtion metal salts
+Organic potassium salts
+Organic salts
+Organic silver salts
+Organic sodium salts
+Organic tin salts
+Organic zwitterions
+Organo-alkali-metal compounds
+Organo-post-transition metal compounds
+Organoalkaline-earth metal compounds
+Organoaluminium compounds
+Organoantimony compounds
+Organoarsenic compounds
+Organoastatides
+Organoboron compounds
+Organobromides
+Organochlorides
+Organochromium compounds
+Organocopper compounds
+Organofluorides
+Organogold compounds
+Organohalogen compounds
+Organoiodides
+Organolead compounds
+Organolithium compounds
+Organomagnesium compounds
+Organomercurial compounds
+Organometallic compounds
+Organometalloid compounds
+Organonickel compounds
+Organonitrogen compounds
+Organooxygen compounds
+Organophosphorus compounds
+Organopnictogen compounds
+Organoselenium compounds
+Organosilicon compounds
+Organosilver compounds
+Organosulfur compounds
+Organotellurium compounds
+Organothalium compounds
+Organotin compounds
+Organotransition metal compounds
+Organozinc compounds
+Post-transition metal organides
+Post-transition metal salts
+Post-transtion metal salts
+Primary amines
+Primary stibines
+Salt-like carbides
+Tellones
+Tellurols
+Thiocarbonyl compounds
+Thiols
+Transition metal alkyls
+Transition metal salts
+Unsaturated aliphatic hydrocarbons
+Unsaturated hydrocarbons
+Alkanes
+Carbenes
+Homogeneous metal compounds
+Homogeneous non-metal compounds
+Hydrocarbons
+Inorganic anions
+Inorganic arsenic compounds
+Inorganic cations
+Inorganic chromium (VI) compounds
+Inorganic compounds
+Inorganic mercury compounds
+Inorganic nickel compounds
+Inorganic pnictogen compounds
+Inorganic thalium compounds
+Miscellaneous inorganic compounds
+Organic anions
+Organic cations
+Organic compounds
+Saturated hydrocarbons

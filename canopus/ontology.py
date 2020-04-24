@@ -118,7 +118,7 @@ class Category(object):
 
 def write_ontology(ontology, filename):
     print("write into file")
-    with filename.open("w") as fhandle: 
+    with filename.open("w", encoding='utf-8') as fhandle: 
         for category in ontology.categories.values():
             fhandle.write(category.to_tsv())
             fhandle.write("\n")
@@ -126,7 +126,7 @@ def write_ontology(ontology, filename):
     
 def ontology_from_tsv(filename):
     categories = {}
-    with filename.open() as fhandle:
+    with filename.open(encoding='utf-8') as fhandle:
         for line in fhandle:
             line = line.rstrip()
             (oid,name,description,parent_oid) = line.split("\t")
