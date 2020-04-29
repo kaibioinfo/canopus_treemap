@@ -501,8 +501,6 @@ div.networkDescription {
     code = pkg_resources.resource_string("canopus.resources", "network.js").decode("utf-8")
     customCode = self.to_json()
     code = code.replace('"<CUSTOM-CODE>";', customCode + ";\n").replace('<CUSTOM-ID>', self.uid).replace("\"<CUSTOM-ONTOLOGY>\"",self.ontology.to_json())
-    with open("fuck.js","w") as f:
-      f.write(code)
     display(Javascript(code))
 
   def __init__(self,uid=None):
