@@ -89,6 +89,8 @@ class Category(object):
     def classyFireGenus(self):
         ys=list(reversed(self.ancestors()))
         genus = dict()
+        if (len(ys)<=1):
+            return
         genus["kingdom"] = ys[1]
         if len(ys)>2:
             genus["superclass"] = ys[2]
