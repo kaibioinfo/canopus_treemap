@@ -19,6 +19,7 @@ File.open("gnps.mgf","w") {|io|
     io.puts "FEATURE_ID=#{c.name}"
     io.puts "PEPMASS=#{mz}"
     io.puts "CHARGE=1+"
+    io.puts "MSLEVEL=2"
     io.puts "RTINSECONDS=#{rt}"
     io.puts "SCANS=#{name}"
     spec.slice_before(/^>(ms1|ms2|coll)/).drop(1).each {|batch|
