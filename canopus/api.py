@@ -310,7 +310,7 @@ class Canopus(object):
       plt.subplot(1,len(conditions),i+1)
       cb=plt.imshow(Q.loc[cmps,grp.samples],vmin=m,vmax=m2,aspect="auto")
       plt.title(grp.name)
-    plt.show()
+    
 
   def histogram(self, compound, conditions=None):
     """
@@ -330,7 +330,7 @@ class Canopus(object):
     plt.subplot(1, 2, 2)
     self.__drawQuant__(self.QuantLogarithmic,compound,conditions)
     plt.ylabel("logarithmized intensity")
-    plt.show()
+    
 
   def __drawQuant__(self, quant, compound, conditions):
     compound = self.__fid__(compound)

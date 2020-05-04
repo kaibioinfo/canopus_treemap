@@ -74,7 +74,6 @@ class CanopusRenderer:
       mids.append(mid)
       names.append(name)
     plt.xticks(ticks=mids,labels=names)
-    plt.show()
 
   def canopusTreeTable(self,compound,threshold=0.25):
     compound = self.__compound__(compound)
