@@ -8,6 +8,7 @@ import numpy as np
 import math
 import pkg_resources
 import json
+from glob import glob
 import collections
 import pandas
 
@@ -395,9 +396,7 @@ class SiriusInstance(object):
 
     def __parse_canopus(self):
         filename = None
-        if self.maxFingerblast:
-            filename = self.maxFingerblast
-        elif self.maxZodiac:
+        if self.maxZodiac:
             filename = self.maxZodiac
         elif self.maxSirius:
             filename = self.maxSirius
@@ -419,7 +418,7 @@ class SiriusInstance(object):
 
     def __parse_scores(self):
         self.scores = dict()
-        with open(Path(self.dirname, "formula_candidates.csv")) as fhandle:
+        with open(Path(self.dirname, "formula_candidates.tsv")) as fhandle:
             header = fhandle.readline()
             header = header.rstrip().split("\t")
             formula = header.index("precursorFormula")
@@ -427,34 +426,44 @@ class SiriusInstance(object):
             adduct = header.index("adduct")
             sirius = header.index("siriusScore") if "siriusScore" in header else header.index("TreeIsotope_Score")
             zodiac = header.index("zodiacScore") if "zodiacScore" in header else (header.index("Zodiac_Score") if "Zodiac_Score" in header else None)
-            fingerblast = header.index("TopFingerblastScore") if "TopFingerblastScore" in header else None
             maxSirius = None
             maxZodiac = None
-            maxFingerblast = None
+            maxCanopus = None
             hits=[]
             maxFormula = None
             for line in fhandle:
-                c=line.rstrip().split("\t")
-                hits.append((c[formula], c[adduct].replace(" ",""), float(c[sirius]),float(c[zodiac]) if zodiac else None, float(c[fingerblast]) if fingerblast else None, c[neutralFormula]))
+                c=line.replace("N/A", "NaN").rstrip().split("\t")
+                hits.append((c[formula], c[adduct].replace(" ",""), float(c[sirius]),float(c[zodiac]) if zodiac else None, None, c[neutralFormula]))
             for (f,a,s,z,b,n) in hits:
-                p = Path(self.dirname, "canopus",f+"_"+a+".fpt")
-                if b and math.isnan(b):
-                    b = -math.inf
                 if (maxSirius is None or s > maxSirius[2]):
-                    maxSirius = (f,a,s,n)
+                    maxSirius = [f,a,s,n]
                 if zodiac and (maxZodiac is None or z > maxZodiac[2]):
-                    maxZodiac = (f,a,z,n)
+                    maxZodiac = [f,a,z,n]
                     maxFormula = f
             if not maxFormula:
                 maxFormula = maxSirius[0]
-            for (f,a,s,z,b,n) in hits:    
-                if fingerblast and (maxFingerblast is None or b > maxFingerblast[2]) and p.exists() and f==maxFormula:
-                    maxFingerblast = (f,a,b,n)
+            bestAdduct = maxZodiac[1] if maxZodiac else maxSirius[1]
+            #adductScore = 0
+            #for filename in Path(self.dirname,"canopus").glob(maxFormula+"_"+"*"+".fpt"):
+            #    adduct = filename.name.split("_")[1].split(".fpt")[0] 
+            #    cfp = np.loadtxt(filename)
+            #    cfp[cfp<0.25]=0
+            #    canopusScore = np.dot(cfp,cfp)
+            #    if maxCanopus is None or canopusScore > maxCanopus[2]:
+            #        maxCanopus = (f, adduct, canopusScore, n)
+            #    if bestAdduct is None or canopusScore > adductScore:
+            #        bestAdduct = adduct
+            #        adductScore = canopusScore
+            #if maxZodiac:
+            #    maxZodiac[1] = bestAdduct
+            #else:
+            #    maxSirius[1] = bestAdduct
+
             self.maxSirius = maxSirius
             self.maxZodiac = maxZodiac
-            self.maxFingerblast = maxFingerblast
+            self.maxCanopus = None#maxCanopus
 
-            if (self.maxSirius is None) and (self.maxZodiac is None) and (self.maxFingerblast is None):
+            if (self.maxSirius is None) and (self.maxZodiac is None) and (self.maxCanopus is None):
                 raise Exception("Error for instance %s" % self.dirname)
 
 
@@ -469,11 +478,14 @@ class SiriusWorkspace(object):
         if Path(rootdir).is_dir():
             self.load_ontology_index()
             self.load_compounds()
+            print("%d compounds in workspace " % len(self.compounds))
         else:
             self.load_compounds_from_csv(rootdir)
         self.statistics = CanopusStatistics(self)
         self.statistics.setCompounds(self.compounds)
+        print("-> %d compounds in workspace " % len(self.compounds))
         self.statistics.assign_most_specific_classes()
+        print("--> %d compounds in workspace " % len(self.compounds))
 
     def make_quant(self):
         for adir in Path(self.rootdir).glob("*/spectrum.ms"):
@@ -572,11 +584,15 @@ class SiriusWorkspace(object):
         return mapping
 
     def load_compounds(self):
+        counter=0
+        counter2=0
+        namer = dict()
         for adir in Path(self.rootdir).glob("*/spectrum.ms"):
             compound_dir = adir.parent
             if not Path(compound_dir, "canopus").exists():
                 continue
             try:
+                counter += 1
                 name = None
                 with adir.open() as fhandle:
                     for line in fhandle:
@@ -592,13 +608,17 @@ class SiriusWorkspace(object):
                     cmp.adduct = siriusInstance.topAdduct
                     cmp.zodiacScore = siriusInstance.zodiacScore
                     cmp.quality = siriusInstance.quality
+                    counter2 += 1
+                    namer[name] = True
             except StopIteration:
                 pass
+        print(len(namer))
+        print(counter2)
         
         
     def load_ontology_index(self):
         mapping = dict()
-        with Path(self.rootdir, "canopus.csv").open() as fhandle:
+        with Path(self.rootdir, "canopus.tsv").open() as fhandle:
             header=None
             ri = None
             coid = None

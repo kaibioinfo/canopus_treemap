@@ -41,7 +41,7 @@ class CanopusRenderer:
       compound.name
     )))
     # plot top structure results
-    f = Path("%s/structure_candidates.csv" % compound.directory)
+    f = Path("%s/structure_candidates.tsv" % compound.directory)
     if f.exists():
       table = pd.read_csv(f,sep="\t")
       display(table.sort_values(by="score",ascending=False).head(10))
@@ -82,12 +82,12 @@ class CanopusRenderer:
     astree = self.workspace.ontology.root
     # add root
     fp[astree] = 1.0
-    display(HTML(self.__displayTreeAsHTML__(fp,astree,0)))
+    display(HTML(self.__getTreeAsHTML__(fp,astree,0)))
 
   def __tooltip__(self,text, tipp):
     return "<span title='" + tipp + "'>" + text + "</span>"
 
-  def __displayTreeAsHTML__(self,fp,root,indent):
+  def __getTreeAsHTML__(self,fp,root,indent):
     s=""
     weight = "bold" if fp[root]>0.5 else "italic"
     s += "<li>" + self.__tooltip__("<span style='font-weight:" + weight +"'>" + root.name + "</span>" + "<span style='margin-left:15pt;font-weight:" + weight + "'>" + 
@@ -96,7 +96,7 @@ class CanopusRenderer:
     c=0
     for child in root.children:
       if child in fp:
-        t += self.__displayTreeAsHTML__(fp,child,indent+1)
+        t += self.__getTreeAsHTML__(fp,child,indent+1)
         c +=1
     t += "</ul>"
     if c>0:
@@ -109,9 +109,12 @@ class CanopusRenderer:
           statistics = self.workspace.statistics
       self.treemaps.append(statistics)
       
-      
-  def renderCSS(self):      
-      display(HTML(r"""
+  
+  def renderCSS(self):
+    display(HTML(self.getCSS()))
+
+  def getCSS(self):      
+      return r"""
 <style>
 #main {
   width: 100%;
@@ -201,14 +204,29 @@ div.node {
   fill: #fff;
 }
 </style>
-"""))
-      
+"""
+
+  def toFile(self, filename):
+      with open(filename,"w") as fhandle:
+        fhandle.write("<html>\n")
+        fhandle.write(self.getCSS())
+        fhandle.write("<script>\n")
+        fhandle.write(self.getJavascript())
+        fhandle.write("</script>\n")
+        fhandle.write("<body>\n")
+        fhandle.write(self.getHTML())
+        fhandle.write("</body>\n")
+        fhandle.write("</html>\n")
+
   def render(self):
       self.renderCSS()
       self.renderHTML()
       self.renderJavascript()
-      
+
   def renderHTML(self):
+    display(HTML(self.getHTML()))
+
+  def getHTML(self):
       charts = "\n".join([
           "<div class=\"chart\" id=\"chart" + self.uid + "_" + str(i) + "\">"
           """
@@ -219,17 +237,19 @@ div.node {
               </div>
             </div>
           """ for (i,_) in enumerate(self.treemaps)])
-      display(HTML("<div id=\"main" + "_" +self.uid + "\">" +
-"""
+      return "<div id=\"main" + "_" +self.uid + "\">" + """
     <div class="treelegend"></div>
     <div class="sequence"></div>
 """ + charts + """<div class="sidebar">
     <div>
     <p class="description"></p>
     </div>
-</div>"""))
-      
+</div>"""
+  
   def renderJavascript(self):
+    display(Javascript(self.getJavascript()))
+
+  def getJavascript(self):
       customCode = "var json = " + json.dumps(self.workspace.json_treemap(use_probabilities=self.use_probabilities)) + """;
 var nodes = [];
 allnodes(json, nodes);
@@ -237,5 +257,5 @@ loadColors(nodes);
       """;
       charts = "\n".join(["createVisualization(" + json.dumps(self.workspace.json_treemap(x,use_probabilities=self.use_probabilities)) + ", \"" + self.uid + "\""  + ",\"" + self.uid + "_" + str(i) + "\");" for (i, x) in enumerate(self.treemaps)])
       json_code = pkg_resources.resource_string("canopus.resources", "treemap.js").decode("utf-8")
-      display(Javascript(json_code.replace('"<CUSTOM-CODE>";', customCode + "\n" + charts)))
+      return json_code.replace('"<CUSTOM-CODE>";', customCode + "\n" + charts)
       

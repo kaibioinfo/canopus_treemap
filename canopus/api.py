@@ -285,7 +285,7 @@ class Canopus(object):
     display the CSI identifications for this compound
     """
     compound = self.__compound__(compound)
-    f = Path("%s/structure_candidates.csv" % compound.directory)
+    f = Path("%s/structure_candidates.tsv" % compound.directory)
     if f.exists():
       table = pd.read_csv(f,sep="\t")
       display(table.sort_values(by="CSI:FingerID_Score",ascending=False).head(10))

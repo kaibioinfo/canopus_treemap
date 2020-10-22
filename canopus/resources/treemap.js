@@ -196,7 +196,7 @@ var createVisualization = function(json, mainId, id) {
 
         d3.selectAll(idtag("percentage"))
             .text(percentageString);
-        $(idtag("category_name")).html("of compounds (<span class=\"catemph\">" + Math.round(d.data.num) + " spectra</span>) in this dataset belong to the category <span class=\"catemph\">" + d.data.name + "</span>.")
+        d3.selectAll(idtag("category_name")).html("of compounds (<span class=\"catemph\">" + Math.round(d.data.num) + " spectra</span>) in this dataset belong to the category <span class=\"catemph\">" + d.data.name + "</span>.")
         d3.selectAll(idtag("explanation"))
             .style("visibility", "");
 
@@ -250,9 +250,9 @@ var createVisualization = function(json, mainId, id) {
 
     var updateDescription = function(activeNode) {
         if (activeNode) {
-            $(mainIdNode(".description")).html(activeNode.description);
+            d3.selectAll(mainIdNode(".description")).html(activeNode.description);
         } else {
-            $(mainIdNode(".description")).html("");
+            d3.selectAll(mainIdNode(".description")).html("");
         }
     }
 
