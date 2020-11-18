@@ -227,8 +227,12 @@ div.node {
     display(HTML(self.getHTML()))
 
   def getHTML(self):
-      charts = "\n".join([
-          "<div class=\"chart\" id=\"chart" + self.uid + "_" + str(i) + "\">"
+    specialClasses = ["" for _ in self.treemaps]
+    if len(self.treemaps)==2:
+      specialClasses[0] = " left"
+      specialClasses[1] = " right"
+
+    charts = "\n".join(["<div class=\"chart" + specialClasses[i] + "\" id=\"chart" + self.uid + "_" + str(i) + "\">"
           """
           
               <div class="explanation" style="visibility: hidden;">
@@ -237,7 +241,7 @@ div.node {
               </div>
             </div>
           """ for (i,_) in enumerate(self.treemaps)])
-      return "<div id=\"main" + "_" +self.uid + "\">" + """
+    return "<div id=\"main" + "_" +self.uid + "\">" + """
     <div class="treelegend"></div>
     <div class="sequence"></div>
 """ + charts + """<div class="sidebar">

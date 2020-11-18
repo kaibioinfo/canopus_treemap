@@ -4,6 +4,7 @@ from IPython.display import HTML, display, Javascript
 import pkg_resources
 import json
 import pandas as pd
+import xml.etree.ElementTree as ET
 class NetworkEdge:
   def __init__(self, source, target,props):
     self.source = source
@@ -21,6 +22,7 @@ class NetworkEdge:
 
 class NetworkNode:
   def __init__(self,nodeId):
+    ET.register_namespace('',"http://graphml.graphdrawing.org/xmlns")
     self.edges = []
     self.nodeId = nodeId
     self.gnpsLink = ""
@@ -58,6 +60,14 @@ class MolecularNetwork:
     c7 = ET.Element("{http://graphml.graphdrawing.org/xmlns}key", {"attr.name": "formula", "attr.type":"string", "for":"node",
      "id":"sirius1"})
 
+    npc_elements = ["canopus_npc0","canopus_npc1","canopus_npc2"]
+    npc0 = ET.Element("{http://graphml.graphdrawing.org/xmlns}key", {"attr.name": "npc_pathway", "attr.type":"string", "for":"node",
+     "id":"canopus_npc0"})
+    npc1 = ET.Element("{http://graphml.graphdrawing.org/xmlns}key", {"attr.name": "npc_superclass", "attr.type":"string", "for":"node",
+     "id":"canopus_npc1"})
+    npc2 = ET.Element("{http://graphml.graphdrawing.org/xmlns}key", {"attr.name": "npc_class", "attr.type":"string", "for":"node",
+     "id":"canopus_npc2"})
+
 
     allSecondaryClasses = set([c for c in self.sirius.statistics.secondaryAssignments.values() if c in self.sirius.revmap])
     mappingCl = {("cl%d" % index): name for (index, name) in enumerate(allSecondaryClasses)}
@@ -77,6 +87,9 @@ class MolecularNetwork:
     xml.find(".").insert(0, c3)
     xml.find(".").insert(0, c2)
     xml.find(".").insert(0, c1)
+    for c in [npc0,npc1,npc2]:
+      xml.find(".").insert(0, c)
+
     for graph in xml.findall("ml:graph",ns):
       for node in graph.findall("ml:node",ns):
         id = node.attrib["id"]
@@ -93,6 +106,16 @@ class MolecularNetwork:
           meta = ET.Element("{http://graphml.graphdrawing.org/xmlns}data",{"key":"canopus6"})
           meta.text = str(flag)
           node.append(meta)
+
+          # npc
+          npc_list = self.sirius.statistics.npcPrimaryAssignmentVector(c,0.33)
+          for i,elem in enumerate(npc_list):
+            if elem:
+              meta = ET.Element("{http://graphml.graphdrawing.org/xmlns}data",{"key":npc_elements[i]})
+              meta.text = elem.name
+              node.append(meta)
+
+
           if c in self.sirius.statistics.assignments:
             formula = c.formula
             meta = ET.Element("{http://graphml.graphdrawing.org/xmlns}data",{"key":"sirius1"})
@@ -161,6 +184,14 @@ class MolecularNetwork:
     c7 = ET.Element("{http://graphml.graphdrawing.org/xmlns}key", {"attr.name": "formula", "attr.type":"string", "for":"node",
      "id":"sirius1"})
 
+    npc_elements = ["canopus_npc0","canopus_npc1","canopus_npc2"]
+    npc0 = ET.Element("{http://graphml.graphdrawing.org/xmlns}key", {"attr.name": "npc_pathway", "attr.type":"string", "for":"node",
+     "id":"canopus_npc0"})
+    npc1 = ET.Element("{http://graphml.graphdrawing.org/xmlns}key", {"attr.name": "npc_superclass", "attr.type":"string", "for":"node",
+     "id":"canopus_npc1"})
+    npc2 = ET.Element("{http://graphml.graphdrawing.org/xmlns}key", {"attr.name": "npc_class", "attr.type":"string", "for":"node",
+     "id":"canopus_npc2"})
+
     allSecondaryClasses = set()
     for subset in assignments.values():
       for kl in subset:
@@ -182,6 +213,8 @@ class MolecularNetwork:
     xml.find(".").insert(0, c3)
     xml.find(".").insert(0, c2)
     xml.find(".").insert(0, c1)
+    for c in [npc0,npc1,npc2]:
+      xml.find(".").insert(0, c)
     for graph in xml.findall("ml:graph",ns):
       for node in graph.findall("ml:node",ns):
         id = node.attrib["id"]
@@ -198,6 +231,15 @@ class MolecularNetwork:
           meta = ET.Element("{http://graphml.graphdrawing.org/xmlns}data",{"key":"canopus6"})
           meta.text = str(flag)
           node.append(meta)
+
+          # npc
+          npc_list = self.sirius.statistics.npcPrimaryAssignmentVector(c,0.33)
+          for i,elem in enumerate(npc_list):
+            if elem:
+              meta = ET.Element("{http://graphml.graphdrawing.org/xmlns}data",{"key":npc_elements[i]})
+              meta.text = elem.name
+              node.append(meta)
+
           if c in self.sirius.statistics.assignments:
             formula = c.formula
             meta = ET.Element("{http://graphml.graphdrawing.org/xmlns}data",{"key":"sirius1"})
@@ -257,6 +299,13 @@ class MolecularNetwork:
      "id":"canopus7"})
     c7 = ET.Element("{http://graphml.graphdrawing.org/xmlns}key", {"attr.name": "formula", "attr.type":"string", "for":"node",
      "id":"sirius1"})
+    npc_elements = ["canopus_npc0","canopus_npc1","canopus_npc2"]
+    npc0 = ET.Element("{http://graphml.graphdrawing.org/xmlns}key", {"attr.name": "npc_pathway", "attr.type":"string", "for":"node",
+     "id":"canopus_npc0"})
+    npc1 = ET.Element("{http://graphml.graphdrawing.org/xmlns}key", {"attr.name": "npc_superclass", "attr.type":"string", "for":"node",
+     "id":"canopus_npc1"})
+    npc2 = ET.Element("{http://graphml.graphdrawing.org/xmlns}key", {"attr.name": "npc_class", "attr.type":"string", "for":"node",
+     "id":"canopus_npc2"})
     xml.find(".").insert(0, c8)
     xml.find(".").insert(0, c7)
     xml.find(".").insert(0, c6)
@@ -265,6 +314,8 @@ class MolecularNetwork:
     xml.find(".").insert(0, c3)
     xml.find(".").insert(0, c2)
     xml.find(".").insert(0, c1)
+    for c in [npc0,npc1,npc2]:
+      xml.find(".").insert(0, c)
     for graph in xml.findall("ml:graph",ns):
       for node in graph.findall("ml:node",ns):
         id = node.attrib["id"]
@@ -285,6 +336,15 @@ class MolecularNetwork:
           meta = ET.Element("{http://graphml.graphdrawing.org/xmlns}data",{"key":"sirius1"})
           meta.text = str(formula)
           node.append(meta)
+
+          # npc
+          npc_list = self.sirius.statistics.npcPrimaryAssignmentVector(c,0.33)
+          for i,elem in enumerate(npc_list):
+            if elem:
+              meta = ET.Element("{http://graphml.graphdrawing.org/xmlns}data",{"key":npc_elements[i]})
+              meta.text = elem.name
+              node.append(meta)
+
           if c in self.sirius.statistics.assignments:
             klassname = self.sirius.statistics.assignments[c].name
             meta = ET.Element("{http://graphml.graphdrawing.org/xmlns}data",{"key":"canopus1"})

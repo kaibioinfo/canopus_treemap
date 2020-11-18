@@ -11,6 +11,8 @@ import json
 from glob import glob
 import collections
 import pandas
+import json
+import gzip
 
 FormulaPattern = re.compile(r"([A-Z][a-z]?)(\d*)")
 class Formula(object):
@@ -72,6 +74,52 @@ class Ontology(object):
         return json.dumps(categories)
 
 
+class NPCOntology(object):
+
+    def __init__(self):
+        self.npcs = []
+        self.index2npc = {}
+        # load npc classes
+        files = ["pathways.csv","superclasses.csv", "classes.csv"]
+        total = 0
+        for (xtype,file) in enumerate(files):
+            for line in pkg_resources.resource_string("canopus.resources", file).decode("utf-8").split("\n"):
+                if line:
+                    (name,index) = line.split("\t")
+                    npc = NPC(name, total, xtype)
+                    self.npcs.append(npc)
+                    self.index2npc[total] = npc
+                    total += 1
+
+
+
+
+class NPC(object):
+
+    TYPES = ["pathway","superclass","class"]
+
+    def __init__(self, name, index, type):
+        self.name = name
+        self.index = index
+        self.type = type
+
+    def __repr__(self):
+        return "%s (%s)" % (self.name,self.typeName()) 
+
+    def isPathway(self):
+        return self.type==0
+
+    def isSuperclass(self):
+        return self.type==1
+
+    def isClass(self):
+        return self.type==2
+
+    def typeName(self):
+        return NPC.TYPES[self.type]
+
+
+
 class Category(object):
     
     def __init__(self, oid, name, description, parent_oid):
@@ -88,7 +136,7 @@ class Category(object):
         return self.name
 
     def classyFireGenus(self):
-        ys=list(reversed(self.ancestors()))
+        ys=list(reversed(self.ancestors(True)))
         genus = dict()
         if (len(ys)<=1):
             return genus
@@ -101,9 +149,11 @@ class Category(object):
             genus["subclass"] = ys[4]
         return genus
         
-    def ancestors(self):
+    def ancestors(self,inclusive=False):
         node = self
         xs = []
+        if inclusive:
+            xs.append(self)
         while (node.parent is not None):
             xs.append(node.parent)
             node = node.parent
@@ -189,6 +239,7 @@ class Compound(object):
         self.name = name
         self.directory = directory
         self.canopusfp = None
+        self.canopusnpc = None
 
     def __repr__(self):
         return self.name
@@ -331,6 +382,28 @@ class CanopusStatistics(object):
                     category = category.parent
         return compoundset
 
+    def npcFor(self,compound,threshold):
+        compoundset = set()
+        for index, probability in enumerate(compound.canopusnpc):
+            if probability >= threshold:
+                compoundset.add(self.workspace.npc_ontology.index2npc[index])
+        return compoundset
+
+    def npcPrimaryAssignmentVector(self,compound,threshold):
+        """ returns a list of [pathway, superclass, class] for a given compound.
+            elements in this list might be None if there is no suitable classification 
+        """
+        vec = [None,None,None]
+        for index, probability in enumerate(compound.canopusnpc):
+            if probability >= threshold:
+                c = self.workspace.npc_ontology.index2npc[index]
+                if vec[c.type]:
+                    if compound.canopusnpc[vec[c.type].index] < probability:
+                        vec[c.type] = c
+                else:
+                    vec[c.type] = c
+        return vec
+
     def categoriesAndProbabilitiesFor(self, compound, threshold):
         fps = dict()
         compoundset = self.categoriesFor(compound,threshold)
@@ -384,6 +457,7 @@ class SiriusInstance(object):
     def __parse(self):
         self.__parse_scores()
         self.__parse_canopus()
+        self.__parse_npc()
         self.__parse_msfile()
 
     def __parse_msfile(self):
@@ -395,6 +469,7 @@ class SiriusInstance(object):
                     break
 
     def __parse_canopus(self):
+        self.filename = None
         filename = None
         if self.maxZodiac:
             filename = self.maxZodiac
@@ -409,8 +484,16 @@ class SiriusInstance(object):
         canopusPath = Path(self.dirname, "canopus", filename[0] + "_" + filename[1] + ".fpt")
         if canopusPath.exists():
             self.canopusfp = np.loadtxt(canopusPath)
+            self.filename = canopusPath.name
         else:
             self.canopusfp = None
+
+    def __parse_npc(self):
+        self.canopusnpc = None
+        if self.filename:
+            npcPath = Path(self.dirname, "canopus_npc", self.filename)
+            if npcPath.exists():
+                self.canopusnpc = np.loadtxt(npcPath)
 
     def __findAdduct(self, filename):
         formula = Formula(filename[0])
@@ -424,8 +507,8 @@ class SiriusInstance(object):
             formula = header.index("precursorFormula")
             neutralFormula = header.index("formula") if "formula" in header else header.index("molecularFormula")
             adduct = header.index("adduct")
-            sirius = header.index("siriusScore") if "siriusScore" in header else header.index("TreeIsotope_Score")
-            zodiac = header.index("zodiacScore") if "zodiacScore" in header else (header.index("Zodiac_Score") if "Zodiac_Score" in header else None)
+            sirius = header.index("SiriusScore")
+            zodiac = header.index("ZodiacScore") if "ZodiacScore" in header else None
             maxSirius = None
             maxZodiac = None
             maxCanopus = None
@@ -475,6 +558,7 @@ class SiriusWorkspace(object):
         self.rootdir = Path(rootdir)
         self.compounds = dict()
         self.ontology = load_ontology() if ontology is None else ontology
+        self.npc_ontology = NPCOntology()
         if Path(rootdir).is_dir():
             self.load_ontology_index()
             self.load_compounds()
@@ -483,9 +567,7 @@ class SiriusWorkspace(object):
             self.load_compounds_from_csv(rootdir)
         self.statistics = CanopusStatistics(self)
         self.statistics.setCompounds(self.compounds)
-        print("-> %d compounds in workspace " % len(self.compounds))
         self.statistics.assign_most_specific_classes()
-        print("--> %d compounds in workspace " % len(self.compounds))
 
     def make_quant(self):
         for adir in Path(self.rootdir).glob("*/spectrum.ms"):
@@ -496,6 +578,7 @@ class SiriusWorkspace(object):
                 quant = collections.defaultdict(lambda : 0.0)
                 name = None
                 mz = None
+
                 with adir.open() as fhandle:
                     for line in fhandle:
                         if line.startswith(">compound"):
@@ -509,7 +592,14 @@ class SiriusWorkspace(object):
                                 break
                         if line.startswith(">parentmass"):
                             mz = float(line.split(" ",2)[1])
-
+                lcms=Path(compound_dir, "lcms.json.gz")
+                if lcms.exists():
+                    with gzip.open(lcms,"r") as fhandle:
+                        obj = json.load(fhandle)
+                        sampleNames = obj["sampleNames"]
+                        abundance = obj["abundance"]
+                        for (i,n) in enumerate(sampleNames):
+                            quant[n] = abundance[i]
                 if name in self.compounds:
                     cmp = self.compounds[name]
                     cmp.quant = quant
@@ -523,6 +613,9 @@ class SiriusWorkspace(object):
             for q in self.compounds[compound].quant:
                 all_samples.add(q)
         all_samples = list(all_samples)
+        if not all_samples:
+            # create dummy table without any quant information
+            return pandas.DataFrame(dict(all=[1 for c in all_compounds]), index=all_compounds)
         quantTable = pandas.DataFrame({ key : [self.compounds[c].quant[key] for c in all_compounds] for key in all_samples}, index=all_compounds, columns = all_samples)
         return quantTable
 
@@ -608,12 +701,12 @@ class SiriusWorkspace(object):
                     cmp.adduct = siriusInstance.topAdduct
                     cmp.zodiacScore = siriusInstance.zodiacScore
                     cmp.quality = siriusInstance.quality
+                    cmp.filename = siriusInstance.filename
+                    cmp.canopusnpc = siriusInstance.canopusnpc                   
                     counter2 += 1
                     namer[name] = True
             except StopIteration:
                 pass
-        print(len(namer))
-        print(counter2)
         
         
     def load_ontology_index(self):

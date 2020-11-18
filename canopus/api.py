@@ -288,7 +288,7 @@ class Canopus(object):
     f = Path("%s/structure_candidates.tsv" % compound.directory)
     if f.exists():
       table = pd.read_csv(f,sep="\t")
-      display(table.sort_values(by="CSI:FingerID_Score",ascending=False).head(10))
+      display(table.sort_values(by="CSI:FingerIDScore",ascending=False).head(10))
 
   def heatmap(self, category, conditions=None, logarithmic=False):
     """
