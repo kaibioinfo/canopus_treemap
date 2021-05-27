@@ -79,8 +79,12 @@ class NPCOntology(object):
     def __init__(self):
         self.npcs = []
         self.index2npc = {}
+        self.pathways = []
+        self.classes = []
+        self.superclasses = []
         # load npc classes
         files = ["pathways.csv","superclasses.csv", "classes.csv"]
+        arrays = [self.pathways, self.superclasses, self.classes]
         total = 0
         for (xtype,file) in enumerate(files):
             for line in pkg_resources.resource_string("canopus.resources", file).decode("utf-8").split("\n"):
@@ -89,8 +93,37 @@ class NPCOntology(object):
                     npc = NPC(name, total, xtype)
                     self.npcs.append(npc)
                     self.index2npc[total] = npc
+                    arrays[xtype].append(npc)
                     total += 1
+        j=json.loads(pkg_resources.resource_string("canopus.resources", "npc_index.json").decode("utf-8"))
+        jc=j["Class_hierarchy"]
+        js=j["Super_hierarchy"]
+        for key in jc:
+            keyint = int(key)
+            npcklass = self.classes[keyint]
+            superclass = jc[key]["Superclass"]
+            for n in superclass:
+                npcklass.parents.add(self.superclasses[n])
+            # arbitrary decide for one parent
+            npcklass.parent = self.superclasses[superclass[0]]
+        for key in js:
+            keyint = int(key)
+            npcklass = self.superclasses[keyint]
+            pathway = js[key]["Pathway"]
+            for n in pathway:
+                npcklass.parents.add(self.pathways[n])
+            # arbitrary decide for one parent
+            npcklass.parent = self.pathways[pathway[0]]
 
+        self.root = NPC("", -1, -1)
+        self.makeTree()
+
+    def makeTree(self):
+        for node in self.npcs:
+            for parent in node.parents:
+                parent.children.append(node)
+            if node.parent is None:
+                self.root.children.append(node)
 
 
 
@@ -102,6 +135,18 @@ class NPC(object):
         self.name = name
         self.index = index
         self.type = type
+        self.parent = None
+        self.parents = set()
+        self.children = []
+        self.description = ""
+
+    def ancestors(self):
+        aset = set()
+        for parent in self.parents:
+            aset.add(parent)
+            for parent2 in parent.parents:
+                aset.add(parent2)
+        return aset
 
     def __repr__(self):
         return "%s (%s)" % (self.name,self.typeName()) 
@@ -240,6 +285,7 @@ class Compound(object):
         self.directory = directory
         self.canopusfp = None
         self.canopusnpc = None
+        self.quant = collections.defaultdict(lambda : 0.0)
 
     def __repr__(self):
         return self.name
@@ -386,8 +432,18 @@ class CanopusStatistics(object):
         compoundset = set()
         for index, probability in enumerate(compound.canopusnpc):
             if probability >= threshold:
-                compoundset.add(self.workspace.npc_ontology.index2npc[index])
+                node = self.workspace.npc_ontology.index2npc[index]
+                compoundset.add(node)
+                for n in node.ancestors():
+                    compoundset.add(n)
         return compoundset
+
+    def npcCategoriesAndProbabilitiesFor(self, compound, threshold):
+        xs = self.npcFor(compound, threshold)
+        fps=dict()
+        for x in xs:
+            fps[x] = compound.canopusnpc[x.index]
+        return fps
 
     def npcPrimaryAssignmentVector(self,compound,threshold):
         """ returns a list of [pathway, superclass, class] for a given compound.
@@ -402,6 +458,10 @@ class CanopusStatistics(object):
                         vec[c.type] = c
                 else:
                     vec[c.type] = c
+        if vec[2]:
+            vec[1] = sorted(vec[2].parents, key=lambda x: -compound.canopusnpc[x.index])[0]
+        if vec[1]:
+            vec[0] = sorted(vec[1].parents, key=lambda x: -compound.canopusnpc[x.index])[0]
         return vec
 
     def categoriesAndProbabilitiesFor(self, compound, threshold):
@@ -680,14 +740,14 @@ class SiriusWorkspace(object):
         counter=0
         counter2=0
         namer = dict()
-        for adir in Path(self.rootdir).glob("*/spectrum.ms"):
+        for adir in Path(self.rootdir).glob("*/formula_candidates.tsv"):
             compound_dir = adir.parent
             if not Path(compound_dir, "canopus").exists():
                 continue
             try:
                 counter += 1
                 name = None
-                with adir.open() as fhandle:
+                with Path(compound_dir, "spectrum.ms").open() as fhandle:
                     for line in fhandle:
                         if line.startswith(">compound"):
                             name = line.strip().split(" ")[1]
