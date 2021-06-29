@@ -75,11 +75,11 @@ class CanopusRenderer:
       names.append(name)
     plt.xticks(ticks=mids,labels=names)
 
-  def canopusTreeTable(self,compound,threshold=0.25):
+  def canopusTreeTable(self,compound,threshold=0.25, npc=False):
     compound = self.__compound__(compound)
-    fp = self.workspace.statistics.categoriesAndProbabilitiesFor(compound,threshold)
+    fp = self.workspace.statistics.npcCategoriesAndProbabilitiesFor(compound,threshold) if npc else self.workspace.statistics.categoriesAndProbabilitiesFor(compound,threshold)
     klasses = set(fp.keys())
-    astree = self.workspace.ontology.root
+    astree = self.workspace.npc_ontology.root if npc else self.workspace.ontology.root
     # add root
     fp[astree] = 1.0
     display(HTML(self.__getTreeAsHTML__(fp,astree,0)))
@@ -90,7 +90,8 @@ class CanopusRenderer:
   def __getTreeAsHTML__(self,fp,root,indent):
     s=""
     weight = "bold" if fp[root]>0.5 else "italic"
-    s += "<li>" + self.__tooltip__("<span style='font-weight:" + weight +"'>" + root.name + "</span>" + "<span style='margin-left:15pt;font-weight:" + weight + "'>" + 
+    if root.name:
+      s += "<li>" + self.__tooltip__("<span style='font-weight:" + weight +"'>" + root.name + "</span>" + "<span style='margin-left:15pt;font-weight:" + weight + "'>" + 
       (str(int(fp[root]*100)) + " %" if fp[root] > 0 else "") + "</span>", root.description)
     t = "<ul>"
     c=0
@@ -101,7 +102,8 @@ class CanopusRenderer:
     t += "</ul>"
     if c>0:
       s += t
-    s += "</li>"
+    if root.name:
+      s += "</li>"
     return s
     
   def addTreemap(self,statistics = None):

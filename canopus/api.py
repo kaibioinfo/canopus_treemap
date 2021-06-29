@@ -280,6 +280,39 @@ class Canopus(object):
     R = CanopusRenderer(self.sirius)
     R.canopusTreeTable(compound)
 
+  def npcClassification(self, compound):
+    """
+    display the natural product categories (NPC) which are predicted for this compound
+    """
+    compound = self.__fid__(compound)
+    R = CanopusRenderer(self.sirius)
+    R.canopusTreeTable(compound, npc=True)
+
+
+  def npcSummary(self, condition=None):
+    """
+    outputs a Pandas dataframe containing all NPC classes
+    """
+    compounds = [self.sirius.compounds[x] for x in self.condition(condition).compounds] if condition else self.sirius.compounds.values()
+    rows = []
+    for compound in compounds:
+      vec = self.sirius.statistics.npcPrimaryAssignmentVector(compound, self.probabilityThreshold)
+      probs = self.sirius.statistics.npcCategoriesAndProbabilitiesFor(compound, self.probabilityThreshold)
+      ary = [compound.name,str(compound.directory)]
+      for name in vec:
+        if name is None:
+          ary.append("N/A")
+        else:
+          ary.append(name.name)
+        ary.append(probs[name] if name in probs else 0.0)
+      key=self.sirius.statistics.assignments[compound]
+      ary.append(key.name)
+      ary.append(compound.canopusfp[self.sirius.statistics.workspace.revmap[key]])
+      rows.append(ary)
+    return pd.DataFrame(data=rows, columns=["name", "directoryName", "pathway", 
+                                            "pathwayProbability", "superclass", "superclassProbability", 
+                                            "class", "classProbability", "ClassyFirePrediction", "ClassyFirePredictionProbability"]).set_index("name", drop=True)
+
   def identification(self,compound):
     """
     display the CSI identifications for this compound
