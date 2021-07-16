@@ -624,7 +624,7 @@ class SiriusWorkspace(object):
             self.load_compounds()
             print("%d compounds in workspace " % len(self.compounds))
         else:
-            self.load_compounds_from_csv(rootdir)
+            raise FileNotFoundError("sirius path does not exist")
         self.statistics = CanopusStatistics(self)
         self.statistics.setCompounds(self.compounds)
         self.statistics.assign_most_specific_classes()
