@@ -2,10 +2,13 @@
 
 import os
 import canopus
+import time
 from sys import argv
+from collections import defaultdict
 
 
 if __name__ == "__main__":
+    start = time.time()
     print("Start")
     if len(argv) < 3:
         raise FileNotFoundError("\nUsage: python classification_to_gnps.py "+
@@ -19,8 +22,7 @@ if __name__ == "__main__":
     # loop through the nodes in molecular network
     class_p_cutoff = 0.5
     results = []
-    hierarchy = ["kingdom", "superclass", "class", "subclass", "level 5",
-                 "level 6", "level 7", "level 8"]
+    hierarchy = ["kingdom", "superclass", "class", "subclass", "level 5"]
     for node_id, node in C.gnps.nodes.items():
         compound = C.sirius.compounds.get(node_id)  # get canopus compound obj
         if compound:
@@ -47,24 +49,45 @@ if __name__ == "__main__":
                     chosen_class = [c for c in deepest_classifications
                                     if c.name == pr][0]
                     chosen_classes_sorted.append(chosen_class)
-            # 4. save scores of most specific classes - todo: scores of all classes
-            scores = []
-            for c in chosen_classes_sorted:
-                sc = compound.canopusfp[
-                    C.sirius.statistics.workspace.revmap[c]]
-                scores.append(sc)
-            chosen_classes_sorted_sc = list(zip(chosen_classes_sorted, scores))
-            # alternative: rank based on highest score instead of priority
-            # chosen_class = [c for c, sc in zip(deepest_classifications, scores)
-            #                 if sc == highest_sc][0]
+
+            # 4. unpack all classes
+            classes_dict = defaultdict(list)
+            classes_set_dict = defaultdict(set)
+            for h_lvl in hierarchy:
+                for c in chosen_classes_sorted:
+                    c_h_lvl = c.classyFireGenus().get(h_lvl, '')
+                    c_h_set = classes_set_dict[h_lvl]
+                    if c_h_lvl not in c_h_set:
+                        classes_dict[h_lvl].append(c_h_lvl)
+                        c_h_set.add(c_h_lvl)
+                        if not c_h_lvl:
+                            # there is no current level - go to next
+                            break
+
+            # 5. get all scores and convert ontology.Category to strings
+            classes_dict_sc = {}
+            for h_lvl in hierarchy:
+                h_lvl_classes = classes_dict[h_lvl]
+                h_lvl_result = []
+                for h_lvl_class in h_lvl_classes:
+                    h_lvl_str = ''
+                    if h_lvl_class:
+                        sc = compound.canopusfp[
+                            C.sirius.statistics.workspace.revmap[h_lvl_class]]
+                        h_lvl_str = f"{h_lvl_class}:{sc:.3f}"
+                    h_lvl_result.append(h_lvl_str)
+                classes_dict_sc[h_lvl] = '; '.join(h_lvl_result)
 
             formula = compound.formula
             results.append(
-                [node.componentId, node_id, formula, hierarchy[max_tree-1],
-                 chosen_classes_sorted_sc])
-    results.sort(key=lambda x: int(x[0]))
-    header = ["GNPS_compnentindex", "Canopus_id", "Formula", "Deepest_lvl",
+                [node.componentId, node_id, formula, classes_dict_sc])
+
+    results.sort(key=lambda x: (int(x[0]), int(x[1])))
+    header = ["GNPS_compnentindex", "Canopus_id", "Formula",
               "Classes_sorted"]
     print('\t'.join(header))
     for res in results:
         print(res)
+
+    end = time.time()
+    print(f"\nTime elapsed: {end-start:.2f}s")
