@@ -750,7 +750,7 @@ class SiriusWorkspace(object):
                 with Path(compound_dir, "spectrum.ms").open() as fhandle:
                     for line in fhandle:
                         if line.startswith(">compound"):
-                            name = line.strip().split(" ")[1]
+                            name = line.strip().split(" ")[-1]
                             break
                 cmp = Compound(name, compound_dir)
                 siriusInstance = SiriusInstance(compound_dir)
