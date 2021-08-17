@@ -185,13 +185,13 @@ class Category(object):
         genus = dict()
         if (len(ys)<=1):
             return genus
-        genus["kingdom"] = ys[1]
-        if len(ys)>2:
-            genus["superclass"] = ys[2]
-        if len(ys)>3:
-            genus["class"] = ys[3]
-        if len(ys)>4:
-            genus["subclass"] = ys[4]
+        hierarchy = ["kingdom", "superclass", "class", "subclass"] + \
+                    [f"level {i}" for i in range(5, 12)]
+        print(hierarchy)
+        if len(ys) <= 1:
+            return genus
+        for i in range(1, len(ys)):
+            genus[hierarchy[i - 1]] = ys[i]
         return genus
         
     def ancestors(self,inclusive=False):
