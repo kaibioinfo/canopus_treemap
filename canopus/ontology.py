@@ -187,7 +187,6 @@ class Category(object):
             return genus
         hierarchy = ["kingdom", "superclass", "class", "subclass"] + \
                     [f"level {i}" for i in range(5, 12)]
-        print(hierarchy)
         if len(ys) <= 1:
             return genus
         for i in range(1, len(ys)):
