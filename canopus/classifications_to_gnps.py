@@ -22,15 +22,16 @@ def analyse_canopus(sirius_folder: str, gnps_folder: str,
 
     # loop through the nodes in molecular network
     class_p_cutoff = 0.5
-    max_class_depth = 5  # meaning that it will find all lvl 5 and trace back
+    # it will find all trees reaching at least the Xth lvl and trace back
+    max_class_depth = None
     hierarchy = ["kingdom", "superclass", "class", "subclass"] + \
                 [f"level {i}" for i in range(5, 12)]
     results = get_classes_for_mol_network(C, hierarchy, class_p_cutoff,
                                           max_class_depth)
-    # write_classes_cluster_index(results, hierarchy, output_folder)
+    write_classes_cluster_index(results, hierarchy, output_folder)
 
-    # group per MF if fraction above 0.5
-    mf_fraction_cutoff = 0.5
+    # group classes per MF if fraction (count class/total spec in MF) above X
+    mf_fraction_cutoff = 0.3
     #todo: treat -1 differently
     for comp_ind, cluster_ind_results in results.items():
         print('\n',comp_ind)
@@ -47,7 +48,7 @@ def analyse_canopus(sirius_folder: str, gnps_folder: str,
                     if c_name:
                         h_counters[h][c_name] += 1
         print(h_counters)
-        # 2. calculate fraciton
+        # 2. calculate fraction
         h_fraction = {}
         for h_lvl, h_dict in h_counters.items():
             cls_frac_list = []
@@ -61,7 +62,7 @@ def analyse_canopus(sirius_folder: str, gnps_folder: str,
             if not cls_frac_list:
                 cls_frac_list = [('', None)]
 
-            # order on highest priority (above cutoff)
+            # 3. order each level on highest priority (above cutoff)
             priority_names = [c.name for c in C.sirius.statistics.priority]
             cls_frac_sorted = []
             for pr in priority_names:  # highest priority
@@ -137,13 +138,19 @@ def get_CF_classes(C: canopus.Canopus,
     # 1. find all classification trees above 0.5 (dict)
     classifications = [c for c in C.sirius.statistics.categoriesFor(
         compound, class_p_cutoff)]
-    # 2. take deepest classification - find the most specific classes
+
+    # 2.a. take all classifications above cutoff
+    if not max_class_depth:
+        deepest_classifications = classifications
+        deepest_names = set(c.name for c in deepest_classifications)
+    else:
+    # 2.b. take deepest classification - find the most specific classes
     # classyFireGenus() gives a dict of the class trees
-    max_tree = max(len(c.classyFireGenus()) for c in classifications)
-    max_tree = min([max_tree, max_class_depth])
-    deepest_classifications = [c for c in classifications if
-                               len(c.classyFireGenus()) >= max_tree]
-    deepest_names = set(c.name for c in deepest_classifications)
+        max_tree = max(len(c.classyFireGenus()) for c in classifications)
+        max_tree = min([max_tree, max_class_depth])
+        deepest_classifications = [c for c in classifications if
+                                   len(c.classyFireGenus()) >= max_tree]
+        deepest_names = set(c.name for c in deepest_classifications)
 
     # 3. choose the most specific class with top priority
     priority_names = [c.name for c in C.sirius.statistics.priority]
