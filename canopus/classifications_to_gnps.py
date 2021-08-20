@@ -22,12 +22,14 @@ def analyse_canopus(sirius_folder: str, gnps_folder: str,
 
     # loop through the nodes in molecular network
     class_p_cutoff = 0.5
-    # it will find all trees reaching at least the Xth lvl and trace back
+    # it will use all classes (set to a number for only keeping the deepest
+    # classes at the Xth level
     max_class_depth = None
     hierarchy = ["kingdom", "superclass", "class", "subclass"] + \
                 [f"level {i}" for i in range(5, 12)]
     results = get_classes_for_mol_network(C, hierarchy, class_p_cutoff,
                                           max_class_depth)
+    print('\n',results)  # todo: remove
     write_classes_cluster_index(results, hierarchy, output_folder)
 
     # group classes per MF if fraction (count class/total spec in MF) above X
@@ -105,6 +107,9 @@ def get_classes_for_mol_network(C: canopus.Canopus,
             formula = compound.formula
             results[node.componentId].append(
                 [node_id, formula, cf_classes_dict])
+            print([node_id, formula, cf_classes_dict])
+            print('\n')
+
     return results
 
 
@@ -112,7 +117,7 @@ def get_CF_classes(C: canopus.Canopus,
                    compound: canopus.ontology.Category,
                    hierarchy: List[str],
                    class_p_cutoff: float = 0.5,
-                   max_class_depth: int = 5) ->\
+                   max_class_depth: Union[int, None] = None) ->\
         Dict[str, List[Tuple[Union[str, float, None]]]]:
     """Get the ClassyFire classes for each compound
 
@@ -121,20 +126,21 @@ def get_CF_classes(C: canopus.Canopus,
     :param hierarchy: the CF class level names to be included in output in
         order of hierarchy
     :param class_p_cutoff: probability cutoff for including a class
-    :param max_class_depth: max class depth for finding CF class
+    :param max_class_depth: None for using all classes, set this to a number
+        for only taking classes into account at a certain max depth
     :return: dict with hierarchy as keys and list of tuples as values where
         each tuple contains a class (ontology.Category) and its score. List of
         classes is sorted on priority
 
-    CF classes are found by looking for the class at deepest depth (or
-    max_class_depth) and then ordering these deepest classes based on priority.
-    Then, the classes are traced back to higher hierarchy and sorted in output,
-    again based on priority of deepest classes.
+    This is kind of an elaboration of assign_most_specific_classes() but here
+    it finds all classes and orders them on priority, and then it fills the
+    result lists by starting with the highest priority class and tracing that
+    class back to all parent classes, then it moves to the second priority
+    class, etc.
+    There is also an option to only take into account the class(es) at deepest
+    depth (or max_class_depth) and then ordering these deepest classes based on
+    priority, etc. For this max_class_depth needs to be set to a number.
     """
-    # assignments with assign_most_specific_classes()
-    # does not work by finding the most specific class, it finds the
-    # class (regardless of level) with highest priority.
-    # here: find deepest/most specific class with highest priority.
     # 1. find all classification trees above 0.5 (dict)
     classifications = [c for c in C.sirius.statistics.categoriesFor(
         compound, class_p_cutoff)]
@@ -161,36 +167,30 @@ def get_CF_classes(C: canopus.Canopus,
                             if c.name == pr][0]
             chosen_classes_sorted.append(chosen_class)
 
-    # 4. unpack all classes
+    # 4. unpack/trace back all classes to parents even if parents have low prob
     classes_dict = defaultdict(list)
     classes_set_dict = defaultdict(set)
-    for h_lvl in hierarchy:
-        for c in chosen_classes_sorted:
-            c_h_lvl = c.classyFireGenus().get(h_lvl, '')
-            c_h_set = classes_set_dict[h_lvl]
-            if c_h_lvl not in c_h_set:
-                classes_dict[h_lvl].append(c_h_lvl)
-                c_h_set.add(c_h_lvl)
-                if not c_h_lvl:
-                    # there is no current level - go to next
-                    break
+    for c in chosen_classes_sorted:
+        for h_lvl in hierarchy:
+            c_h_lvl = c.classyFireGenus().get(h_lvl)
+            if c_h_lvl:
+                c_h_set = classes_set_dict[h_lvl]
+                if c_h_lvl not in c_h_set:
+                    classes_dict[h_lvl].append(c_h_lvl)
+                    c_h_set.add(c_h_lvl)
 
-    # 5. get all scores and convert ontology.Category to strings
+    # 5. get all scores to tuple(cls, sc) and fill empty levels with empty list
     classes_dict_sc = {}
     for h_lvl in hierarchy:
         h_lvl_classes = classes_dict[h_lvl]
         h_lvl_result = []
         for h_lvl_class in h_lvl_classes:
-            # h_lvl_str = ''
-            h_lvl_elem = ('', None)
-            if h_lvl_class:
-                sc = compound.canopusfp[
-                    C.sirius.statistics.workspace.revmap[h_lvl_class]]
-                # h_lvl_str = f"{h_lvl_class}:{sc:.3f}"
-                h_lvl_elem = (h_lvl_class, sc)
-            # h_lvl_result.append(h_lvl_str)
+            sc = compound.canopusfp[
+                C.sirius.statistics.workspace.revmap[h_lvl_class]]
+            h_lvl_elem = (h_lvl_class, sc)
             h_lvl_result.append(h_lvl_elem)
-        # classes_dict_sc[h_lvl] = '; '.join(h_lvl_result)
+        # classes_dict is default dict so _sc will be populated with empty
+        # list if there are no classes at a certain level
         classes_dict_sc[h_lvl] = h_lvl_result
     return classes_dict_sc
 
@@ -238,7 +238,7 @@ if __name__ == "__main__":
     if len(argv) < 3:
         raise FileNotFoundError("\nUsage: python classification_to_gnps.py "+
             "sirius_folder gnps_folder output_folder(default: ./)")
-    sirius_file = argv[1]  # "C:\Users\joris\Documents\iOMEGA_no_backup\NPLinker_results\sirius_test_spec"
+    sirius_file = argv[1]  # "C:\Users\joris\Documents\iOMEGA_no_backup\NPLinker_results\subset_canopus_crus_mgf_maxmz600"
     gnps_file = argv[2]  # "C:\Users\joris\Documents\iOMEGA_no_backup\NPLinker_results\ProteoSAFe-METABOLOMICS-SNETS-V2-eea136cb-download_clustered_spectra"
     output_dir = './'
     if len(argv) == 4:
