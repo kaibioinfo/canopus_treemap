@@ -27,61 +27,61 @@ def analyse_canopus(sirius_folder: str, gnps_folder: str,
     max_class_depth = None
     hierarchy = ["kingdom", "superclass", "class", "subclass"] + \
                 [f"level {i}" for i in range(5, 12)]
-    results = get_classes_for_mol_network(C, hierarchy, class_p_cutoff,
-                                          max_class_depth)
-    print('\n',results)  # todo: remove
-    write_classes_cluster_index(results, hierarchy, output_folder)
+    npc_hierarchy = ['pathway', 'superclass', 'class']
+    class_results = get_classes_for_mol_network(
+        C, hierarchy, npc_hierarchy, class_p_cutoff, max_class_depth)
+    print('\n', class_results)  # todo: remove
+    write_classes_cluster_index(class_results, hierarchy, npc_hierarchy,
+                                output_folder)
 
-    # group classes per MF if fraction (count class/total spec in MF) above X
-    mf_fraction_cutoff = 0.3
-    #todo: treat -1 differently
-    for comp_ind, cluster_ind_results in results.items():
-        print('\n',comp_ind)
-        num_cluster_inds = len(cluster_ind_results)
-        print(num_cluster_inds)
+    mf_fraction_cutoff = 0.2
+    comp_ind_cf_classes = get_cf_classes_for_componentindices(
+        class_results, C, hierarchy, mf_fraction_cutoff)
+    comp_ind_npc_classes = get_classes_npc_for_componentindices(
+        class_results, C, npc_hierarchy, mf_fraction_cutoff)
+    print(comp_ind_cf_classes)
+    print(comp_ind_npc_classes)
 
-        # 1. count the instances of each class in the componentindex (MF)
-        h_counters = {h:defaultdict(int) for h in hierarchy}
-        for cluster_ind_res in cluster_ind_results:
-            ci_classes = cluster_ind_res[2]
+    # write to output
+    output_file = os.path.join(output_folder,
+                               "component_index_classifications.txt")
+    header = ["componentindex"] + hierarchy + \
+             npc_hierarchy
+    with open(output_file, 'w') as outf:
+        outf.write("{}\n".format('\t'.join(header)))
+        for cf_res_tup, npc_res_tup in zip(comp_ind_cf_classes,
+                                           comp_ind_npc_classes):
+            comp_ind, cf_res = cf_res_tup
+            comp_ind2, npc_res = npc_res_tup
+            assert comp_ind == comp_ind2
+
+            # turn CF classifications into strings
+            cf_list = []
             for h in hierarchy:
-                for class_tup in ci_classes[h]:
-                    c_name = class_tup[0]
-                    if c_name:
-                        h_counters[h][c_name] += 1
-        print(h_counters)
-        # 2. calculate fraction
-        h_fraction = {}
-        for h_lvl, h_dict in h_counters.items():
-            cls_frac_list = []
-            cls_names_set = set()
-            for cls, count in h_dict.items():
-                if cls:
-                    frac = count / num_cluster_inds
-                    if frac >= mf_fraction_cutoff:
-                        cls_frac_list.append((cls, frac))
-                        cls_names_set.add(cls.name)
-            if not cls_frac_list:
-                cls_frac_list = [('', None)]
-
-            # 3. order each level on highest priority (above cutoff)
-            priority_names = [c.name for c in C.sirius.statistics.priority]
-            cls_frac_sorted = []
-            for pr in priority_names:  # highest priority
-                if pr in cls_names_set:
-                    chosen_class_tup = [c_tup for c_tup in cls_frac_list
-                                    if c_tup[0].name == pr][0]
-                    cls_frac_sorted.append(chosen_class_tup)
-            h_fraction[h_lvl] = cls_frac_sorted
-        print(h_fraction)
+                h_str = []
+                for cl_tup in cf_res[h]:
+                    h_str.append(f"{cl_tup[0]}:{cl_tup[1]:.3f}")
+                cf_list.append('; '.join(h_str))
+            # turn NPC classifications into strings - todo: make subroutine
+            npc_list = []
+            for h in npc_hierarchy:
+                h_str = []
+                for cl_tup in npc_res[h]:
+                    h_str.append(f"{cl_tup[0]}:{cl_tup[1]:.3f}")
+                npc_list.append('; '.join(h_str))
+            # add everything to a list
+            res_list = [comp_ind] + \
+                       cf_list + npc_list
+            res_str = '\t'.join(res_list)
+            outf.write(f"{res_str}\n")
 
 
 def get_classes_for_mol_network(C: canopus.Canopus,
                                 hierarchy: List[str],
+                                npc_hierarchy: List[str],
                                 class_p_cutoff: float,
-                                max_class_depth: int)\
-        -> DefaultDict[str, List[
-            Union[str, Dict[str, List[Tuple[Union[str, float, None]]]]]]]:
+                                max_class_depth: int) -> DefaultDict[str, List[
+            Union[str, Dict[str, List[Tuple[Union[str, float]]]]]]]:
     """Loop through mol network and gather CF and NPC classes
 
     :param C: Canopus object of canopus results with gnps mol network data
@@ -103,11 +103,11 @@ def get_classes_for_mol_network(C: canopus.Canopus,
         if compound:
             cf_classes_dict = get_CF_classes(C, compound, hierarchy,
                                              class_p_cutoff, max_class_depth)
-
+            npc_classes_dict = get_NPC_classes(C, compound, npc_hierarchy)
             formula = compound.formula
             results[node.componentId].append(
-                [node_id, formula, cf_classes_dict])
-            print([node_id, formula, cf_classes_dict])
+                [node_id, formula, cf_classes_dict, npc_classes_dict])
+            print([node_id, formula, cf_classes_dict, npc_classes_dict])
             print('\n')
 
     return results
@@ -117,8 +117,8 @@ def get_CF_classes(C: canopus.Canopus,
                    compound: canopus.ontology.Category,
                    hierarchy: List[str],
                    class_p_cutoff: float = 0.5,
-                   max_class_depth: Union[int, None] = None) ->\
-        Dict[str, List[Tuple[Union[str, float, None]]]]:
+                   max_class_depth: Union[int, None] = None
+                   ) -> Dict[str, List[Tuple[Union[str, float, None]]]]:
     """Get the ClassyFire classes for each compound
 
     :param C: Canopus object of canopus results with gnps mol network data
@@ -195,9 +195,25 @@ def get_CF_classes(C: canopus.Canopus,
     return classes_dict_sc
 
 
+def get_NPC_classes(C, compound,
+                    npc_hierarchy):
+    npc_array = C.npcSummary().loc[compound.name]
+    print(npc_array)
+    npc_dict = {}
+    for h_lvl in npc_hierarchy:
+        cls = npc_array[h_lvl]
+        npc_dict[h_lvl] = []  # init level in dict
+        if cls != "N/A":  # add class if there is one
+            prob_key = h_lvl + 'Probability'
+            npc_dict[h_lvl].append((cls, npc_array[prob_key]))
+    print(npc_dict)
+    return npc_dict
+
+
 def write_classes_cluster_index(results: DefaultDict[str, List[
-            Union[str, Dict[str, List[Tuple[Union[str, float, None]]]]]]],
+            Union[str, Dict[str, List[Tuple[Union[str, float]]]]]]],
                                 hierarchy: List[str],
+                                npc_hierarchy: List[str],
                                 output_folder: str = './'):
     """Write class results for each cluster index to file grouped by components
 
@@ -210,7 +226,8 @@ def write_classes_cluster_index(results: DefaultDict[str, List[
     """
     output_file = os.path.join(output_folder,
                                "cluster_index_classifications.txt")
-    header = ["compnentindex", "cluster index", "Formula"] + hierarchy
+    header = ["componentindex", "cluster index", "formula"] + hierarchy +\
+             npc_hierarchy
     with open(output_file, 'w') as outf:
         outf.write("{}\n".format('\t'.join(header)))
         for comp_ind, clust_ind_results in sorted(
@@ -218,19 +235,117 @@ def write_classes_cluster_index(results: DefaultDict[str, List[
             for clust_ind_res in clust_ind_results:
                 # turn CF classifications into strings
                 cf_list = []
+                cf_res = clust_ind_res[2]
                 for h in hierarchy:
                     h_str = []
-                    for cl_tup in clust_ind_res[2][h]:
-                        if cl_tup[1]:
-                            h_str.append(f"{cl_tup[0]}:{cl_tup[1]:.3f}")
-                        else:
-                            h_str.append('')
+                    for cl_tup in cf_res[h]:
+                        h_str.append(f"{cl_tup[0]}:{cl_tup[1]:.3f}")
                     cf_list.append('; '.join(h_str))
+                # turn NPC classifications into strings - todo: make subroutine
+                npc_list = []
+                npc_res = clust_ind_res[3]
+                for h in npc_hierarchy:
+                    h_str = []
+                    for cl_tup in npc_res[h]:
+                        h_str.append(f"{cl_tup[0]}:{cl_tup[1]:.3f}")
+                    npc_list.append('; '.join(h_str))
                 # add everything to a list
                 res_list = [comp_ind, clust_ind_res[0], clust_ind_res[1]] +\
-                           cf_list
+                           cf_list + npc_list
                 res_str = '\t'.join(res_list)
                 outf.write(f"{res_str}\n")
+
+
+def get_cf_classes_for_componentindices(clusterindex_results,
+                                     C,
+                                     hierarchy: List[str],
+                                     fraction_cutoff: float = 0.3):
+    # todo: treat -1 differently
+    result_list = []
+    for comp_ind, cluster_ind_results in clusterindex_results.items():
+        print('\n', comp_ind)
+        num_cluster_inds = len(cluster_ind_results)
+        print(num_cluster_inds)
+        comp_ind_scores = {}  # dict{class: fraction_score}
+
+        # 1. count the instances of each class in the componentindex (MF)
+        h_counters = {h: defaultdict(int) for h in hierarchy}
+        for cluster_ind_res in cluster_ind_results:
+            ci_classes = cluster_ind_res[2]
+            for h in hierarchy:
+                for class_tup in ci_classes[h]:
+                    c_name = class_tup[0]
+                    if c_name:
+                        h_counters[h][c_name] += 1
+        print(dict(h_counters))
+        # 2. calculate fraction and save to dict, irregardless of hierarchy lvl
+        h_fraction = {}
+        for h_lvl, h_dict in h_counters.items():
+            for cls, count in h_dict.items():
+                if cls:
+                    frac = count / num_cluster_inds
+                    if frac >= fraction_cutoff:
+                        comp_ind_scores[cls] = frac
+
+        # 3. order all classes on priority
+        priority_classes = [c for c in C.sirius.statistics.priority]
+        comp_ind_sorted_pr = []
+        for pr in priority_classes:  # highest priority
+            if pr in comp_ind_scores:
+                comp_ind_sorted_pr.append(pr)
+
+        # 4. fill hierarchy based on priority
+        comp_ind_classes_dict = defaultdict(list)
+        comp_ind_classes_set_dict = defaultdict(set)
+        for c in comp_ind_sorted_pr:
+            for h_lvl in hierarchy:
+                c_h_lvl = c.classyFireGenus().get(h_lvl)
+                if c_h_lvl:
+                    c_h_set = comp_ind_classes_set_dict[h_lvl]
+                    # make sure to add a classification only once to lvl
+                    if c_h_lvl not in c_h_set:
+                        comp_ind_sc = comp_ind_scores[c_h_lvl]
+                        comp_ind_classes_dict[h_lvl].append(
+                            (c_h_lvl, comp_ind_sc))
+                        c_h_set.add(c_h_lvl)
+        result_list.append((comp_ind, comp_ind_classes_dict))
+    return result_list
+
+
+def get_classes_npc_for_componentindices(clusterindex_results,
+                                         C,
+                                         npc_hierarchy: List[str],
+                                         fraction_cutoff: float = 0.3):
+    # todo: treat -1 differently
+    result_list = []
+    for comp_ind, cluster_ind_results in clusterindex_results.items():
+        print('\n', comp_ind)
+        num_cluster_inds = len(cluster_ind_results)
+        print(num_cluster_inds)
+        comp_ind_scores = {}  # dict{class: fraction_score}
+
+        # 1. count the instances of each class in the componentindex (MF)
+        h_counters = {h: defaultdict(int) for h in npc_hierarchy}
+        for cluster_ind_res in cluster_ind_results:
+            npc_classes = cluster_ind_res[3]
+            for h in npc_hierarchy:
+                for class_tup in npc_classes[h]:
+                    c_name = class_tup[0]
+                    if c_name:
+                        h_counters[h][c_name] += 1
+        print(dict(h_counters))
+
+        # 2. calculate fraction and add to dict
+        scores_dict = defaultdict(list)
+        for h_lvl, h_dict in h_counters.items():
+            for cls, count in h_dict.items():
+                if cls:
+                    frac = count / num_cluster_inds
+                    if frac >= fraction_cutoff:
+                        # comp_ind_scores[cls] = frac
+                        scores_dict[h_lvl].append((cls, frac))
+        result_list.append((comp_ind, scores_dict))
+    return result_list
 
 if __name__ == "__main__":
     start = time.time()
