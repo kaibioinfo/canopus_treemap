@@ -8,24 +8,49 @@ from collections import defaultdict
 from typing import List, Dict, Tuple, Union, DefaultDict, Any
 
 
-def analyse_canopus(sirius_folder: str, gnps_folder: str,
-                    output_folder: str = './'):
+def analyse_canopus(sirius_folder: str,
+                    gnps_folder: str,
+                    output_folder: str = './',
+                    class_p_cutoff: float = 0.5,
+                    max_class_depth: Union[float, None] = None,
+                    mf_fraction_cutoff_cf: float = 0.2,
+                    mf_fraction_cutoff_npc: float = 0.2):
     """Wrapper for analysing and combining canopus output with gnps mol network
 
     :param sirius_folder: directory containing sirius/canopus output
     :param gnps_folder: directory containing gnps molecular networking output
     :param output_folder: directory to write (preliminary) output to
-    :return:
+    :param class_p_cutoff: cutoff for CF class prediction to be taken into
+        account
+    :param max_class_depth: setting to control which CF classes are taken into
+        account. Setting this to None will use all classes at all levels
+        (default). Setting to a number will only keep classes at the Xth level.
+        These classes are then traced back to their parents.
+    :param mf_fraction_cutoff_cf: fraction cutoff for CF classes to be called
+        in a componentindex (MF). 0.2 means classes are kept if it occurs in
+        20% of the spectra
+    :param mf_fraction_cutoff_npc: fraction cutoff for NPC classes to be called
+        in a componentindex (MF). 0.2 means classes are kept if it occurs in
+        20% of the spectra
+    :return: None
+
+    The 2 outputs that are saved are for the clusterindices and
+    componentindices (MFs). Classes for each level are sorted by (our vision
+    of) most important classes, so taking the first class for a level will be
+    taking the most important class into account, taking the first two classes
+    will take the two most important classes into account, etc. For CF classes,
+    they are sorted by priority (see class_priority.txt), and for NPC classes,
+    they are sorted by highest score.
     """
     # make canopus object
     can = canopus.Canopus(sirius_folder, gnps_folder)
 
     # find classes per cluster index (spectra): loop through the nodes in
     # molecular network
-    class_p_cutoff = 0.5
+    # class_p_cutoff = 0.5
     # it will use all classes (set max_class_depth to a number for only keeping
     # the deepest classes at the Xth level)
-    max_class_depth = None
+    # max_class_depth = None
     hierarchy = ["kingdom", "superclass", "class", "subclass"] + \
                 [f"level {i}" for i in range(5, 12)]
     npc_hierarchy = ['pathway', 'superclass', 'class']
@@ -37,13 +62,13 @@ def analyse_canopus(sirius_folder: str, gnps_folder: str,
                                 output_folder)
 
     # group classes per componentindex (molecular family)
-    mf_fraction_cutoff = 0.2
+    # mf_fraction_cutoff = 0.2
     comp_ind_classes = get_classes_for_componentindices(
-        class_results, can, hierarchy, npc_hierarchy, mf_fraction_cutoff,
-        mf_fraction_cutoff)
+        class_results, can, hierarchy, npc_hierarchy, mf_fraction_cutoff_cf,
+        mf_fraction_cutoff_npc)
 
     # write componentindex results
-    write_classes_componentindex(
+    comp_ind_results_file = write_classes_componentindex(
         comp_ind_classes, hierarchy, npc_hierarchy, output_folder)
 
 
@@ -243,19 +268,38 @@ def write_classes_cluster_index(results: DefaultDict[str, List[
                 outf.write(f"{res_str}\n")
 
 
-def get_classes_for_componentindices(clusterindex_results,
-                                     can,
+def get_classes_for_componentindices(clusterindex_results: DefaultDict[
+    str, List[Union[str, Dict[str, List[Tuple[Union[str, float]]]]]]],
+                                     can: canopus.Canopus,
                                      hierarchy: List[str],
                                      npc_hierarchy: List[str],
                                      cf_fraction_cutoff: float = 0.3,
-                                     npc_fraction_cutoff: float = 0.2):
+                                     npc_fraction_cutoff: float = 0.2) -> \
+        List[Tuple[str, int, DefaultDict[Any, list], DefaultDict[Any, list]]]:
+    """For each component index in clusterindex_results, gather classes
+
+    :param clusterindex_results: classes output - defaultdict of lists of
+        {componentindex: [cluster index, formula, {CF_level: [(class, prob)]},
+        {NPC_level: [(class, prob)]}]}
+    :param can: Canopus object of canopus results with gnps mol network data
+    :param hierarchy: the CF class level names to be included in output in
+        order of hierarchy
+    :param npc_hierarchy: the NPC class level names to be included in output in
+        order of hierarchy
+    :param cf_fraction_cutoff: fraction cutoff for CF classes
+    :param npc_fraction_cutoff: fraction cutoff for NPC classes
+    :return: list with each tuple element being results for one componentindex
+        (MF). Each tuple consists of (MF_name, MF_size, CF_results,
+        NPC_results). Where CF/NPC results are defaultdict with
+        {hierarchy_lvl: [(class, fraction_score)] }
+    """
     result_list = []
     for comp_ind, cluster_ind_results in clusterindex_results.items():
         num_cluster_inds = len(cluster_ind_results)
         comp_ind_cf_classes_dict = get_cf_classes_for_componentindex(
             cluster_ind_results, num_cluster_inds, can, hierarchy,
             cf_fraction_cutoff)
-        comp_ind_npc_classes_dict = get_classes_npc_for_componentindex(
+        comp_ind_npc_classes_dict = get_npc_classes_for_componentindex(
             cluster_ind_results, num_cluster_inds, npc_hierarchy,
             npc_fraction_cutoff)
         result_list.append((
@@ -264,11 +308,26 @@ def get_classes_for_componentindices(clusterindex_results,
     return result_list
 
 
-def get_cf_classes_for_componentindex(cluster_ind_results,
-                                      num_cluster_inds,
-                                      can,
+def get_cf_classes_for_componentindex(cluster_ind_results: List[
+    Union[str, Dict[str, List[Tuple[Union[str, float]]]]]],
+                                      num_cluster_inds: int,
+                                      can: canopus.Canopus,
                                       hierarchy: List[str],
-                                      fraction_cutoff: float = 0.3):
+                                      fraction_cutoff: float = 0.3) -> \
+        DefaultDict[str, List[Tuple[Any]]]:
+    """
+    For one componentindex compute shared CF classes from clusterindex results
+
+    :param cluster_ind_results: list of the cluster index results for one
+        component index(MF) [cluster index, formula,
+        {CF_level: [(class, prob)]}, {NPC_level: [(class, prob)]}]
+    :param num_cluster_inds: size of the MF
+    :param can: Canopus object of canopus results with gnps mol network data
+    :param hierarchy: the CF class level names to be included in output in
+        order of hierarchy
+    :param fraction_cutoff: fraction cutoff for CF classes
+    :return: defaultdict with {hierarchy_lvl: [(class, fraction_score)] }
+    """
     comp_ind_scores = {}  # dict{class: fraction_score}
 
     # 1. count the instances of each class in the componentindex (MF)
@@ -313,23 +372,24 @@ def get_cf_classes_for_componentindex(cluster_ind_results,
     return comp_ind_classes_dict
 
 
-def get_classes_npc_for_componentindices(clusterindex_results,
-                                         npc_hierarchy: List[str],
-                                         fraction_cutoff: float = 0.3):
-    result_list = []
-    for comp_ind, cluster_ind_results in clusterindex_results.items():
-        num_cluster_inds = len(cluster_ind_results)
-        scores_dict = get_classes_npc_for_componentindex(
-            cluster_ind_results, num_cluster_inds, npc_hierarchy,
-            fraction_cutoff)
-        result_list.append((comp_ind, num_cluster_inds, scores_dict))
-    return result_list
+def get_npc_classes_for_componentindex(cluster_ind_results: List[
+    Union[str, Dict[str, List[Tuple[Union[str, float]]]]]],
+                                       num_cluster_inds: int,
+                                       npc_hierarchy: List[str],
+                                       fraction_cutoff: float = 0.2) -> \
+        DefaultDict[str, List[Tuple[Any]]]:
+    """
+    For one componentindex compute shared NPC classes from clusterindex results
 
-
-def get_classes_npc_for_componentindex(cluster_ind_results,
-                                       num_cluster_inds,
-                                       npc_hierarchy,
-                                       fraction_cutoff: float = 0.2):
+    :param cluster_ind_results: list of the cluster index results for one
+        component index(MF) [cluster index, formula,
+        {CF_level: [(class, prob)]}, {NPC_level: [(class, prob)]}]
+    :param num_cluster_inds: size of the MF
+    :param npc_hierarchy: the NPC class level names to be included in output in
+        order of hierarchy
+    :param fraction_cutoff: fraction cutoff for NPC classes
+    :return: defaultdict with {hierarchy_lvl: [(class, fraction_score)] }
+    """
     # 1. count the instances of each class in the componentindex (MF)
     h_counters = {h: defaultdict(int) for h in npc_hierarchy}
     for cluster_ind_res in cluster_ind_results:
@@ -343,17 +403,21 @@ def get_classes_npc_for_componentindex(cluster_ind_results,
     # 2. calculate fraction and add to dict
     scores_dict = defaultdict(list)
     for h_lvl, h_dict in h_counters.items():
-        for cls, count in h_dict.items():
+        # 3. sort on highest to lowest occurrence (for each level separately)
+        for cls, count in sorted(h_dict.items(), key=lambda x: x[1],
+                                 reverse=True):
             if cls:
                 frac = count / num_cluster_inds
                 if frac >= fraction_cutoff:
-                    # comp_ind_scores[cls] = frac
                     scores_dict[h_lvl].append((cls, frac))
     return scores_dict
 
 
-def write_classes_componentindex(comp_ind_cf_classes,
-                                 hierarchy, npc_hierarchy, output_folder):
+def write_classes_componentindex(comp_ind_cf_classes: List[
+    Tuple[str, int, DefaultDict[Any, list], DefaultDict[Any, list]]],
+                                 hierarchy: List[str],
+                                 npc_hierarchy: List[str],
+                                 output_folder: str):
     """
     Write component indices class results - component_index_classifications.txt
 
@@ -363,7 +427,7 @@ def write_classes_componentindex(comp_ind_cf_classes,
     :param npc_hierarchy: the NPC class level names to be included in output in
         order of hierarchy
     :param output_folder: directory to write (preliminary) output to
-    :return: None
+    :return: path of output file
     """
     output_file = os.path.join(output_folder,
                                "component_index_classifications.txt")
@@ -392,6 +456,7 @@ def write_classes_componentindex(comp_ind_cf_classes,
                 cf_list + npc_list
             res_str = '\t'.join(res_list)
             outf.write(f"{res_str}\n")
+    return output_file
 
 
 if __name__ == "__main__":
@@ -401,10 +466,8 @@ if __name__ == "__main__":
         raise FileNotFoundError(
             "\nUsage: python classification_to_gnps.py " +
             "sirius_folder gnps_folder output_folder(default: ./)")
-    sirius_file = argv[
-        1]  # "C:\Users\joris\Documents\iOMEGA_no_backup\NPLinker_results\subset_canopus_crus_mgf_maxmz600"
-    gnps_file = argv[
-        2]  # "C:\Users\joris\Documents\iOMEGA_no_backup\NPLinker_results\ProteoSAFe-METABOLOMICS-SNETS-V2-eea136cb-download_clustered_spectra"
+    sirius_file = argv[1]
+    gnps_file = argv[2]
     output_dir = './'
     if len(argv) == 4:
         output_dir = argv[3]
