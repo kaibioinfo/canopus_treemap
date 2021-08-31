@@ -34,7 +34,7 @@ def analyse_canopus(sirius_folder: str,
         20% of the spectra
     :return: None
 
-    The 2 outputs that are saved are for the clusterindices and
+    Creates two txt files as output: one for the clusterindices and one for the
     componentindices (MFs). Classes for each level are sorted by (our vision
     of) most important classes, so taking the first class for a level will be
     taking the most important class into account, taking the first two classes
