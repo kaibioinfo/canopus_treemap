@@ -239,7 +239,7 @@ class Canopus(object):
     """
     compound = self.__fid__(compound)
     self.featureHeader(compound)
-    if self.gnps_hits:
+    if self.gnps_hits is not None:
       self.gnpsHit(compound)
     self.identification(compound)
     self.classification(compound)
