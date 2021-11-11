@@ -53,7 +53,7 @@ def normalizeByLogGeom(Quant):
     Normed = Quant.copy()
     # divide by total ion count
     Normed /= Normed.sum(axis=0)
-    pseudoCount = np.percentile(M.where(M>0).stack().values,1)
+    pseudoCount = np.percentile(Normed.where(Normed>0).stack().values,1)
     for feature in Quant.index:
         s = Quant.loc[feature,:].to_numpy()
         geom = np.mean(np.log10(s[np.nonzero(s)]))
@@ -81,7 +81,7 @@ def orderByFoldChange(Quant,group1,group2):
     fold_changes = (trim_mean(Quant.loc[:,A],0.1,axis=1)+pseudoCount) / (trim_mean(Quant.loc[:,B],0.1,axis=1)+pseudoCount)
     table = pd.DataFrame(dict(compound=Quant.index, weight=np.abs(np.log10(fold_changes)), fold_change=fold_changes))
     table.sort_values(by="weight",ascending=False, inplace=True)
-    return t
+    return table
 
 def orderByDiscrimination(Quant, group1, group2,ntrees=1000):
     group1 = re.compile(group1)

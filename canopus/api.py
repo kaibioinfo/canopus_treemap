@@ -26,6 +26,7 @@ class Canopus(object):
     self.sirius = SiriusWorkspace(sirius)
     self.Quant = self.sirius.make_quant()
     self.conditions = dict()
+    self.gnps_hits = None
     if gnps:
       networkfile = list(Path(gnps,"gnps_molecular_network_graphml").glob("*.graphml" ))
       if not networkfile:
@@ -238,7 +239,8 @@ class Canopus(object):
     """
     compound = self.__fid__(compound)
     self.featureHeader(compound)
-    self.gnpsHit(compound)
+    if self.gnps_hits:
+      self.gnpsHit(compound)
     self.identification(compound)
     self.classification(compound)
     self.histogram(compound,conditions)
@@ -339,6 +341,8 @@ class Canopus(object):
     s=Q.loc[cmps,:]
     m = s.min().min()
     m2 = s.max().max()
+    fig=plt.figure()
+    fig.suptitle(category)
     for (i,grp) in enumerate(conditions):
       plt.subplot(1,len(conditions),i+1)
       cb=plt.imshow(Q.loc[cmps,grp.samples],vmin=m,vmax=m2,aspect="auto")
@@ -356,13 +360,18 @@ class Canopus(object):
       conditions = list(self.conditions.values())
     else:
       conditions = [self.condition(c) for c in conditions]
-    plt.subplot(1, 2, 1)
+    plt.figure(figsize=(16,6))
+    plt.subplot(1, 3, 1)
+    self.__drawQuant__(self.Quant,compound,conditions)
+    plt.ylabel("raw intensity")
+    plt.subplot(1, 3, 2)
     self.__drawQuant__(self.QuantNormalized,compound,conditions)
     plt.ylabel("normalized intensity")
     plt.legend()
-    plt.subplot(1, 2, 2)
+    plt.subplot(1, 3, 3)
     self.__drawQuant__(self.QuantLogarithmic,compound,conditions)
     plt.ylabel("logarithmized intensity")
+    plt.tight_layout()
     
 
   def __drawQuant__(self, quant, compound, conditions):
@@ -454,6 +463,7 @@ class Canopus(object):
       return compound.name
     return str(fid)
 
+import collections
 class Condition(object):
 
   def __init__(self, name, regexp=None, color=None):
@@ -499,7 +509,6 @@ class DifferentialApi(object):
     display(HTML("<h5>Category heatmaps</h6>"))
     t = permutationTest(self.canopus.sirius,self.ordering,self.canopus.probabilityThreshold)
     for row in t.head(5).index:
-      display(HTML("<h6>" + row + "</h6>"))
       self.canopus.heatmap(row, [self.conditionLeft, self.conditionRight])
       plt.figure()
 
@@ -553,17 +562,25 @@ class DifferentialApi(object):
   def orderByRobustForest(self):
     self.__forest_ordering__(self.canopus.QuantLogarithmic)
 
-  def orderByFoldChange(self,bidirection=True):
+  def __enoughEntries(self, Quant, A):
+    rows,cols = np.nonzero(Quant.loc[:,A].values)
+    c =collections.Counter()
+    for i in range(len(rows)):
+        c[rows[i]] += 1
+    return {row for row in set(rows) if c[row] > len(A)//2}
 
+
+  def orderByFoldChange(self,bidirection=True):
+    Raw = self.canopus.Quant
     Quant = Quant = self.canopus.QuantNormalized
     pseudoCount = np.percentile(Quant.where(Quant>0).stack().values,0.1)
     A = self.conditionLeft.samples
     B = self.conditionRight.samples
-    fold_changes = (trim_mean(Quant.loc[:,A],0.05,axis=1)+pseudoCount) / (trim_mean(Quant.loc[:,B],0.05,axis=1)+pseudoCount)
-    #fold_changes = (np.mean(Quant.loc[:,A],axis=1)+pseudoCount) / (np.mean(Quant.loc[:,B],axis=1)+pseudoCount)
-
+    entries = np.array(list(self.__enoughEntries(Raw, A) | self.__enoughEntries(Raw, B)))
+    entries = np.array(list(set(Raw.index[entries])&set(Quant.index)))
+    Quant = Quant.loc[entries,:]
+    fold_changes = (trim_mean(Quant.loc[:,A],0.1,axis=1)+pseudoCount) / (trim_mean(Quant.loc[:,B],0.1,axis=1)+pseudoCount)
     W = np.log10(fold_changes)
-
     if self.binning:
       binsize = 0.5 if self.binning==True else self.binning
       scale = 1.0/binsize
