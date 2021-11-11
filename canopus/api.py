@@ -34,12 +34,12 @@ class Canopus(object):
       else:
         self.gnps = MolecularNetwork.parse(networkfile[0])
         self.gnps.feedSirius(self.sirius)
-      identificationFile = list(Path(gnps, "DB_result").glob("*.tsv"))
+      identificationFile = list(Path(gnps).glob("*DB*/*.tsv"))
       if identificationFile:
         self.gnps_hits = pd.read_csv(identificationFile[0],sep="\t")
       else:
         self.gnps_hits = None
-      clusterinfo = list(Path(gnps, "clusterinfo_summary").glob("*.tsv"))
+      clusterinfo = list(Path(gnps).glob("clusterinfo*summary*/*.*"))
       if clusterinfo:
         self.gnps.feedClusterInfo(clusterinfo[0])
     self.all = Condition("all", ".*", "black")

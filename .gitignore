@@ -1,0 +1,6 @@
+dist/
+build/
+canopus.egg-info/
+canopus/__pycache__/
+canopus/resources/__pycache__/
+chemontology.csv
