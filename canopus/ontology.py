@@ -185,13 +185,10 @@ class Category(object):
         genus = dict()
         if (len(ys)<=1):
             return genus
-        genus["kingdom"] = ys[1]
-        if len(ys)>2:
-            genus["superclass"] = ys[2]
-        if len(ys)>3:
-            genus["class"] = ys[3]
-        if len(ys)>4:
-            genus["subclass"] = ys[4]
+        hierarchy = ["kingdom", "superclass", "class", "subclass"] + \
+                    [f"level {i}" for i in range(5, 12)]
+        for i in range(1, len(ys)):
+            genus[hierarchy[i - 1]] = ys[i]
         return genus
         
     def ancestors(self,inclusive=False):
@@ -624,7 +621,7 @@ class SiriusWorkspace(object):
             self.load_compounds()
             print("%d compounds in workspace " % len(self.compounds))
         else:
-            self.load_compounds_from_csv(rootdir)
+            raise FileNotFoundError("sirius path does not exist")
         self.statistics = CanopusStatistics(self)
         self.statistics.setCompounds(self.compounds)
         self.statistics.assign_most_specific_classes()
@@ -750,7 +747,7 @@ class SiriusWorkspace(object):
                 with Path(compound_dir, "spectrum.ms").open() as fhandle:
                     for line in fhandle:
                         if line.startswith(">compound"):
-                            name = line.strip().split(" ")[1]
+                            name = line.strip().split(" ")[-1]
                             break
                 cmp = Compound(name, compound_dir)
                 siriusInstance = SiriusInstance(compound_dir)
