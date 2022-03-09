@@ -539,9 +539,19 @@ class SiriusInstance(object):
         else:
             self.zodiacScore = None
         canopusPath = Path(self.dirname, "canopus", filename[0] + "_" + filename[1] + ".fpt")
+        canopusZipPath = Path(self.dirname, "canopus")
         if canopusPath.exists():
             self.canopusfp = np.loadtxt(canopusPath)
             self.filename = canopusPath.name
+        elif canopusZipPath.exists(): 
+            with zipfile.ZipFile(canopusZipPath) as myzip:
+                path = zipfile.Path(myzip, at=filename[0] + "_" + filename[1] + ".fpt")
+                if path.exists():
+                    with path.open("r") as myfile:
+                        self.canopusfp = np.loadtxt(myfile)
+                        self.filename = canopusPath.name
+                else:
+                    self.canopusfp = None
         else:
             self.canopusfp = None
 
@@ -549,8 +559,16 @@ class SiriusInstance(object):
         self.canopusnpc = None
         if self.filename:
             npcPath = Path(self.dirname, "canopus_npc", self.filename)
+            npcZipPath = Path(self.dirname, "canopus_npc")
             if npcPath.exists():
                 self.canopusnpc = np.loadtxt(npcPath)
+            elif npcZipPath.exists():
+                with zipfile.ZipFile(npcZipPath) as myzip:
+                    path = zipfile.Path(myzip, at=self.filename)
+                    if path.exists():
+                        with path.open("r") as myfile:
+                            self.canopusnpc = np.loadtxt(myfile)
+
 
     def __findAdduct(self, filename):
         formula = Formula(filename[0])
